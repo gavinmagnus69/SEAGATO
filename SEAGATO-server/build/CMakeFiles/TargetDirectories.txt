@@ -1,0 +1,5 @@
+/home/roman/Desktop/project/SEAGATO/SEAGATO-server/build/CMakeFiles/protolib.dir
+/home/roman/Desktop/project/SEAGATO/SEAGATO-server/build/CMakeFiles/ent.dir
+/home/roman/Desktop/project/SEAGATO/SEAGATO-server/build/CMakeFiles/server-sg.dir
+/home/roman/Desktop/project/SEAGATO/SEAGATO-server/build/CMakeFiles/edit_cache.dir
+/home/roman/Desktop/project/SEAGATO/SEAGATO-server/build/CMakeFiles/rebuild_cache.dir

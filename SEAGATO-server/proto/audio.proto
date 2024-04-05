@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+message Request
+{
+    string song_id = 1;
+}
+
+message Audio
+{
+    bytes data = 1;
+}
+
+service AudioServices
+{
+    rpc sendAudio(Request) returns (Audio){}
+}
