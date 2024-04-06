@@ -1,8 +1,10 @@
 #include <fstream>
 #include <grpcpp/security/credentials.h>
 #include <iostream>
-#include "../Implementations/YaController.h"
-#include "User.h"
+#include "Interactor.h"
+#include "YaController.h"
+#include "ServerController.h"
+#include "grpc.h"
 
 void to_bin(Entity::Track& ent)
 {
@@ -14,11 +16,16 @@ void to_bin(Entity::Track& ent)
 
 int main()
 {
-    Controller::YaController c(new Client(grpc::CreateChannel("localhost:9999", grpc::InsecureChannelCredentials())) );
-    Entity::User usr;
-    auto tr = c.fetch_track("228", usr);
+    Service::Interactor server(new Controller::YaController(
+        new Client(grpc::CreateChannel("localhost:9999", grpc::InsecureChannelCredentials()))),
+        new Controller::YaController(
+        new Client(grpc::CreateChannel("localhost:9998", grpc::InsecureChannelCredentials()))),
+        new Controller::ServerController()
+         );
+    server.start();
 
-    to_bin(tr);
+
+    
     
     return 0;
 }

@@ -3,8 +3,7 @@
 
 
 #include <string>
-#include "IController.h"
-
+#include "../Entities/User.h"
 
 namespace Interface {
     class IClient

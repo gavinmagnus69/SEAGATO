@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = -DCARES_STATICLIB
 
-CXX_INCLUDES = -I/home/roman/Desktop/project/SEAGATO/SEAGATO-server/Entities -I/home/roman/Desktop/project/SEAGATO/SEAGATO-server/Services -I/home/roman/Desktop/project/SEAGATO/SEAGATO-server/Implementations -I/home/roman/Desktop/project/SEAGATO/SEAGATO-server/Interfaces -I/home/roman/Desktop/project/SEAGATO/SEAGATO-server/build/proto -I/home/roman/Desktop/project/SEAGATO/SEAGATO-server/build
+CXX_INCLUDES = -I/home/roman/Desktop/project/SEAGATO/SEAGATO-server/Entities -I/home/roman/Desktop/project/SEAGATO/SEAGATO-server/Services -I/home/roman/Desktop/project/SEAGATO/SEAGATO-server/Implementations -I/home/roman/Desktop/project/SEAGATO/SEAGATO-server/Interfaces -I/home/roman/Desktop/project/SEAGATO/SEAGATO-server/GRPC_Implementations -I/home/roman/Desktop/project/SEAGATO/SEAGATO-server/build/proto -I/home/roman/Desktop/project/SEAGATO/SEAGATO-server/build
 
 CXX_FLAGS = 
 

@@ -203,6 +203,78 @@ Entities/User.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ent.dir/build.make CMakeFiles/ent.dir/Entities/User.cpp.s
 .PHONY : Entities/User.cpp.s
 
+GRPC_Implementations/GRPCServer.o: GRPC_Implementations/GRPCServer.cpp.o
+.PHONY : GRPC_Implementations/GRPCServer.o
+
+# target to build an object file
+GRPC_Implementations/GRPCServer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ent.dir/build.make CMakeFiles/ent.dir/GRPC_Implementations/GRPCServer.cpp.o
+.PHONY : GRPC_Implementations/GRPCServer.cpp.o
+
+GRPC_Implementations/GRPCServer.i: GRPC_Implementations/GRPCServer.cpp.i
+.PHONY : GRPC_Implementations/GRPCServer.i
+
+# target to preprocess a source file
+GRPC_Implementations/GRPCServer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ent.dir/build.make CMakeFiles/ent.dir/GRPC_Implementations/GRPCServer.cpp.i
+.PHONY : GRPC_Implementations/GRPCServer.cpp.i
+
+GRPC_Implementations/GRPCServer.s: GRPC_Implementations/GRPCServer.cpp.s
+.PHONY : GRPC_Implementations/GRPCServer.s
+
+# target to generate assembly for a file
+GRPC_Implementations/GRPCServer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ent.dir/build.make CMakeFiles/ent.dir/GRPC_Implementations/GRPCServer.cpp.s
+.PHONY : GRPC_Implementations/GRPCServer.cpp.s
+
+GRPC_Implementations/grpc.o: GRPC_Implementations/grpc.cpp.o
+.PHONY : GRPC_Implementations/grpc.o
+
+# target to build an object file
+GRPC_Implementations/grpc.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ent.dir/build.make CMakeFiles/ent.dir/GRPC_Implementations/grpc.cpp.o
+.PHONY : GRPC_Implementations/grpc.cpp.o
+
+GRPC_Implementations/grpc.i: GRPC_Implementations/grpc.cpp.i
+.PHONY : GRPC_Implementations/grpc.i
+
+# target to preprocess a source file
+GRPC_Implementations/grpc.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ent.dir/build.make CMakeFiles/ent.dir/GRPC_Implementations/grpc.cpp.i
+.PHONY : GRPC_Implementations/grpc.cpp.i
+
+GRPC_Implementations/grpc.s: GRPC_Implementations/grpc.cpp.s
+.PHONY : GRPC_Implementations/grpc.s
+
+# target to generate assembly for a file
+GRPC_Implementations/grpc.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ent.dir/build.make CMakeFiles/ent.dir/GRPC_Implementations/grpc.cpp.s
+.PHONY : GRPC_Implementations/grpc.cpp.s
+
+Implementations/ServerController.o: Implementations/ServerController.cpp.o
+.PHONY : Implementations/ServerController.o
+
+# target to build an object file
+Implementations/ServerController.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ent.dir/build.make CMakeFiles/ent.dir/Implementations/ServerController.cpp.o
+.PHONY : Implementations/ServerController.cpp.o
+
+Implementations/ServerController.i: Implementations/ServerController.cpp.i
+.PHONY : Implementations/ServerController.i
+
+# target to preprocess a source file
+Implementations/ServerController.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ent.dir/build.make CMakeFiles/ent.dir/Implementations/ServerController.cpp.i
+.PHONY : Implementations/ServerController.cpp.i
+
+Implementations/ServerController.s: Implementations/ServerController.cpp.s
+.PHONY : Implementations/ServerController.s
+
+# target to generate assembly for a file
+Implementations/ServerController.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ent.dir/build.make CMakeFiles/ent.dir/Implementations/ServerController.cpp.s
+.PHONY : Implementations/ServerController.cpp.s
+
 Implementations/TgController.o: Implementations/TgController.cpp.o
 .PHONY : Implementations/TgController.o
 
@@ -250,30 +322,6 @@ Implementations/YaController.s: Implementations/YaController.cpp.s
 Implementations/YaController.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ent.dir/build.make CMakeFiles/ent.dir/Implementations/YaController.cpp.s
 .PHONY : Implementations/YaController.cpp.s
-
-Implementations/grpc.o: Implementations/grpc.cpp.o
-.PHONY : Implementations/grpc.o
-
-# target to build an object file
-Implementations/grpc.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ent.dir/build.make CMakeFiles/ent.dir/Implementations/grpc.cpp.o
-.PHONY : Implementations/grpc.cpp.o
-
-Implementations/grpc.i: Implementations/grpc.cpp.i
-.PHONY : Implementations/grpc.i
-
-# target to preprocess a source file
-Implementations/grpc.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ent.dir/build.make CMakeFiles/ent.dir/Implementations/grpc.cpp.i
-.PHONY : Implementations/grpc.cpp.i
-
-Implementations/grpc.s: Implementations/grpc.cpp.s
-.PHONY : Implementations/grpc.s
-
-# target to generate assembly for a file
-Implementations/grpc.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ent.dir/build.make CMakeFiles/ent.dir/Implementations/grpc.cpp.s
-.PHONY : Implementations/grpc.cpp.s
 
 Services/Interactor.o: Services/Interactor.cpp.o
 .PHONY : Services/Interactor.o
@@ -388,15 +436,21 @@ help:
 	@echo "... Entities/User.o"
 	@echo "... Entities/User.i"
 	@echo "... Entities/User.s"
+	@echo "... GRPC_Implementations/GRPCServer.o"
+	@echo "... GRPC_Implementations/GRPCServer.i"
+	@echo "... GRPC_Implementations/GRPCServer.s"
+	@echo "... GRPC_Implementations/grpc.o"
+	@echo "... GRPC_Implementations/grpc.i"
+	@echo "... GRPC_Implementations/grpc.s"
+	@echo "... Implementations/ServerController.o"
+	@echo "... Implementations/ServerController.i"
+	@echo "... Implementations/ServerController.s"
 	@echo "... Implementations/TgController.o"
 	@echo "... Implementations/TgController.i"
 	@echo "... Implementations/TgController.s"
 	@echo "... Implementations/YaController.o"
 	@echo "... Implementations/YaController.i"
 	@echo "... Implementations/YaController.s"
-	@echo "... Implementations/grpc.o"
-	@echo "... Implementations/grpc.i"
-	@echo "... Implementations/grpc.s"
 	@echo "... Services/Interactor.o"
 	@echo "... Services/Interactor.i"
 	@echo "... Services/Interactor.s"

@@ -139,19 +139,47 @@ CMakeFiles/ent.dir/Implementations/YaController.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ent.dir/Implementations/YaController.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/roman/Desktop/project/SEAGATO/SEAGATO-server/Implementations/YaController.cpp -o CMakeFiles/ent.dir/Implementations/YaController.cpp.s
 
-CMakeFiles/ent.dir/Implementations/grpc.cpp.o: CMakeFiles/ent.dir/flags.make
-CMakeFiles/ent.dir/Implementations/grpc.cpp.o: /home/roman/Desktop/project/SEAGATO/SEAGATO-server/Implementations/grpc.cpp
-CMakeFiles/ent.dir/Implementations/grpc.cpp.o: CMakeFiles/ent.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/roman/Desktop/project/SEAGATO/SEAGATO-server/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/ent.dir/Implementations/grpc.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ent.dir/Implementations/grpc.cpp.o -MF CMakeFiles/ent.dir/Implementations/grpc.cpp.o.d -o CMakeFiles/ent.dir/Implementations/grpc.cpp.o -c /home/roman/Desktop/project/SEAGATO/SEAGATO-server/Implementations/grpc.cpp
+CMakeFiles/ent.dir/GRPC_Implementations/grpc.cpp.o: CMakeFiles/ent.dir/flags.make
+CMakeFiles/ent.dir/GRPC_Implementations/grpc.cpp.o: /home/roman/Desktop/project/SEAGATO/SEAGATO-server/GRPC_Implementations/grpc.cpp
+CMakeFiles/ent.dir/GRPC_Implementations/grpc.cpp.o: CMakeFiles/ent.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/roman/Desktop/project/SEAGATO/SEAGATO-server/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/ent.dir/GRPC_Implementations/grpc.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ent.dir/GRPC_Implementations/grpc.cpp.o -MF CMakeFiles/ent.dir/GRPC_Implementations/grpc.cpp.o.d -o CMakeFiles/ent.dir/GRPC_Implementations/grpc.cpp.o -c /home/roman/Desktop/project/SEAGATO/SEAGATO-server/GRPC_Implementations/grpc.cpp
 
-CMakeFiles/ent.dir/Implementations/grpc.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/ent.dir/Implementations/grpc.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/roman/Desktop/project/SEAGATO/SEAGATO-server/Implementations/grpc.cpp > CMakeFiles/ent.dir/Implementations/grpc.cpp.i
+CMakeFiles/ent.dir/GRPC_Implementations/grpc.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/ent.dir/GRPC_Implementations/grpc.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/roman/Desktop/project/SEAGATO/SEAGATO-server/GRPC_Implementations/grpc.cpp > CMakeFiles/ent.dir/GRPC_Implementations/grpc.cpp.i
 
-CMakeFiles/ent.dir/Implementations/grpc.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ent.dir/Implementations/grpc.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/roman/Desktop/project/SEAGATO/SEAGATO-server/Implementations/grpc.cpp -o CMakeFiles/ent.dir/Implementations/grpc.cpp.s
+CMakeFiles/ent.dir/GRPC_Implementations/grpc.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ent.dir/GRPC_Implementations/grpc.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/roman/Desktop/project/SEAGATO/SEAGATO-server/GRPC_Implementations/grpc.cpp -o CMakeFiles/ent.dir/GRPC_Implementations/grpc.cpp.s
+
+CMakeFiles/ent.dir/GRPC_Implementations/GRPCServer.cpp.o: CMakeFiles/ent.dir/flags.make
+CMakeFiles/ent.dir/GRPC_Implementations/GRPCServer.cpp.o: /home/roman/Desktop/project/SEAGATO/SEAGATO-server/GRPC_Implementations/GRPCServer.cpp
+CMakeFiles/ent.dir/GRPC_Implementations/GRPCServer.cpp.o: CMakeFiles/ent.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/roman/Desktop/project/SEAGATO/SEAGATO-server/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/ent.dir/GRPC_Implementations/GRPCServer.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ent.dir/GRPC_Implementations/GRPCServer.cpp.o -MF CMakeFiles/ent.dir/GRPC_Implementations/GRPCServer.cpp.o.d -o CMakeFiles/ent.dir/GRPC_Implementations/GRPCServer.cpp.o -c /home/roman/Desktop/project/SEAGATO/SEAGATO-server/GRPC_Implementations/GRPCServer.cpp
+
+CMakeFiles/ent.dir/GRPC_Implementations/GRPCServer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/ent.dir/GRPC_Implementations/GRPCServer.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/roman/Desktop/project/SEAGATO/SEAGATO-server/GRPC_Implementations/GRPCServer.cpp > CMakeFiles/ent.dir/GRPC_Implementations/GRPCServer.cpp.i
+
+CMakeFiles/ent.dir/GRPC_Implementations/GRPCServer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ent.dir/GRPC_Implementations/GRPCServer.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/roman/Desktop/project/SEAGATO/SEAGATO-server/GRPC_Implementations/GRPCServer.cpp -o CMakeFiles/ent.dir/GRPC_Implementations/GRPCServer.cpp.s
+
+CMakeFiles/ent.dir/Implementations/ServerController.cpp.o: CMakeFiles/ent.dir/flags.make
+CMakeFiles/ent.dir/Implementations/ServerController.cpp.o: /home/roman/Desktop/project/SEAGATO/SEAGATO-server/Implementations/ServerController.cpp
+CMakeFiles/ent.dir/Implementations/ServerController.cpp.o: CMakeFiles/ent.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/roman/Desktop/project/SEAGATO/SEAGATO-server/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/ent.dir/Implementations/ServerController.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ent.dir/Implementations/ServerController.cpp.o -MF CMakeFiles/ent.dir/Implementations/ServerController.cpp.o.d -o CMakeFiles/ent.dir/Implementations/ServerController.cpp.o -c /home/roman/Desktop/project/SEAGATO/SEAGATO-server/Implementations/ServerController.cpp
+
+CMakeFiles/ent.dir/Implementations/ServerController.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/ent.dir/Implementations/ServerController.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/roman/Desktop/project/SEAGATO/SEAGATO-server/Implementations/ServerController.cpp > CMakeFiles/ent.dir/Implementations/ServerController.cpp.i
+
+CMakeFiles/ent.dir/Implementations/ServerController.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ent.dir/Implementations/ServerController.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/roman/Desktop/project/SEAGATO/SEAGATO-server/Implementations/ServerController.cpp -o CMakeFiles/ent.dir/Implementations/ServerController.cpp.s
 
 # Object files for target ent
 ent_OBJECTS = \
@@ -160,7 +188,9 @@ ent_OBJECTS = \
 "CMakeFiles/ent.dir/Services/Interactor.cpp.o" \
 "CMakeFiles/ent.dir/Implementations/TgController.cpp.o" \
 "CMakeFiles/ent.dir/Implementations/YaController.cpp.o" \
-"CMakeFiles/ent.dir/Implementations/grpc.cpp.o"
+"CMakeFiles/ent.dir/GRPC_Implementations/grpc.cpp.o" \
+"CMakeFiles/ent.dir/GRPC_Implementations/GRPCServer.cpp.o" \
+"CMakeFiles/ent.dir/Implementations/ServerController.cpp.o"
 
 # External object files for target ent
 ent_EXTERNAL_OBJECTS =
@@ -170,10 +200,12 @@ libent.a: CMakeFiles/ent.dir/Entities/User.cpp.o
 libent.a: CMakeFiles/ent.dir/Services/Interactor.cpp.o
 libent.a: CMakeFiles/ent.dir/Implementations/TgController.cpp.o
 libent.a: CMakeFiles/ent.dir/Implementations/YaController.cpp.o
-libent.a: CMakeFiles/ent.dir/Implementations/grpc.cpp.o
+libent.a: CMakeFiles/ent.dir/GRPC_Implementations/grpc.cpp.o
+libent.a: CMakeFiles/ent.dir/GRPC_Implementations/GRPCServer.cpp.o
+libent.a: CMakeFiles/ent.dir/Implementations/ServerController.cpp.o
 libent.a: CMakeFiles/ent.dir/build.make
 libent.a: CMakeFiles/ent.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/roman/Desktop/project/SEAGATO/SEAGATO-server/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX static library libent.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/roman/Desktop/project/SEAGATO/SEAGATO-server/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX static library libent.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/ent.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/ent.dir/link.txt --verbose=$(VERBOSE)
 

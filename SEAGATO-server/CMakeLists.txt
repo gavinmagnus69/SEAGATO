@@ -23,10 +23,12 @@ PLUGIN "protoc-gen-grpc=${grpc_cpp_plugin_location}"
 #сюда всю хуйню классовую
 add_library(ent STATIC Entities/Track.cpp Entities/User.cpp Services/Interactor.cpp
 Implementations/TgController.cpp Implementations/YaController.cpp
-Implementations/grpc.cpp
+GRPC_Implementations/grpc.cpp GRPC_Implementations/GRPCServer.cpp
+Implementations/ServerController.cpp  
 )
 target_include_directories(ent PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/Entities ${CMAKE_CURRENT_SOURCE_DIR}/Services
 ${CMAKE_CURRENT_SOURCE_DIR}/Implementations ${CMAKE_CURRENT_SOURCE_DIR}/Interfaces
+${CMAKE_CURRENT_SOURCE_DIR}/GRPC_Implementations
 )
 
 
@@ -36,6 +38,7 @@ add_executable(server-sg src/main.cpp)
 #и сюда
 target_include_directories(server-sg PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/Entities ${CMAKE_CURRENT_SOURCE_DIR}/Services
 ${CMAKE_CURRENT_SOURCE_DIR}/Implementations ${CMAKE_CURRENT_SOURCE_DIR}/Interfaces
+${CMAKE_CURRENT_SOURCE_DIR}/GRPC_Implementations
 )
 target_link_libraries(server-sg PUBLIC ent protolib)
 target_include_directories(ent PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/build/proto)

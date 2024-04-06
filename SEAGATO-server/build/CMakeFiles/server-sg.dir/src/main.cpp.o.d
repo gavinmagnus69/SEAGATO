@@ -384,16 +384,28 @@ CMakeFiles/server-sg.dir/src/main.cpp.o: \
  /usr/local/include/grpcpp/support/channel_arguments.h \
  /usr/local/include/grpc/compression.h \
  /usr/local/include/grpcpp/resource_quota.h \
- /home/roman/Desktop/project/SEAGATO/SEAGATO-server/src/../Implementations/YaController.h \
- /home/roman/Desktop/project/SEAGATO/SEAGATO-server/src/../Implementations/../Interfaces/IController.h \
- /home/roman/Desktop/project/SEAGATO/SEAGATO-server/src/../Implementations/../Interfaces/../Entities/Track.h \
- /home/roman/Desktop/project/SEAGATO/SEAGATO-server/src/../Implementations/../Interfaces/../Entities/User.h \
- /home/roman/Desktop/project/SEAGATO/SEAGATO-server/src/../Implementations/grpc.h \
- /usr/local/include/grpcpp/client_context.h \
- /usr/local/include/grpcpp/impl/create_auth_context.h \
- /usr/local/include/grpcpp/grpcpp.h \
- /usr/local/include/grpcpp/create_channel.h \
- /usr/local/include/grpcpp/create_channel_posix.h \
+ /home/roman/Desktop/project/SEAGATO/SEAGATO-server/Services/Interactor.h \
+ /usr/include/c++/13.2.1/queue /usr/include/c++/13.2.1/bits/stl_queue.h \
+ /home/roman/Desktop/project/SEAGATO/SEAGATO-server/Services/../Interfaces/IController.h \
+ /home/roman/Desktop/project/SEAGATO/SEAGATO-server/Services/../Interfaces/../Entities/Track.h \
+ /home/roman/Desktop/project/SEAGATO/SEAGATO-server/Services/../Interfaces/../Entities/User.h \
+ /home/roman/Desktop/project/SEAGATO/SEAGATO-server/Interfaces/IServer.h \
+ /home/roman/Desktop/project/SEAGATO/SEAGATO-server/Interfaces/../Entities/User.h \
+ /home/roman/Desktop/project/SEAGATO/SEAGATO-server/Interfaces/../Entities/Track.h \
+ /home/roman/Desktop/project/SEAGATO/SEAGATO-server/Interfaces/IController.h \
+ /home/roman/Desktop/project/SEAGATO/SEAGATO-server/Entities/User.h \
+ /home/roman/Desktop/project/SEAGATO/SEAGATO-server/Implementations/YaController.h \
+ /home/roman/Desktop/project/SEAGATO/SEAGATO-server/Implementations/../Interfaces/IClient.h \
+ /home/roman/Desktop/project/SEAGATO/SEAGATO-server/Implementations/../Interfaces/../Entities/User.h \
+ /home/roman/Desktop/project/SEAGATO/SEAGATO-server/Implementations/../Interfaces/IController.h \
+ /home/roman/Desktop/project/SEAGATO/SEAGATO-server/Implementations/ServerController.h \
+ /usr/local/include/grpcpp/server_builder.h \
+ /usr/local/include/grpc/support/cpu.h \
+ /usr/local/include/grpc/support/workaround_list.h \
+ /usr/local/include/grpcpp/impl/channel_argument_option.h \
+ /usr/local/include/grpcpp/impl/server_builder_option.h \
+ /usr/local/include/grpcpp/impl/server_builder_plugin.h \
+ /usr/local/include/grpcpp/security/authorization_policy_provider.h \
  /usr/local/include/grpcpp/server.h \
  /usr/local/include/grpcpp/health_check_service_interface.h \
  /usr/local/include/grpcpp/security/server_credentials.h \
@@ -407,23 +419,21 @@ CMakeFiles/server-sg.dir/src/main.cpp.o: \
  /usr/local/include/grpcpp/server_context.h \
  /usr/local/include/grpcpp/impl/call_op_set.h \
  /usr/local/include/grpc/support/alloc.h \
+ /usr/local/include/grpcpp/client_context.h \
+ /usr/local/include/grpcpp/impl/create_auth_context.h \
  /usr/local/include/grpcpp/impl/codegen/intercepted_channel.h \
  /usr/local/include/grpcpp/impl/codegen/create_auth_context.h \
  /usr/local/include/grpcpp/impl/codegen/metadata_map.h \
  /usr/local/include/grpcpp/support/callback_common.h \
  /usr/local/include/grpcpp/support/message_allocator.h \
  /usr/local/include/grpcpp/support/server_callback.h \
- /usr/local/include/grpcpp/server_builder.h \
- /usr/local/include/grpc/support/cpu.h \
- /usr/local/include/grpc/support/workaround_list.h \
- /usr/local/include/grpcpp/impl/channel_argument_option.h \
- /usr/local/include/grpcpp/impl/server_builder_option.h \
- /usr/local/include/grpcpp/impl/server_builder_plugin.h \
- /usr/local/include/grpcpp/security/authorization_policy_provider.h \
+ /home/roman/Desktop/project/SEAGATO/SEAGATO-server/GRPC_Implementations/GRPCServer.h \
+ /home/roman/Desktop/project/SEAGATO/SEAGATO-server/GRPC_Implementations/../Interfaces/IController.h \
+ /usr/local/include/grpcpp/grpcpp.h \
+ /usr/local/include/grpcpp/create_channel.h \
+ /usr/local/include/grpcpp/create_channel_posix.h \
  /usr/local/include/grpcpp/server_posix.h \
  /usr/local/include/grpcpp/version_info.h \
- /usr/local/include/grpcpp/support/async_stream.h \
- /usr/local/include/grpcpp/impl/service_type.h \
  /home/roman/Desktop/project/SEAGATO/SEAGATO-server/build/proto/audio.grpc.pb.h \
  /home/roman/Desktop/project/SEAGATO/SEAGATO-server/build/proto/audio.pb.h \
  /usr/local/include/google/protobuf/port_def.inc \
@@ -541,6 +551,8 @@ CMakeFiles/server-sg.dir/src/main.cpp.o: \
  /usr/local/include/google/protobuf/reflection.h \
  /usr/local/include/grpcpp/generic/async_generic_service.h \
  /usr/local/include/grpcpp/impl/server_callback_handlers.h \
+ /usr/local/include/grpcpp/support/async_stream.h \
+ /usr/local/include/grpcpp/impl/service_type.h \
  /usr/local/include/grpcpp/support/async_unary_call.h \
  /usr/local/include/grpcpp/support/client_callback.h \
  /usr/local/include/grpc/impl/call.h \
@@ -561,7 +573,7 @@ CMakeFiles/server-sg.dir/src/main.cpp.o: \
  /usr/local/include/grpcpp/support/proto_buffer_reader.h \
  /usr/local/include/grpcpp/support/proto_buffer_writer.h \
  /usr/local/include/grpcpp/support/stub_options.h \
+ /home/roman/Desktop/project/SEAGATO/SEAGATO-server/GRPC_Implementations/grpc.h \
+ /home/roman/Desktop/project/SEAGATO/SEAGATO-server/build/proto/audio.grpc.pb.h \
  /home/roman/Desktop/project/SEAGATO/SEAGATO-server/build/proto/audio.pb.h \
- /home/roman/Desktop/project/SEAGATO/SEAGATO-server/src/../Implementations/../Interfaces/IClient.h \
- /home/roman/Desktop/project/SEAGATO/SEAGATO-server/src/../Implementations/../Interfaces/IController.h \
- /home/roman/Desktop/project/SEAGATO/SEAGATO-server/Entities/User.h
+ /home/roman/Desktop/project/SEAGATO/SEAGATO-server/GRPC_Implementations/../Interfaces/IClient.h

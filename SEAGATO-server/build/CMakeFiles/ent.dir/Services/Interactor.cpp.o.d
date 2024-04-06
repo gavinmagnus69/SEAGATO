@@ -166,4 +166,9 @@ CMakeFiles/ent.dir/Services/Interactor.cpp.o: \
  /usr/include/c++/13.2.1/bits/basic_ios.tcc \
  /usr/include/c++/13.2.1/bits/ostream.tcc /usr/include/c++/13.2.1/istream \
  /usr/include/c++/13.2.1/bits/istream.tcc \
- /home/roman/Desktop/project/SEAGATO/SEAGATO-server/Services/../Services/../Interfaces/../Entities/User.h
+ /home/roman/Desktop/project/SEAGATO/SEAGATO-server/Services/../Services/../Interfaces/../Entities/User.h \
+ /home/roman/Desktop/project/SEAGATO/SEAGATO-server/Interfaces/IServer.h \
+ /home/roman/Desktop/project/SEAGATO/SEAGATO-server/Interfaces/../Entities/User.h \
+ /home/roman/Desktop/project/SEAGATO/SEAGATO-server/Interfaces/../Entities/Track.h \
+ /home/roman/Desktop/project/SEAGATO/SEAGATO-server/Interfaces/IController.h \
+ /home/roman/Desktop/project/SEAGATO/SEAGATO-server/Entities/User.h

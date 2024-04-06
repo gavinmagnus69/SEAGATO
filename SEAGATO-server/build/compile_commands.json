@@ -13,43 +13,55 @@
 },
 {
   "directory": "/home/roman/Desktop/project/SEAGATO/SEAGATO-server/build",
-  "command": "/usr/bin/c++ -DCARES_STATICLIB -I/home/roman/Desktop/project/SEAGATO/SEAGATO-server/Entities -I/home/roman/Desktop/project/SEAGATO/SEAGATO-server/Services -I/home/roman/Desktop/project/SEAGATO/SEAGATO-server/Implementations -I/home/roman/Desktop/project/SEAGATO/SEAGATO-server/Interfaces -I/home/roman/Desktop/project/SEAGATO/SEAGATO-server/build/proto -I/home/roman/Desktop/project/SEAGATO/SEAGATO-server/build  -o CMakeFiles/ent.dir/Entities/Track.cpp.o -c /home/roman/Desktop/project/SEAGATO/SEAGATO-server/Entities/Track.cpp",
+  "command": "/usr/bin/c++ -DCARES_STATICLIB -I/home/roman/Desktop/project/SEAGATO/SEAGATO-server/Entities -I/home/roman/Desktop/project/SEAGATO/SEAGATO-server/Services -I/home/roman/Desktop/project/SEAGATO/SEAGATO-server/Implementations -I/home/roman/Desktop/project/SEAGATO/SEAGATO-server/Interfaces -I/home/roman/Desktop/project/SEAGATO/SEAGATO-server/GRPC_Implementations -I/home/roman/Desktop/project/SEAGATO/SEAGATO-server/build/proto -I/home/roman/Desktop/project/SEAGATO/SEAGATO-server/build  -o CMakeFiles/ent.dir/Entities/Track.cpp.o -c /home/roman/Desktop/project/SEAGATO/SEAGATO-server/Entities/Track.cpp",
   "file": "/home/roman/Desktop/project/SEAGATO/SEAGATO-server/Entities/Track.cpp",
   "output": "CMakeFiles/ent.dir/Entities/Track.cpp.o"
 },
 {
   "directory": "/home/roman/Desktop/project/SEAGATO/SEAGATO-server/build",
-  "command": "/usr/bin/c++ -DCARES_STATICLIB -I/home/roman/Desktop/project/SEAGATO/SEAGATO-server/Entities -I/home/roman/Desktop/project/SEAGATO/SEAGATO-server/Services -I/home/roman/Desktop/project/SEAGATO/SEAGATO-server/Implementations -I/home/roman/Desktop/project/SEAGATO/SEAGATO-server/Interfaces -I/home/roman/Desktop/project/SEAGATO/SEAGATO-server/build/proto -I/home/roman/Desktop/project/SEAGATO/SEAGATO-server/build  -o CMakeFiles/ent.dir/Entities/User.cpp.o -c /home/roman/Desktop/project/SEAGATO/SEAGATO-server/Entities/User.cpp",
+  "command": "/usr/bin/c++ -DCARES_STATICLIB -I/home/roman/Desktop/project/SEAGATO/SEAGATO-server/Entities -I/home/roman/Desktop/project/SEAGATO/SEAGATO-server/Services -I/home/roman/Desktop/project/SEAGATO/SEAGATO-server/Implementations -I/home/roman/Desktop/project/SEAGATO/SEAGATO-server/Interfaces -I/home/roman/Desktop/project/SEAGATO/SEAGATO-server/GRPC_Implementations -I/home/roman/Desktop/project/SEAGATO/SEAGATO-server/build/proto -I/home/roman/Desktop/project/SEAGATO/SEAGATO-server/build  -o CMakeFiles/ent.dir/Entities/User.cpp.o -c /home/roman/Desktop/project/SEAGATO/SEAGATO-server/Entities/User.cpp",
   "file": "/home/roman/Desktop/project/SEAGATO/SEAGATO-server/Entities/User.cpp",
   "output": "CMakeFiles/ent.dir/Entities/User.cpp.o"
 },
 {
   "directory": "/home/roman/Desktop/project/SEAGATO/SEAGATO-server/build",
-  "command": "/usr/bin/c++ -DCARES_STATICLIB -I/home/roman/Desktop/project/SEAGATO/SEAGATO-server/Entities -I/home/roman/Desktop/project/SEAGATO/SEAGATO-server/Services -I/home/roman/Desktop/project/SEAGATO/SEAGATO-server/Implementations -I/home/roman/Desktop/project/SEAGATO/SEAGATO-server/Interfaces -I/home/roman/Desktop/project/SEAGATO/SEAGATO-server/build/proto -I/home/roman/Desktop/project/SEAGATO/SEAGATO-server/build  -o CMakeFiles/ent.dir/Services/Interactor.cpp.o -c /home/roman/Desktop/project/SEAGATO/SEAGATO-server/Services/Interactor.cpp",
+  "command": "/usr/bin/c++ -DCARES_STATICLIB -I/home/roman/Desktop/project/SEAGATO/SEAGATO-server/Entities -I/home/roman/Desktop/project/SEAGATO/SEAGATO-server/Services -I/home/roman/Desktop/project/SEAGATO/SEAGATO-server/Implementations -I/home/roman/Desktop/project/SEAGATO/SEAGATO-server/Interfaces -I/home/roman/Desktop/project/SEAGATO/SEAGATO-server/GRPC_Implementations -I/home/roman/Desktop/project/SEAGATO/SEAGATO-server/build/proto -I/home/roman/Desktop/project/SEAGATO/SEAGATO-server/build  -o CMakeFiles/ent.dir/Services/Interactor.cpp.o -c /home/roman/Desktop/project/SEAGATO/SEAGATO-server/Services/Interactor.cpp",
   "file": "/home/roman/Desktop/project/SEAGATO/SEAGATO-server/Services/Interactor.cpp",
   "output": "CMakeFiles/ent.dir/Services/Interactor.cpp.o"
 },
 {
   "directory": "/home/roman/Desktop/project/SEAGATO/SEAGATO-server/build",
-  "command": "/usr/bin/c++ -DCARES_STATICLIB -I/home/roman/Desktop/project/SEAGATO/SEAGATO-server/Entities -I/home/roman/Desktop/project/SEAGATO/SEAGATO-server/Services -I/home/roman/Desktop/project/SEAGATO/SEAGATO-server/Implementations -I/home/roman/Desktop/project/SEAGATO/SEAGATO-server/Interfaces -I/home/roman/Desktop/project/SEAGATO/SEAGATO-server/build/proto -I/home/roman/Desktop/project/SEAGATO/SEAGATO-server/build  -o CMakeFiles/ent.dir/Implementations/TgController.cpp.o -c /home/roman/Desktop/project/SEAGATO/SEAGATO-server/Implementations/TgController.cpp",
+  "command": "/usr/bin/c++ -DCARES_STATICLIB -I/home/roman/Desktop/project/SEAGATO/SEAGATO-server/Entities -I/home/roman/Desktop/project/SEAGATO/SEAGATO-server/Services -I/home/roman/Desktop/project/SEAGATO/SEAGATO-server/Implementations -I/home/roman/Desktop/project/SEAGATO/SEAGATO-server/Interfaces -I/home/roman/Desktop/project/SEAGATO/SEAGATO-server/GRPC_Implementations -I/home/roman/Desktop/project/SEAGATO/SEAGATO-server/build/proto -I/home/roman/Desktop/project/SEAGATO/SEAGATO-server/build  -o CMakeFiles/ent.dir/Implementations/TgController.cpp.o -c /home/roman/Desktop/project/SEAGATO/SEAGATO-server/Implementations/TgController.cpp",
   "file": "/home/roman/Desktop/project/SEAGATO/SEAGATO-server/Implementations/TgController.cpp",
   "output": "CMakeFiles/ent.dir/Implementations/TgController.cpp.o"
 },
 {
   "directory": "/home/roman/Desktop/project/SEAGATO/SEAGATO-server/build",
-  "command": "/usr/bin/c++ -DCARES_STATICLIB -I/home/roman/Desktop/project/SEAGATO/SEAGATO-server/Entities -I/home/roman/Desktop/project/SEAGATO/SEAGATO-server/Services -I/home/roman/Desktop/project/SEAGATO/SEAGATO-server/Implementations -I/home/roman/Desktop/project/SEAGATO/SEAGATO-server/Interfaces -I/home/roman/Desktop/project/SEAGATO/SEAGATO-server/build/proto -I/home/roman/Desktop/project/SEAGATO/SEAGATO-server/build  -o CMakeFiles/ent.dir/Implementations/YaController.cpp.o -c /home/roman/Desktop/project/SEAGATO/SEAGATO-server/Implementations/YaController.cpp",
+  "command": "/usr/bin/c++ -DCARES_STATICLIB -I/home/roman/Desktop/project/SEAGATO/SEAGATO-server/Entities -I/home/roman/Desktop/project/SEAGATO/SEAGATO-server/Services -I/home/roman/Desktop/project/SEAGATO/SEAGATO-server/Implementations -I/home/roman/Desktop/project/SEAGATO/SEAGATO-server/Interfaces -I/home/roman/Desktop/project/SEAGATO/SEAGATO-server/GRPC_Implementations -I/home/roman/Desktop/project/SEAGATO/SEAGATO-server/build/proto -I/home/roman/Desktop/project/SEAGATO/SEAGATO-server/build  -o CMakeFiles/ent.dir/Implementations/YaController.cpp.o -c /home/roman/Desktop/project/SEAGATO/SEAGATO-server/Implementations/YaController.cpp",
   "file": "/home/roman/Desktop/project/SEAGATO/SEAGATO-server/Implementations/YaController.cpp",
   "output": "CMakeFiles/ent.dir/Implementations/YaController.cpp.o"
 },
 {
   "directory": "/home/roman/Desktop/project/SEAGATO/SEAGATO-server/build",
-  "command": "/usr/bin/c++ -DCARES_STATICLIB -I/home/roman/Desktop/project/SEAGATO/SEAGATO-server/Entities -I/home/roman/Desktop/project/SEAGATO/SEAGATO-server/Services -I/home/roman/Desktop/project/SEAGATO/SEAGATO-server/Implementations -I/home/roman/Desktop/project/SEAGATO/SEAGATO-server/Interfaces -I/home/roman/Desktop/project/SEAGATO/SEAGATO-server/build/proto -I/home/roman/Desktop/project/SEAGATO/SEAGATO-server/build  -o CMakeFiles/ent.dir/Implementations/grpc.cpp.o -c /home/roman/Desktop/project/SEAGATO/SEAGATO-server/Implementations/grpc.cpp",
-  "file": "/home/roman/Desktop/project/SEAGATO/SEAGATO-server/Implementations/grpc.cpp",
-  "output": "CMakeFiles/ent.dir/Implementations/grpc.cpp.o"
+  "command": "/usr/bin/c++ -DCARES_STATICLIB -I/home/roman/Desktop/project/SEAGATO/SEAGATO-server/Entities -I/home/roman/Desktop/project/SEAGATO/SEAGATO-server/Services -I/home/roman/Desktop/project/SEAGATO/SEAGATO-server/Implementations -I/home/roman/Desktop/project/SEAGATO/SEAGATO-server/Interfaces -I/home/roman/Desktop/project/SEAGATO/SEAGATO-server/GRPC_Implementations -I/home/roman/Desktop/project/SEAGATO/SEAGATO-server/build/proto -I/home/roman/Desktop/project/SEAGATO/SEAGATO-server/build  -o CMakeFiles/ent.dir/GRPC_Implementations/grpc.cpp.o -c /home/roman/Desktop/project/SEAGATO/SEAGATO-server/GRPC_Implementations/grpc.cpp",
+  "file": "/home/roman/Desktop/project/SEAGATO/SEAGATO-server/GRPC_Implementations/grpc.cpp",
+  "output": "CMakeFiles/ent.dir/GRPC_Implementations/grpc.cpp.o"
 },
 {
   "directory": "/home/roman/Desktop/project/SEAGATO/SEAGATO-server/build",
-  "command": "/usr/bin/c++ -DCARES_STATICLIB -I/home/roman/Desktop/project/SEAGATO/SEAGATO-server/Entities -I/home/roman/Desktop/project/SEAGATO/SEAGATO-server/Services -I/home/roman/Desktop/project/SEAGATO/SEAGATO-server/Implementations -I/home/roman/Desktop/project/SEAGATO/SEAGATO-server/Interfaces -I/home/roman/Desktop/project/SEAGATO/SEAGATO-server/build/proto -I/home/roman/Desktop/project/SEAGATO/SEAGATO-server/build  -o CMakeFiles/server-sg.dir/src/main.cpp.o -c /home/roman/Desktop/project/SEAGATO/SEAGATO-server/src/main.cpp",
+  "command": "/usr/bin/c++ -DCARES_STATICLIB -I/home/roman/Desktop/project/SEAGATO/SEAGATO-server/Entities -I/home/roman/Desktop/project/SEAGATO/SEAGATO-server/Services -I/home/roman/Desktop/project/SEAGATO/SEAGATO-server/Implementations -I/home/roman/Desktop/project/SEAGATO/SEAGATO-server/Interfaces -I/home/roman/Desktop/project/SEAGATO/SEAGATO-server/GRPC_Implementations -I/home/roman/Desktop/project/SEAGATO/SEAGATO-server/build/proto -I/home/roman/Desktop/project/SEAGATO/SEAGATO-server/build  -o CMakeFiles/ent.dir/GRPC_Implementations/GRPCServer.cpp.o -c /home/roman/Desktop/project/SEAGATO/SEAGATO-server/GRPC_Implementations/GRPCServer.cpp",
+  "file": "/home/roman/Desktop/project/SEAGATO/SEAGATO-server/GRPC_Implementations/GRPCServer.cpp",
+  "output": "CMakeFiles/ent.dir/GRPC_Implementations/GRPCServer.cpp.o"
+},
+{
+  "directory": "/home/roman/Desktop/project/SEAGATO/SEAGATO-server/build",
+  "command": "/usr/bin/c++ -DCARES_STATICLIB -I/home/roman/Desktop/project/SEAGATO/SEAGATO-server/Entities -I/home/roman/Desktop/project/SEAGATO/SEAGATO-server/Services -I/home/roman/Desktop/project/SEAGATO/SEAGATO-server/Implementations -I/home/roman/Desktop/project/SEAGATO/SEAGATO-server/Interfaces -I/home/roman/Desktop/project/SEAGATO/SEAGATO-server/GRPC_Implementations -I/home/roman/Desktop/project/SEAGATO/SEAGATO-server/build/proto -I/home/roman/Desktop/project/SEAGATO/SEAGATO-server/build  -o CMakeFiles/ent.dir/Implementations/ServerController.cpp.o -c /home/roman/Desktop/project/SEAGATO/SEAGATO-server/Implementations/ServerController.cpp",
+  "file": "/home/roman/Desktop/project/SEAGATO/SEAGATO-server/Implementations/ServerController.cpp",
+  "output": "CMakeFiles/ent.dir/Implementations/ServerController.cpp.o"
+},
+{
+  "directory": "/home/roman/Desktop/project/SEAGATO/SEAGATO-server/build",
+  "command": "/usr/bin/c++ -DCARES_STATICLIB -I/home/roman/Desktop/project/SEAGATO/SEAGATO-server/Entities -I/home/roman/Desktop/project/SEAGATO/SEAGATO-server/Services -I/home/roman/Desktop/project/SEAGATO/SEAGATO-server/Implementations -I/home/roman/Desktop/project/SEAGATO/SEAGATO-server/Interfaces -I/home/roman/Desktop/project/SEAGATO/SEAGATO-server/GRPC_Implementations -I/home/roman/Desktop/project/SEAGATO/SEAGATO-server/build/proto -I/home/roman/Desktop/project/SEAGATO/SEAGATO-server/build  -o CMakeFiles/server-sg.dir/src/main.cpp.o -c /home/roman/Desktop/project/SEAGATO/SEAGATO-server/src/main.cpp",
   "file": "/home/roman/Desktop/project/SEAGATO/SEAGATO-server/src/main.cpp",
   "output": "CMakeFiles/server-sg.dir/src/main.cpp.o"
 }

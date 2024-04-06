@@ -10,9 +10,11 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/roman/Desktop/project/SEAGATO/SEAGATO-server/Entities/Track.cpp" "CMakeFiles/ent.dir/Entities/Track.cpp.o" "gcc" "CMakeFiles/ent.dir/Entities/Track.cpp.o.d"
   "/home/roman/Desktop/project/SEAGATO/SEAGATO-server/Entities/User.cpp" "CMakeFiles/ent.dir/Entities/User.cpp.o" "gcc" "CMakeFiles/ent.dir/Entities/User.cpp.o.d"
+  "/home/roman/Desktop/project/SEAGATO/SEAGATO-server/GRPC_Implementations/GRPCServer.cpp" "CMakeFiles/ent.dir/GRPC_Implementations/GRPCServer.cpp.o" "gcc" "CMakeFiles/ent.dir/GRPC_Implementations/GRPCServer.cpp.o.d"
+  "/home/roman/Desktop/project/SEAGATO/SEAGATO-server/GRPC_Implementations/grpc.cpp" "CMakeFiles/ent.dir/GRPC_Implementations/grpc.cpp.o" "gcc" "CMakeFiles/ent.dir/GRPC_Implementations/grpc.cpp.o.d"
+  "/home/roman/Desktop/project/SEAGATO/SEAGATO-server/Implementations/ServerController.cpp" "CMakeFiles/ent.dir/Implementations/ServerController.cpp.o" "gcc" "CMakeFiles/ent.dir/Implementations/ServerController.cpp.o.d"
   "/home/roman/Desktop/project/SEAGATO/SEAGATO-server/Implementations/TgController.cpp" "CMakeFiles/ent.dir/Implementations/TgController.cpp.o" "gcc" "CMakeFiles/ent.dir/Implementations/TgController.cpp.o.d"
   "/home/roman/Desktop/project/SEAGATO/SEAGATO-server/Implementations/YaController.cpp" "CMakeFiles/ent.dir/Implementations/YaController.cpp.o" "gcc" "CMakeFiles/ent.dir/Implementations/YaController.cpp.o.d"
-  "/home/roman/Desktop/project/SEAGATO/SEAGATO-server/Implementations/grpc.cpp" "CMakeFiles/ent.dir/Implementations/grpc.cpp.o" "gcc" "CMakeFiles/ent.dir/Implementations/grpc.cpp.o.d"
   "/home/roman/Desktop/project/SEAGATO/SEAGATO-server/Services/Interactor.cpp" "CMakeFiles/ent.dir/Services/Interactor.cpp.o" "gcc" "CMakeFiles/ent.dir/Services/Interactor.cpp.o.d"
   )
 

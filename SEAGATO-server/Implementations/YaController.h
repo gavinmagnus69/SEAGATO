@@ -1,13 +1,9 @@
 #ifndef YACONTROLLER_H
 #define YACONTROLLER_H
 
-//#include "../Interfaces/IClient.h"
+#include "../Interfaces/IClient.h"
 #include "../Interfaces/IController.h"
-#//include "grpc.h"
 #include <memory>
-//#include <string>
-#include "grpc.h"
-
 
 
 

@@ -1,7 +1,7 @@
 #include "YaController.h"
 #include "User.h"
 #include <string>
-
+#include <cstring>
 
 Controller::YaController::YaController(Interface::IClient* cli, std::string ip_str) :
 _client(cli), _ip_port(ip_str)
