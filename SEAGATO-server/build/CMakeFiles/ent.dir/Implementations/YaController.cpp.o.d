@@ -105,6 +105,10 @@ CMakeFiles/ent.dir/Implementations/YaController.cpp.o: \
  /usr/include/c++/13.2.1/bits/uses_allocator_args.h \
  /usr/include/c++/13.2.1/tuple \
  /home/roman/Desktop/project/SEAGATO/SEAGATO-server/Implementations/../Interfaces/../Entities/User.h \
+ /usr/include/c++/13.2.1/list /usr/include/c++/13.2.1/bits/stl_list.h \
+ /usr/include/c++/13.2.1/bits/allocated_ptr.h \
+ /usr/include/c++/13.2.1/ext/aligned_buffer.h \
+ /usr/include/c++/13.2.1/bits/list.tcc \
  /home/roman/Desktop/project/SEAGATO/SEAGATO-server/Implementations/../Interfaces/IController.h \
  /home/roman/Desktop/project/SEAGATO/SEAGATO-server/Implementations/../Interfaces/../Entities/Track.h \
  /usr/include/c++/13.2.1/iostream /usr/include/c++/13.2.1/ostream \
@@ -153,8 +157,6 @@ CMakeFiles/ent.dir/Implementations/YaController.cpp.o: \
  /usr/include/c++/13.2.1/bits/unique_ptr.h \
  /usr/include/c++/13.2.1/bits/shared_ptr.h \
  /usr/include/c++/13.2.1/bits/shared_ptr_base.h \
- /usr/include/c++/13.2.1/bits/allocated_ptr.h \
- /usr/include/c++/13.2.1/ext/aligned_buffer.h \
  /usr/include/c++/13.2.1/ext/concurrence.h \
  /usr/include/c++/13.2.1/bits/shared_ptr_atomic.h \
  /usr/include/c++/13.2.1/bits/atomic_base.h \

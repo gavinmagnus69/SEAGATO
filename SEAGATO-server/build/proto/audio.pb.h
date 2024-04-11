@@ -61,6 +61,18 @@ extern AudioDefaultTypeInternal _Audio_default_instance_;
 class Request;
 struct RequestDefaultTypeInternal;
 extern RequestDefaultTypeInternal _Request_default_instance_;
+class Request_list;
+struct Request_listDefaultTypeInternal;
+extern Request_listDefaultTypeInternal _Request_list_default_instance_;
+class Track;
+struct TrackDefaultTypeInternal;
+extern TrackDefaultTypeInternal _Track_default_instance_;
+class Tracks;
+struct TracksDefaultTypeInternal;
+extern TracksDefaultTypeInternal _Tracks_default_instance_;
+class Tracks_list;
+struct Tracks_listDefaultTypeInternal;
+extern Tracks_listDefaultTypeInternal _Tracks_list_default_instance_;
 namespace google {
 namespace protobuf {
 }  // namespace protobuf
@@ -71,6 +83,591 @@ namespace protobuf {
 
 
 // -------------------------------------------------------------------
+
+class Tracks_list final :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:Tracks_list) */ {
+ public:
+  inline Tracks_list() : Tracks_list(nullptr) {}
+  ~Tracks_list() override;
+  template<typename = void>
+  explicit PROTOBUF_CONSTEXPR Tracks_list(::google::protobuf::internal::ConstantInitialized);
+
+  inline Tracks_list(const Tracks_list& from)
+      : Tracks_list(nullptr, from) {}
+  Tracks_list(Tracks_list&& from) noexcept
+    : Tracks_list() {
+    *this = ::std::move(from);
+  }
+
+  inline Tracks_list& operator=(const Tracks_list& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline Tracks_list& operator=(Tracks_list&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetArena() == from.GetArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance);
+  }
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields()
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::google::protobuf::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::google::protobuf::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const Tracks_list& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const Tracks_list* internal_default_instance() {
+    return reinterpret_cast<const Tracks_list*>(
+               &_Tracks_list_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    5;
+
+  friend void swap(Tracks_list& a, Tracks_list& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(Tracks_list* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetArena() != nullptr &&
+        GetArena() == other->GetArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetArena() == other->GetArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::google::protobuf::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(Tracks_list* other) {
+    if (other == this) return;
+    ABSL_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  Tracks_list* New(::google::protobuf::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<Tracks_list>(arena);
+  }
+  using ::google::protobuf::Message::CopyFrom;
+  void CopyFrom(const Tracks_list& from);
+  using ::google::protobuf::Message::MergeFrom;
+  void MergeFrom( const Tracks_list& from) {
+    Tracks_list::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  ::size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::google::protobuf::internal::ParseContext* ctx) final;
+  ::uint8_t* _InternalSerialize(
+      ::uint8_t* target, ::google::protobuf::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const { return _impl_._cached_size_.Get(); }
+
+  private:
+  ::google::protobuf::internal::CachedSize* AccessCachedSize() const final;
+  void SharedCtor(::google::protobuf::Arena* arena);
+  void SharedDtor();
+  void InternalSwap(Tracks_list* other);
+
+  private:
+  friend class ::google::protobuf::internal::AnyMetadata;
+  static ::absl::string_view FullMessageName() {
+    return "Tracks_list";
+  }
+  protected:
+  explicit Tracks_list(::google::protobuf::Arena* arena);
+  Tracks_list(::google::protobuf::Arena* arena, const Tracks_list& from);
+  public:
+
+  static const ClassData _class_data_;
+  const ::google::protobuf::Message::ClassData*GetClassData() const final;
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kTracksNamesFieldNumber = 1,
+  };
+  // repeated string tracks_names = 1;
+  int tracks_names_size() const;
+  private:
+  int _internal_tracks_names_size() const;
+
+  public:
+  void clear_tracks_names() ;
+  const std::string& tracks_names(int index) const;
+  std::string* mutable_tracks_names(int index);
+  void set_tracks_names(int index, const std::string& value);
+  void set_tracks_names(int index, std::string&& value);
+  void set_tracks_names(int index, const char* value);
+  void set_tracks_names(int index, const char* value, std::size_t size);
+  void set_tracks_names(int index, absl::string_view value);
+  std::string* add_tracks_names();
+  void add_tracks_names(const std::string& value);
+  void add_tracks_names(std::string&& value);
+  void add_tracks_names(const char* value);
+  void add_tracks_names(const char* value, std::size_t size);
+  void add_tracks_names(absl::string_view value);
+  const ::google::protobuf::RepeatedPtrField<std::string>& tracks_names() const;
+  ::google::protobuf::RepeatedPtrField<std::string>* mutable_tracks_names();
+
+  private:
+  const ::google::protobuf::RepeatedPtrField<std::string>& _internal_tracks_names() const;
+  ::google::protobuf::RepeatedPtrField<std::string>* _internal_mutable_tracks_names();
+
+  public:
+  // @@protoc_insertion_point(class_scope:Tracks_list)
+ private:
+  class _Internal;
+
+  friend class ::google::protobuf::internal::TcParser;
+  static const ::google::protobuf::internal::TcParseTable<
+      0, 1, 0,
+      32, 2>
+      _table_;
+  friend class ::google::protobuf::MessageLite;
+  friend class ::google::protobuf::Arena;
+  template <typename T>
+  friend class ::google::protobuf::Arena::InternalHelper;
+  using InternalArenaConstructable_ = void;
+  using DestructorSkippable_ = void;
+  struct Impl_ {
+
+        inline explicit constexpr Impl_(
+            ::google::protobuf::internal::ConstantInitialized) noexcept;
+        inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
+                              ::google::protobuf::Arena* arena);
+        inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
+                              ::google::protobuf::Arena* arena, const Impl_& from);
+    ::google::protobuf::RepeatedPtrField<std::string> tracks_names_;
+    mutable ::google::protobuf::internal::CachedSize _cached_size_;
+    PROTOBUF_TSAN_DECLARE_MEMBER
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_proto_2faudio_2eproto;
+};// -------------------------------------------------------------------
+
+class Track final :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:Track) */ {
+ public:
+  inline Track() : Track(nullptr) {}
+  ~Track() override;
+  template<typename = void>
+  explicit PROTOBUF_CONSTEXPR Track(::google::protobuf::internal::ConstantInitialized);
+
+  inline Track(const Track& from)
+      : Track(nullptr, from) {}
+  Track(Track&& from) noexcept
+    : Track() {
+    *this = ::std::move(from);
+  }
+
+  inline Track& operator=(const Track& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline Track& operator=(Track&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetArena() == from.GetArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance);
+  }
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields()
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::google::protobuf::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::google::protobuf::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const Track& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const Track* internal_default_instance() {
+    return reinterpret_cast<const Track*>(
+               &_Track_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    2;
+
+  friend void swap(Track& a, Track& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(Track* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetArena() != nullptr &&
+        GetArena() == other->GetArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetArena() == other->GetArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::google::protobuf::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(Track* other) {
+    if (other == this) return;
+    ABSL_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  Track* New(::google::protobuf::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<Track>(arena);
+  }
+  using ::google::protobuf::Message::CopyFrom;
+  void CopyFrom(const Track& from);
+  using ::google::protobuf::Message::MergeFrom;
+  void MergeFrom( const Track& from) {
+    Track::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  ::size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::google::protobuf::internal::ParseContext* ctx) final;
+  ::uint8_t* _InternalSerialize(
+      ::uint8_t* target, ::google::protobuf::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const { return _impl_._cached_size_.Get(); }
+
+  private:
+  ::google::protobuf::internal::CachedSize* AccessCachedSize() const final;
+  void SharedCtor(::google::protobuf::Arena* arena);
+  void SharedDtor();
+  void InternalSwap(Track* other);
+
+  private:
+  friend class ::google::protobuf::internal::AnyMetadata;
+  static ::absl::string_view FullMessageName() {
+    return "Track";
+  }
+  protected:
+  explicit Track(::google::protobuf::Arena* arena);
+  Track(::google::protobuf::Arena* arena, const Track& from);
+  public:
+
+  static const ClassData _class_data_;
+  const ::google::protobuf::Message::ClassData*GetClassData() const final;
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kTrackNameFieldNumber = 1,
+    kDataFieldNumber = 2,
+    kSongIdFieldNumber = 3,
+  };
+  // string track_name = 1;
+  void clear_track_name() ;
+  const std::string& track_name() const;
+  template <typename Arg_ = const std::string&, typename... Args_>
+  void set_track_name(Arg_&& arg, Args_... args);
+  std::string* mutable_track_name();
+  PROTOBUF_NODISCARD std::string* release_track_name();
+  void set_allocated_track_name(std::string* value);
+
+  private:
+  const std::string& _internal_track_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_track_name(
+      const std::string& value);
+  std::string* _internal_mutable_track_name();
+
+  public:
+  // bytes data = 2;
+  void clear_data() ;
+  const std::string& data() const;
+  template <typename Arg_ = const std::string&, typename... Args_>
+  void set_data(Arg_&& arg, Args_... args);
+  std::string* mutable_data();
+  PROTOBUF_NODISCARD std::string* release_data();
+  void set_allocated_data(std::string* value);
+
+  private:
+  const std::string& _internal_data() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_data(
+      const std::string& value);
+  std::string* _internal_mutable_data();
+
+  public:
+  // string song_id = 3;
+  void clear_song_id() ;
+  const std::string& song_id() const;
+  template <typename Arg_ = const std::string&, typename... Args_>
+  void set_song_id(Arg_&& arg, Args_... args);
+  std::string* mutable_song_id();
+  PROTOBUF_NODISCARD std::string* release_song_id();
+  void set_allocated_song_id(std::string* value);
+
+  private:
+  const std::string& _internal_song_id() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_song_id(
+      const std::string& value);
+  std::string* _internal_mutable_song_id();
+
+  public:
+  // @@protoc_insertion_point(class_scope:Track)
+ private:
+  class _Internal;
+
+  friend class ::google::protobuf::internal::TcParser;
+  static const ::google::protobuf::internal::TcParseTable<
+      2, 3, 0,
+      31, 2>
+      _table_;
+  friend class ::google::protobuf::MessageLite;
+  friend class ::google::protobuf::Arena;
+  template <typename T>
+  friend class ::google::protobuf::Arena::InternalHelper;
+  using InternalArenaConstructable_ = void;
+  using DestructorSkippable_ = void;
+  struct Impl_ {
+
+        inline explicit constexpr Impl_(
+            ::google::protobuf::internal::ConstantInitialized) noexcept;
+        inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
+                              ::google::protobuf::Arena* arena);
+        inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
+                              ::google::protobuf::Arena* arena, const Impl_& from);
+    ::google::protobuf::internal::ArenaStringPtr track_name_;
+    ::google::protobuf::internal::ArenaStringPtr data_;
+    ::google::protobuf::internal::ArenaStringPtr song_id_;
+    mutable ::google::protobuf::internal::CachedSize _cached_size_;
+    PROTOBUF_TSAN_DECLARE_MEMBER
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_proto_2faudio_2eproto;
+};// -------------------------------------------------------------------
+
+class Request_list final :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:Request_list) */ {
+ public:
+  inline Request_list() : Request_list(nullptr) {}
+  ~Request_list() override;
+  template<typename = void>
+  explicit PROTOBUF_CONSTEXPR Request_list(::google::protobuf::internal::ConstantInitialized);
+
+  inline Request_list(const Request_list& from)
+      : Request_list(nullptr, from) {}
+  Request_list(Request_list&& from) noexcept
+    : Request_list() {
+    *this = ::std::move(from);
+  }
+
+  inline Request_list& operator=(const Request_list& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline Request_list& operator=(Request_list&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetArena() == from.GetArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance);
+  }
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields()
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::google::protobuf::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::google::protobuf::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const Request_list& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const Request_list* internal_default_instance() {
+    return reinterpret_cast<const Request_list*>(
+               &_Request_list_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    4;
+
+  friend void swap(Request_list& a, Request_list& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(Request_list* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetArena() != nullptr &&
+        GetArena() == other->GetArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetArena() == other->GetArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::google::protobuf::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(Request_list* other) {
+    if (other == this) return;
+    ABSL_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  Request_list* New(::google::protobuf::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<Request_list>(arena);
+  }
+  using ::google::protobuf::Message::CopyFrom;
+  void CopyFrom(const Request_list& from);
+  using ::google::protobuf::Message::MergeFrom;
+  void MergeFrom( const Request_list& from) {
+    Request_list::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  ::size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::google::protobuf::internal::ParseContext* ctx) final;
+  ::uint8_t* _InternalSerialize(
+      ::uint8_t* target, ::google::protobuf::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const { return _impl_._cached_size_.Get(); }
+
+  private:
+  ::google::protobuf::internal::CachedSize* AccessCachedSize() const final;
+  void SharedCtor(::google::protobuf::Arena* arena);
+  void SharedDtor();
+  void InternalSwap(Request_list* other);
+
+  private:
+  friend class ::google::protobuf::internal::AnyMetadata;
+  static ::absl::string_view FullMessageName() {
+    return "Request_list";
+  }
+  protected:
+  explicit Request_list(::google::protobuf::Arena* arena);
+  Request_list(::google::protobuf::Arena* arena, const Request_list& from);
+  public:
+
+  static const ClassData _class_data_;
+  const ::google::protobuf::Message::ClassData*GetClassData() const final;
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kReqFieldNumber = 1,
+  };
+  // bool req = 1;
+  void clear_req() ;
+  bool req() const;
+  void set_req(bool value);
+
+  private:
+  bool _internal_req() const;
+  void _internal_set_req(bool value);
+
+  public:
+  // @@protoc_insertion_point(class_scope:Request_list)
+ private:
+  class _Internal;
+
+  friend class ::google::protobuf::internal::TcParser;
+  static const ::google::protobuf::internal::TcParseTable<
+      0, 1, 0,
+      0, 2>
+      _table_;
+  friend class ::google::protobuf::MessageLite;
+  friend class ::google::protobuf::Arena;
+  template <typename T>
+  friend class ::google::protobuf::Arena::InternalHelper;
+  using InternalArenaConstructable_ = void;
+  using DestructorSkippable_ = void;
+  struct Impl_ {
+
+        inline explicit constexpr Impl_(
+            ::google::protobuf::internal::ConstantInitialized) noexcept;
+        inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
+                              ::google::protobuf::Arena* arena);
+        inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
+                              ::google::protobuf::Arena* arena, const Impl_& from);
+    bool req_;
+    mutable ::google::protobuf::internal::CachedSize _cached_size_;
+    PROTOBUF_TSAN_DECLARE_MEMBER
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_proto_2faudio_2eproto;
+};// -------------------------------------------------------------------
 
 class Request final :
     public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:Request) */ {
@@ -432,6 +1029,189 @@ class Audio final :
   };
   union { Impl_ _impl_; };
   friend struct ::TableStruct_proto_2faudio_2eproto;
+};// -------------------------------------------------------------------
+
+class Tracks final :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:Tracks) */ {
+ public:
+  inline Tracks() : Tracks(nullptr) {}
+  ~Tracks() override;
+  template<typename = void>
+  explicit PROTOBUF_CONSTEXPR Tracks(::google::protobuf::internal::ConstantInitialized);
+
+  inline Tracks(const Tracks& from)
+      : Tracks(nullptr, from) {}
+  Tracks(Tracks&& from) noexcept
+    : Tracks() {
+    *this = ::std::move(from);
+  }
+
+  inline Tracks& operator=(const Tracks& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline Tracks& operator=(Tracks&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetArena() == from.GetArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance);
+  }
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields()
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::google::protobuf::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::google::protobuf::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const Tracks& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const Tracks* internal_default_instance() {
+    return reinterpret_cast<const Tracks*>(
+               &_Tracks_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    3;
+
+  friend void swap(Tracks& a, Tracks& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(Tracks* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetArena() != nullptr &&
+        GetArena() == other->GetArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetArena() == other->GetArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::google::protobuf::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(Tracks* other) {
+    if (other == this) return;
+    ABSL_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  Tracks* New(::google::protobuf::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<Tracks>(arena);
+  }
+  using ::google::protobuf::Message::CopyFrom;
+  void CopyFrom(const Tracks& from);
+  using ::google::protobuf::Message::MergeFrom;
+  void MergeFrom( const Tracks& from) {
+    Tracks::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  ::size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::google::protobuf::internal::ParseContext* ctx) final;
+  ::uint8_t* _InternalSerialize(
+      ::uint8_t* target, ::google::protobuf::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const { return _impl_._cached_size_.Get(); }
+
+  private:
+  ::google::protobuf::internal::CachedSize* AccessCachedSize() const final;
+  void SharedCtor(::google::protobuf::Arena* arena);
+  void SharedDtor();
+  void InternalSwap(Tracks* other);
+
+  private:
+  friend class ::google::protobuf::internal::AnyMetadata;
+  static ::absl::string_view FullMessageName() {
+    return "Tracks";
+  }
+  protected:
+  explicit Tracks(::google::protobuf::Arena* arena);
+  Tracks(::google::protobuf::Arena* arena, const Tracks& from);
+  public:
+
+  static const ClassData _class_data_;
+  const ::google::protobuf::Message::ClassData*GetClassData() const final;
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kTracksFieldNumber = 1,
+  };
+  // repeated .Track tracks = 1;
+  int tracks_size() const;
+  private:
+  int _internal_tracks_size() const;
+
+  public:
+  void clear_tracks() ;
+  ::Track* mutable_tracks(int index);
+  ::google::protobuf::RepeatedPtrField< ::Track >*
+      mutable_tracks();
+  private:
+  const ::google::protobuf::RepeatedPtrField<::Track>& _internal_tracks() const;
+  ::google::protobuf::RepeatedPtrField<::Track>* _internal_mutable_tracks();
+  public:
+  const ::Track& tracks(int index) const;
+  ::Track* add_tracks();
+  const ::google::protobuf::RepeatedPtrField< ::Track >&
+      tracks() const;
+  // @@protoc_insertion_point(class_scope:Tracks)
+ private:
+  class _Internal;
+
+  friend class ::google::protobuf::internal::TcParser;
+  static const ::google::protobuf::internal::TcParseTable<
+      0, 1, 1,
+      0, 2>
+      _table_;
+  friend class ::google::protobuf::MessageLite;
+  friend class ::google::protobuf::Arena;
+  template <typename T>
+  friend class ::google::protobuf::Arena::InternalHelper;
+  using InternalArenaConstructable_ = void;
+  using DestructorSkippable_ = void;
+  struct Impl_ {
+
+        inline explicit constexpr Impl_(
+            ::google::protobuf::internal::ConstantInitialized) noexcept;
+        inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
+                              ::google::protobuf::Arena* arena);
+        inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
+                              ::google::protobuf::Arena* arena, const Impl_& from);
+    ::google::protobuf::RepeatedPtrField< ::Track > tracks_;
+    mutable ::google::protobuf::internal::CachedSize _cached_size_;
+    PROTOBUF_TSAN_DECLARE_MEMBER
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_proto_2faudio_2eproto;
 };
 
 // ===================================================================
@@ -558,6 +1338,354 @@ inline void Audio::set_allocated_data(std::string* value) {
         }
   #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   // @@protoc_insertion_point(field_set_allocated:Audio.data)
+}
+
+// -------------------------------------------------------------------
+
+// Track
+
+// string track_name = 1;
+inline void Track::clear_track_name() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_.track_name_.ClearToEmpty();
+}
+inline const std::string& Track::track_name() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:Track.track_name)
+  return _internal_track_name();
+}
+template <typename Arg_, typename... Args_>
+inline PROTOBUF_ALWAYS_INLINE void Track::set_track_name(Arg_&& arg,
+                                                     Args_... args) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ;
+  _impl_.track_name_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:Track.track_name)
+}
+inline std::string* Track::mutable_track_name() ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  std::string* _s = _internal_mutable_track_name();
+  // @@protoc_insertion_point(field_mutable:Track.track_name)
+  return _s;
+}
+inline const std::string& Track::_internal_track_name() const {
+  PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
+  return _impl_.track_name_.Get();
+}
+inline void Track::_internal_set_track_name(const std::string& value) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ;
+  _impl_.track_name_.Set(value, GetArena());
+}
+inline std::string* Track::_internal_mutable_track_name() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ;
+  return _impl_.track_name_.Mutable( GetArena());
+}
+inline std::string* Track::release_track_name() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  // @@protoc_insertion_point(field_release:Track.track_name)
+  return _impl_.track_name_.Release();
+}
+inline void Track::set_allocated_track_name(std::string* value) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_.track_name_.SetAllocated(value, GetArena());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        if (_impl_.track_name_.IsDefault()) {
+          _impl_.track_name_.Set("", GetArena());
+        }
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:Track.track_name)
+}
+
+// bytes data = 2;
+inline void Track::clear_data() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_.data_.ClearToEmpty();
+}
+inline const std::string& Track::data() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:Track.data)
+  return _internal_data();
+}
+template <typename Arg_, typename... Args_>
+inline PROTOBUF_ALWAYS_INLINE void Track::set_data(Arg_&& arg,
+                                                     Args_... args) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ;
+  _impl_.data_.SetBytes(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:Track.data)
+}
+inline std::string* Track::mutable_data() ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  std::string* _s = _internal_mutable_data();
+  // @@protoc_insertion_point(field_mutable:Track.data)
+  return _s;
+}
+inline const std::string& Track::_internal_data() const {
+  PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
+  return _impl_.data_.Get();
+}
+inline void Track::_internal_set_data(const std::string& value) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ;
+  _impl_.data_.Set(value, GetArena());
+}
+inline std::string* Track::_internal_mutable_data() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ;
+  return _impl_.data_.Mutable( GetArena());
+}
+inline std::string* Track::release_data() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  // @@protoc_insertion_point(field_release:Track.data)
+  return _impl_.data_.Release();
+}
+inline void Track::set_allocated_data(std::string* value) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_.data_.SetAllocated(value, GetArena());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        if (_impl_.data_.IsDefault()) {
+          _impl_.data_.Set("", GetArena());
+        }
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:Track.data)
+}
+
+// string song_id = 3;
+inline void Track::clear_song_id() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_.song_id_.ClearToEmpty();
+}
+inline const std::string& Track::song_id() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:Track.song_id)
+  return _internal_song_id();
+}
+template <typename Arg_, typename... Args_>
+inline PROTOBUF_ALWAYS_INLINE void Track::set_song_id(Arg_&& arg,
+                                                     Args_... args) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ;
+  _impl_.song_id_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:Track.song_id)
+}
+inline std::string* Track::mutable_song_id() ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  std::string* _s = _internal_mutable_song_id();
+  // @@protoc_insertion_point(field_mutable:Track.song_id)
+  return _s;
+}
+inline const std::string& Track::_internal_song_id() const {
+  PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
+  return _impl_.song_id_.Get();
+}
+inline void Track::_internal_set_song_id(const std::string& value) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ;
+  _impl_.song_id_.Set(value, GetArena());
+}
+inline std::string* Track::_internal_mutable_song_id() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ;
+  return _impl_.song_id_.Mutable( GetArena());
+}
+inline std::string* Track::release_song_id() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  // @@protoc_insertion_point(field_release:Track.song_id)
+  return _impl_.song_id_.Release();
+}
+inline void Track::set_allocated_song_id(std::string* value) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_.song_id_.SetAllocated(value, GetArena());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        if (_impl_.song_id_.IsDefault()) {
+          _impl_.song_id_.Set("", GetArena());
+        }
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:Track.song_id)
+}
+
+// -------------------------------------------------------------------
+
+// Tracks
+
+// repeated .Track tracks = 1;
+inline int Tracks::_internal_tracks_size() const {
+  return _internal_tracks().size();
+}
+inline int Tracks::tracks_size() const {
+  return _internal_tracks_size();
+}
+inline void Tracks::clear_tracks() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_.tracks_.Clear();
+}
+inline ::Track* Tracks::mutable_tracks(int index)
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_mutable:Tracks.tracks)
+  return _internal_mutable_tracks()->Mutable(index);
+}
+inline ::google::protobuf::RepeatedPtrField<::Track>* Tracks::mutable_tracks()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_mutable_list:Tracks.tracks)
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  return _internal_mutable_tracks();
+}
+inline const ::Track& Tracks::tracks(int index) const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:Tracks.tracks)
+  return _internal_tracks().Get(index);
+}
+inline ::Track* Tracks::add_tracks() ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ::Track* _add = _internal_mutable_tracks()->Add();
+  // @@protoc_insertion_point(field_add:Tracks.tracks)
+  return _add;
+}
+inline const ::google::protobuf::RepeatedPtrField<::Track>& Tracks::tracks() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_list:Tracks.tracks)
+  return _internal_tracks();
+}
+inline const ::google::protobuf::RepeatedPtrField<::Track>&
+Tracks::_internal_tracks() const {
+  PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
+  return _impl_.tracks_;
+}
+inline ::google::protobuf::RepeatedPtrField<::Track>*
+Tracks::_internal_mutable_tracks() {
+  PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
+  return &_impl_.tracks_;
+}
+
+// -------------------------------------------------------------------
+
+// Request_list
+
+// bool req = 1;
+inline void Request_list::clear_req() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_.req_ = false;
+}
+inline bool Request_list::req() const {
+  // @@protoc_insertion_point(field_get:Request_list.req)
+  return _internal_req();
+}
+inline void Request_list::set_req(bool value) {
+  _internal_set_req(value);
+  // @@protoc_insertion_point(field_set:Request_list.req)
+}
+inline bool Request_list::_internal_req() const {
+  PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
+  return _impl_.req_;
+}
+inline void Request_list::_internal_set_req(bool value) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ;
+  _impl_.req_ = value;
+}
+
+// -------------------------------------------------------------------
+
+// Tracks_list
+
+// repeated string tracks_names = 1;
+inline int Tracks_list::_internal_tracks_names_size() const {
+  return _internal_tracks_names().size();
+}
+inline int Tracks_list::tracks_names_size() const {
+  return _internal_tracks_names_size();
+}
+inline void Tracks_list::clear_tracks_names() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_.tracks_names_.Clear();
+}
+inline std::string* Tracks_list::add_tracks_names()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  std::string* _s = _internal_mutable_tracks_names()->Add();
+  // @@protoc_insertion_point(field_add_mutable:Tracks_list.tracks_names)
+  return _s;
+}
+inline const std::string& Tracks_list::tracks_names(int index) const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:Tracks_list.tracks_names)
+  return _internal_tracks_names().Get(index);
+}
+inline std::string* Tracks_list::mutable_tracks_names(int index)
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_mutable:Tracks_list.tracks_names)
+  return _internal_mutable_tracks_names()->Mutable(index);
+}
+inline void Tracks_list::set_tracks_names(int index, const std::string& value) {
+  _internal_mutable_tracks_names()->Mutable(index)->assign(value);
+  // @@protoc_insertion_point(field_set:Tracks_list.tracks_names)
+}
+inline void Tracks_list::set_tracks_names(int index, std::string&& value) {
+  _internal_mutable_tracks_names()->Mutable(index)->assign(std::move(value));
+  // @@protoc_insertion_point(field_set:Tracks_list.tracks_names)
+}
+inline void Tracks_list::set_tracks_names(int index, const char* value) {
+  ABSL_DCHECK(value != nullptr);
+  _internal_mutable_tracks_names()->Mutable(index)->assign(value);
+  // @@protoc_insertion_point(field_set_char:Tracks_list.tracks_names)
+}
+inline void Tracks_list::set_tracks_names(int index, const char* value,
+                              std::size_t size) {
+  _internal_mutable_tracks_names()->Mutable(index)->assign(
+      reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:Tracks_list.tracks_names)
+}
+inline void Tracks_list::set_tracks_names(int index, absl::string_view value) {
+  _internal_mutable_tracks_names()->Mutable(index)->assign(value.data(),
+                                                     value.size());
+  // @@protoc_insertion_point(field_set_string_piece:Tracks_list.tracks_names)
+}
+inline void Tracks_list::add_tracks_names(const std::string& value) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _internal_mutable_tracks_names()->Add()->assign(value);
+  // @@protoc_insertion_point(field_add:Tracks_list.tracks_names)
+}
+inline void Tracks_list::add_tracks_names(std::string&& value) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _internal_mutable_tracks_names()->Add(std::move(value));
+  // @@protoc_insertion_point(field_add:Tracks_list.tracks_names)
+}
+inline void Tracks_list::add_tracks_names(const char* value) {
+  ABSL_DCHECK(value != nullptr);
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _internal_mutable_tracks_names()->Add()->assign(value);
+  // @@protoc_insertion_point(field_add_char:Tracks_list.tracks_names)
+}
+inline void Tracks_list::add_tracks_names(const char* value, std::size_t size) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _internal_mutable_tracks_names()->Add()->assign(
+      reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_add_pointer:Tracks_list.tracks_names)
+}
+inline void Tracks_list::add_tracks_names(absl::string_view value) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _internal_mutable_tracks_names()->Add()->assign(value.data(), value.size());
+  // @@protoc_insertion_point(field_add_string_piece:Tracks_list.tracks_names)
+}
+inline const ::google::protobuf::RepeatedPtrField<std::string>&
+Tracks_list::tracks_names() const ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_list:Tracks_list.tracks_names)
+  return _internal_tracks_names();
+}
+inline ::google::protobuf::RepeatedPtrField<std::string>*
+Tracks_list::mutable_tracks_names() ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_mutable_list:Tracks_list.tracks_names)
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  return _internal_mutable_tracks_names();
+}
+inline const ::google::protobuf::RepeatedPtrField<std::string>&
+Tracks_list::_internal_tracks_names() const {
+  PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
+  return _impl_.tracks_names_;
+}
+inline ::google::protobuf::RepeatedPtrField<std::string>*
+Tracks_list::_internal_mutable_tracks_names() {
+  PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
+  return &_impl_.tracks_names_;
 }
 
 #ifdef __GNUC__

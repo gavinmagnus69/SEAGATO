@@ -23,7 +23,8 @@ class Client : public Interface::IClient
     public:
         Client(std::shared_ptr<Channel>);
     public:
-        std::string sendData(std::string song_id, Entity::User& usr) override;    
+        std::string sendData(std::string song_id, Entity::User& usr) override;  
+        //std::list<Entity::Track> sendTracks()  
 };
 
 

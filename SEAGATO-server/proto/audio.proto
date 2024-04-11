@@ -1,5 +1,7 @@
 syntax = "proto3";
 
+
+
 message Request
 {
     string song_id = 1;
@@ -10,7 +12,42 @@ message Audio
     bytes data = 1;
 }
 
+
+message Track
+{
+    string track_name = 1;
+    bytes data = 2;
+    string song_id = 3;
+}
+
+message Tracks
+{
+    repeated Track tracks = 1;
+}
+
+
+
+message Request_list
+{
+    bool req = 1;
+}
+
+message Tracks_list
+{
+    repeated string tracks_names = 1;
+}
+
+
+
 service AudioServices
 {
     rpc sendAudio(Request) returns (Audio){}
+
+    rpc sendTrackList(Request_list) returns (Tracks_list){}
+
+    rpc sendTracks(Tracks_list) returns(Tracks){}
+
+    rpc sendTrackStream(Tracks_list) returns(stream Track){}
+
 }
+

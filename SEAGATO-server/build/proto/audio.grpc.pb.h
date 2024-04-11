@@ -40,11 +40,39 @@ class AudioServices final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::Audio>> PrepareAsyncsendAudio(::grpc::ClientContext* context, const ::Request& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::Audio>>(PrepareAsyncsendAudioRaw(context, request, cq));
     }
+    virtual ::grpc::Status sendTrackList(::grpc::ClientContext* context, const ::Request_list& request, ::Tracks_list* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::Tracks_list>> AsyncsendTrackList(::grpc::ClientContext* context, const ::Request_list& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::Tracks_list>>(AsyncsendTrackListRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::Tracks_list>> PrepareAsyncsendTrackList(::grpc::ClientContext* context, const ::Request_list& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::Tracks_list>>(PrepareAsyncsendTrackListRaw(context, request, cq));
+    }
+    virtual ::grpc::Status sendTracks(::grpc::ClientContext* context, const ::Tracks_list& request, ::Tracks* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::Tracks>> AsyncsendTracks(::grpc::ClientContext* context, const ::Tracks_list& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::Tracks>>(AsyncsendTracksRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::Tracks>> PrepareAsyncsendTracks(::grpc::ClientContext* context, const ::Tracks_list& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::Tracks>>(PrepareAsyncsendTracksRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientReaderInterface< ::Track>> sendTrackStream(::grpc::ClientContext* context, const ::Tracks_list& request) {
+      return std::unique_ptr< ::grpc::ClientReaderInterface< ::Track>>(sendTrackStreamRaw(context, request));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::Track>> AsyncsendTrackStream(::grpc::ClientContext* context, const ::Tracks_list& request, ::grpc::CompletionQueue* cq, void* tag) {
+      return std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::Track>>(AsyncsendTrackStreamRaw(context, request, cq, tag));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::Track>> PrepareAsyncsendTrackStream(::grpc::ClientContext* context, const ::Tracks_list& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::Track>>(PrepareAsyncsendTrackStreamRaw(context, request, cq));
+    }
     class async_interface {
      public:
       virtual ~async_interface() {}
       virtual void sendAudio(::grpc::ClientContext* context, const ::Request* request, ::Audio* response, std::function<void(::grpc::Status)>) = 0;
       virtual void sendAudio(::grpc::ClientContext* context, const ::Request* request, ::Audio* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void sendTrackList(::grpc::ClientContext* context, const ::Request_list* request, ::Tracks_list* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void sendTrackList(::grpc::ClientContext* context, const ::Request_list* request, ::Tracks_list* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void sendTracks(::grpc::ClientContext* context, const ::Tracks_list* request, ::Tracks* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void sendTracks(::grpc::ClientContext* context, const ::Tracks_list* request, ::Tracks* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void sendTrackStream(::grpc::ClientContext* context, const ::Tracks_list* request, ::grpc::ClientReadReactor< ::Track>* reactor) = 0;
     };
     typedef class async_interface experimental_async_interface;
     virtual class async_interface* async() { return nullptr; }
@@ -52,6 +80,13 @@ class AudioServices final {
    private:
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::Audio>* AsyncsendAudioRaw(::grpc::ClientContext* context, const ::Request& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::Audio>* PrepareAsyncsendAudioRaw(::grpc::ClientContext* context, const ::Request& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::Tracks_list>* AsyncsendTrackListRaw(::grpc::ClientContext* context, const ::Request_list& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::Tracks_list>* PrepareAsyncsendTrackListRaw(::grpc::ClientContext* context, const ::Request_list& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::Tracks>* AsyncsendTracksRaw(::grpc::ClientContext* context, const ::Tracks_list& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::Tracks>* PrepareAsyncsendTracksRaw(::grpc::ClientContext* context, const ::Tracks_list& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientReaderInterface< ::Track>* sendTrackStreamRaw(::grpc::ClientContext* context, const ::Tracks_list& request) = 0;
+    virtual ::grpc::ClientAsyncReaderInterface< ::Track>* AsyncsendTrackStreamRaw(::grpc::ClientContext* context, const ::Tracks_list& request, ::grpc::CompletionQueue* cq, void* tag) = 0;
+    virtual ::grpc::ClientAsyncReaderInterface< ::Track>* PrepareAsyncsendTrackStreamRaw(::grpc::ClientContext* context, const ::Tracks_list& request, ::grpc::CompletionQueue* cq) = 0;
   };
   class Stub final : public StubInterface {
    public:
@@ -63,11 +98,39 @@ class AudioServices final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::Audio>> PrepareAsyncsendAudio(::grpc::ClientContext* context, const ::Request& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::Audio>>(PrepareAsyncsendAudioRaw(context, request, cq));
     }
+    ::grpc::Status sendTrackList(::grpc::ClientContext* context, const ::Request_list& request, ::Tracks_list* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::Tracks_list>> AsyncsendTrackList(::grpc::ClientContext* context, const ::Request_list& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::Tracks_list>>(AsyncsendTrackListRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::Tracks_list>> PrepareAsyncsendTrackList(::grpc::ClientContext* context, const ::Request_list& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::Tracks_list>>(PrepareAsyncsendTrackListRaw(context, request, cq));
+    }
+    ::grpc::Status sendTracks(::grpc::ClientContext* context, const ::Tracks_list& request, ::Tracks* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::Tracks>> AsyncsendTracks(::grpc::ClientContext* context, const ::Tracks_list& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::Tracks>>(AsyncsendTracksRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::Tracks>> PrepareAsyncsendTracks(::grpc::ClientContext* context, const ::Tracks_list& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::Tracks>>(PrepareAsyncsendTracksRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientReader< ::Track>> sendTrackStream(::grpc::ClientContext* context, const ::Tracks_list& request) {
+      return std::unique_ptr< ::grpc::ClientReader< ::Track>>(sendTrackStreamRaw(context, request));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncReader< ::Track>> AsyncsendTrackStream(::grpc::ClientContext* context, const ::Tracks_list& request, ::grpc::CompletionQueue* cq, void* tag) {
+      return std::unique_ptr< ::grpc::ClientAsyncReader< ::Track>>(AsyncsendTrackStreamRaw(context, request, cq, tag));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncReader< ::Track>> PrepareAsyncsendTrackStream(::grpc::ClientContext* context, const ::Tracks_list& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncReader< ::Track>>(PrepareAsyncsendTrackStreamRaw(context, request, cq));
+    }
     class async final :
       public StubInterface::async_interface {
      public:
       void sendAudio(::grpc::ClientContext* context, const ::Request* request, ::Audio* response, std::function<void(::grpc::Status)>) override;
       void sendAudio(::grpc::ClientContext* context, const ::Request* request, ::Audio* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void sendTrackList(::grpc::ClientContext* context, const ::Request_list* request, ::Tracks_list* response, std::function<void(::grpc::Status)>) override;
+      void sendTrackList(::grpc::ClientContext* context, const ::Request_list* request, ::Tracks_list* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void sendTracks(::grpc::ClientContext* context, const ::Tracks_list* request, ::Tracks* response, std::function<void(::grpc::Status)>) override;
+      void sendTracks(::grpc::ClientContext* context, const ::Tracks_list* request, ::Tracks* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void sendTrackStream(::grpc::ClientContext* context, const ::Tracks_list* request, ::grpc::ClientReadReactor< ::Track>* reactor) override;
      private:
       friend class Stub;
       explicit async(Stub* stub): stub_(stub) { }
@@ -81,7 +144,17 @@ class AudioServices final {
     class async async_stub_{this};
     ::grpc::ClientAsyncResponseReader< ::Audio>* AsyncsendAudioRaw(::grpc::ClientContext* context, const ::Request& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::Audio>* PrepareAsyncsendAudioRaw(::grpc::ClientContext* context, const ::Request& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::Tracks_list>* AsyncsendTrackListRaw(::grpc::ClientContext* context, const ::Request_list& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::Tracks_list>* PrepareAsyncsendTrackListRaw(::grpc::ClientContext* context, const ::Request_list& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::Tracks>* AsyncsendTracksRaw(::grpc::ClientContext* context, const ::Tracks_list& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::Tracks>* PrepareAsyncsendTracksRaw(::grpc::ClientContext* context, const ::Tracks_list& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientReader< ::Track>* sendTrackStreamRaw(::grpc::ClientContext* context, const ::Tracks_list& request) override;
+    ::grpc::ClientAsyncReader< ::Track>* AsyncsendTrackStreamRaw(::grpc::ClientContext* context, const ::Tracks_list& request, ::grpc::CompletionQueue* cq, void* tag) override;
+    ::grpc::ClientAsyncReader< ::Track>* PrepareAsyncsendTrackStreamRaw(::grpc::ClientContext* context, const ::Tracks_list& request, ::grpc::CompletionQueue* cq) override;
     const ::grpc::internal::RpcMethod rpcmethod_sendAudio_;
+    const ::grpc::internal::RpcMethod rpcmethod_sendTrackList_;
+    const ::grpc::internal::RpcMethod rpcmethod_sendTracks_;
+    const ::grpc::internal::RpcMethod rpcmethod_sendTrackStream_;
   };
   static std::unique_ptr<Stub> NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
 
@@ -90,6 +163,9 @@ class AudioServices final {
     Service();
     virtual ~Service();
     virtual ::grpc::Status sendAudio(::grpc::ServerContext* context, const ::Request* request, ::Audio* response);
+    virtual ::grpc::Status sendTrackList(::grpc::ServerContext* context, const ::Request_list* request, ::Tracks_list* response);
+    virtual ::grpc::Status sendTracks(::grpc::ServerContext* context, const ::Tracks_list* request, ::Tracks* response);
+    virtual ::grpc::Status sendTrackStream(::grpc::ServerContext* context, const ::Tracks_list* request, ::grpc::ServerWriter< ::Track>* writer);
   };
   template <class BaseClass>
   class WithAsyncMethod_sendAudio : public BaseClass {
@@ -111,7 +187,67 @@ class AudioServices final {
       ::grpc::Service::RequestAsyncUnary(0, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
-  typedef WithAsyncMethod_sendAudio<Service > AsyncService;
+  template <class BaseClass>
+  class WithAsyncMethod_sendTrackList : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_sendTrackList() {
+      ::grpc::Service::MarkMethodAsync(1);
+    }
+    ~WithAsyncMethod_sendTrackList() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status sendTrackList(::grpc::ServerContext* /*context*/, const ::Request_list* /*request*/, ::Tracks_list* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestsendTrackList(::grpc::ServerContext* context, ::Request_list* request, ::grpc::ServerAsyncResponseWriter< ::Tracks_list>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(1, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithAsyncMethod_sendTracks : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_sendTracks() {
+      ::grpc::Service::MarkMethodAsync(2);
+    }
+    ~WithAsyncMethod_sendTracks() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status sendTracks(::grpc::ServerContext* /*context*/, const ::Tracks_list* /*request*/, ::Tracks* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestsendTracks(::grpc::ServerContext* context, ::Tracks_list* request, ::grpc::ServerAsyncResponseWriter< ::Tracks>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(2, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithAsyncMethod_sendTrackStream : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_sendTrackStream() {
+      ::grpc::Service::MarkMethodAsync(3);
+    }
+    ~WithAsyncMethod_sendTrackStream() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status sendTrackStream(::grpc::ServerContext* /*context*/, const ::Tracks_list* /*request*/, ::grpc::ServerWriter< ::Track>* /*writer*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestsendTrackStream(::grpc::ServerContext* context, ::Tracks_list* request, ::grpc::ServerAsyncWriter< ::Track>* writer, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncServerStreaming(3, context, request, writer, new_call_cq, notification_cq, tag);
+    }
+  };
+  typedef WithAsyncMethod_sendAudio<WithAsyncMethod_sendTrackList<WithAsyncMethod_sendTracks<WithAsyncMethod_sendTrackStream<Service > > > > AsyncService;
   template <class BaseClass>
   class WithCallbackMethod_sendAudio : public BaseClass {
    private:
@@ -139,7 +275,83 @@ class AudioServices final {
     virtual ::grpc::ServerUnaryReactor* sendAudio(
       ::grpc::CallbackServerContext* /*context*/, const ::Request* /*request*/, ::Audio* /*response*/)  { return nullptr; }
   };
-  typedef WithCallbackMethod_sendAudio<Service > CallbackService;
+  template <class BaseClass>
+  class WithCallbackMethod_sendTrackList : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithCallbackMethod_sendTrackList() {
+      ::grpc::Service::MarkMethodCallback(1,
+          new ::grpc::internal::CallbackUnaryHandler< ::Request_list, ::Tracks_list>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::Request_list* request, ::Tracks_list* response) { return this->sendTrackList(context, request, response); }));}
+    void SetMessageAllocatorFor_sendTrackList(
+        ::grpc::MessageAllocator< ::Request_list, ::Tracks_list>* allocator) {
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(1);
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::Request_list, ::Tracks_list>*>(handler)
+              ->SetMessageAllocator(allocator);
+    }
+    ~WithCallbackMethod_sendTrackList() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status sendTrackList(::grpc::ServerContext* /*context*/, const ::Request_list* /*request*/, ::Tracks_list* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* sendTrackList(
+      ::grpc::CallbackServerContext* /*context*/, const ::Request_list* /*request*/, ::Tracks_list* /*response*/)  { return nullptr; }
+  };
+  template <class BaseClass>
+  class WithCallbackMethod_sendTracks : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithCallbackMethod_sendTracks() {
+      ::grpc::Service::MarkMethodCallback(2,
+          new ::grpc::internal::CallbackUnaryHandler< ::Tracks_list, ::Tracks>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::Tracks_list* request, ::Tracks* response) { return this->sendTracks(context, request, response); }));}
+    void SetMessageAllocatorFor_sendTracks(
+        ::grpc::MessageAllocator< ::Tracks_list, ::Tracks>* allocator) {
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(2);
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::Tracks_list, ::Tracks>*>(handler)
+              ->SetMessageAllocator(allocator);
+    }
+    ~WithCallbackMethod_sendTracks() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status sendTracks(::grpc::ServerContext* /*context*/, const ::Tracks_list* /*request*/, ::Tracks* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* sendTracks(
+      ::grpc::CallbackServerContext* /*context*/, const ::Tracks_list* /*request*/, ::Tracks* /*response*/)  { return nullptr; }
+  };
+  template <class BaseClass>
+  class WithCallbackMethod_sendTrackStream : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithCallbackMethod_sendTrackStream() {
+      ::grpc::Service::MarkMethodCallback(3,
+          new ::grpc::internal::CallbackServerStreamingHandler< ::Tracks_list, ::Track>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::Tracks_list* request) { return this->sendTrackStream(context, request); }));
+    }
+    ~WithCallbackMethod_sendTrackStream() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status sendTrackStream(::grpc::ServerContext* /*context*/, const ::Tracks_list* /*request*/, ::grpc::ServerWriter< ::Track>* /*writer*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerWriteReactor< ::Track>* sendTrackStream(
+      ::grpc::CallbackServerContext* /*context*/, const ::Tracks_list* /*request*/)  { return nullptr; }
+  };
+  typedef WithCallbackMethod_sendAudio<WithCallbackMethod_sendTrackList<WithCallbackMethod_sendTracks<WithCallbackMethod_sendTrackStream<Service > > > > CallbackService;
   typedef CallbackService ExperimentalCallbackService;
   template <class BaseClass>
   class WithGenericMethod_sendAudio : public BaseClass {
@@ -154,6 +366,57 @@ class AudioServices final {
     }
     // disable synchronous version of this method
     ::grpc::Status sendAudio(::grpc::ServerContext* /*context*/, const ::Request* /*request*/, ::Audio* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_sendTrackList : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_sendTrackList() {
+      ::grpc::Service::MarkMethodGeneric(1);
+    }
+    ~WithGenericMethod_sendTrackList() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status sendTrackList(::grpc::ServerContext* /*context*/, const ::Request_list* /*request*/, ::Tracks_list* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_sendTracks : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_sendTracks() {
+      ::grpc::Service::MarkMethodGeneric(2);
+    }
+    ~WithGenericMethod_sendTracks() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status sendTracks(::grpc::ServerContext* /*context*/, const ::Tracks_list* /*request*/, ::Tracks* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_sendTrackStream : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_sendTrackStream() {
+      ::grpc::Service::MarkMethodGeneric(3);
+    }
+    ~WithGenericMethod_sendTrackStream() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status sendTrackStream(::grpc::ServerContext* /*context*/, const ::Tracks_list* /*request*/, ::grpc::ServerWriter< ::Track>* /*writer*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -179,6 +442,66 @@ class AudioServices final {
     }
   };
   template <class BaseClass>
+  class WithRawMethod_sendTrackList : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_sendTrackList() {
+      ::grpc::Service::MarkMethodRaw(1);
+    }
+    ~WithRawMethod_sendTrackList() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status sendTrackList(::grpc::ServerContext* /*context*/, const ::Request_list* /*request*/, ::Tracks_list* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestsendTrackList(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(1, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_sendTracks : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_sendTracks() {
+      ::grpc::Service::MarkMethodRaw(2);
+    }
+    ~WithRawMethod_sendTracks() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status sendTracks(::grpc::ServerContext* /*context*/, const ::Tracks_list* /*request*/, ::Tracks* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestsendTracks(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(2, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_sendTrackStream : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_sendTrackStream() {
+      ::grpc::Service::MarkMethodRaw(3);
+    }
+    ~WithRawMethod_sendTrackStream() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status sendTrackStream(::grpc::ServerContext* /*context*/, const ::Tracks_list* /*request*/, ::grpc::ServerWriter< ::Track>* /*writer*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestsendTrackStream(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncWriter< ::grpc::ByteBuffer>* writer, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncServerStreaming(3, context, request, writer, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
   class WithRawCallbackMethod_sendAudio : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
@@ -199,6 +522,72 @@ class AudioServices final {
     }
     virtual ::grpc::ServerUnaryReactor* sendAudio(
       ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+  };
+  template <class BaseClass>
+  class WithRawCallbackMethod_sendTrackList : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawCallbackMethod_sendTrackList() {
+      ::grpc::Service::MarkMethodRawCallback(1,
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->sendTrackList(context, request, response); }));
+    }
+    ~WithRawCallbackMethod_sendTrackList() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status sendTrackList(::grpc::ServerContext* /*context*/, const ::Request_list* /*request*/, ::Tracks_list* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* sendTrackList(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+  };
+  template <class BaseClass>
+  class WithRawCallbackMethod_sendTracks : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawCallbackMethod_sendTracks() {
+      ::grpc::Service::MarkMethodRawCallback(2,
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->sendTracks(context, request, response); }));
+    }
+    ~WithRawCallbackMethod_sendTracks() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status sendTracks(::grpc::ServerContext* /*context*/, const ::Tracks_list* /*request*/, ::Tracks* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* sendTracks(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+  };
+  template <class BaseClass>
+  class WithRawCallbackMethod_sendTrackStream : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawCallbackMethod_sendTrackStream() {
+      ::grpc::Service::MarkMethodRawCallback(3,
+          new ::grpc::internal::CallbackServerStreamingHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const::grpc::ByteBuffer* request) { return this->sendTrackStream(context, request); }));
+    }
+    ~WithRawCallbackMethod_sendTrackStream() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status sendTrackStream(::grpc::ServerContext* /*context*/, const ::Tracks_list* /*request*/, ::grpc::ServerWriter< ::Track>* /*writer*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerWriteReactor< ::grpc::ByteBuffer>* sendTrackStream(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/)  { return nullptr; }
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_sendAudio : public BaseClass {
@@ -227,9 +616,90 @@ class AudioServices final {
     // replace default version of method with streamed unary
     virtual ::grpc::Status StreamedsendAudio(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::Request,::Audio>* server_unary_streamer) = 0;
   };
-  typedef WithStreamedUnaryMethod_sendAudio<Service > StreamedUnaryService;
-  typedef Service SplitStreamedService;
-  typedef WithStreamedUnaryMethod_sendAudio<Service > StreamedService;
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_sendTrackList : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithStreamedUnaryMethod_sendTrackList() {
+      ::grpc::Service::MarkMethodStreamed(1,
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::Request_list, ::Tracks_list>(
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
+                     ::Request_list, ::Tracks_list>* streamer) {
+                       return this->StreamedsendTrackList(context,
+                         streamer);
+                  }));
+    }
+    ~WithStreamedUnaryMethod_sendTrackList() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status sendTrackList(::grpc::ServerContext* /*context*/, const ::Request_list* /*request*/, ::Tracks_list* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedsendTrackList(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::Request_list,::Tracks_list>* server_unary_streamer) = 0;
+  };
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_sendTracks : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithStreamedUnaryMethod_sendTracks() {
+      ::grpc::Service::MarkMethodStreamed(2,
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::Tracks_list, ::Tracks>(
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
+                     ::Tracks_list, ::Tracks>* streamer) {
+                       return this->StreamedsendTracks(context,
+                         streamer);
+                  }));
+    }
+    ~WithStreamedUnaryMethod_sendTracks() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status sendTracks(::grpc::ServerContext* /*context*/, const ::Tracks_list* /*request*/, ::Tracks* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedsendTracks(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::Tracks_list,::Tracks>* server_unary_streamer) = 0;
+  };
+  typedef WithStreamedUnaryMethod_sendAudio<WithStreamedUnaryMethod_sendTrackList<WithStreamedUnaryMethod_sendTracks<Service > > > StreamedUnaryService;
+  template <class BaseClass>
+  class WithSplitStreamingMethod_sendTrackStream : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithSplitStreamingMethod_sendTrackStream() {
+      ::grpc::Service::MarkMethodStreamed(3,
+        new ::grpc::internal::SplitServerStreamingHandler<
+          ::Tracks_list, ::Track>(
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerSplitStreamer<
+                     ::Tracks_list, ::Track>* streamer) {
+                       return this->StreamedsendTrackStream(context,
+                         streamer);
+                  }));
+    }
+    ~WithSplitStreamingMethod_sendTrackStream() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status sendTrackStream(::grpc::ServerContext* /*context*/, const ::Tracks_list* /*request*/, ::grpc::ServerWriter< ::Track>* /*writer*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with split streamed
+    virtual ::grpc::Status StreamedsendTrackStream(::grpc::ServerContext* context, ::grpc::ServerSplitStreamer< ::Tracks_list,::Track>* server_split_streamer) = 0;
+  };
+  typedef WithSplitStreamingMethod_sendTrackStream<Service > SplitStreamedService;
+  typedef WithStreamedUnaryMethod_sendAudio<WithStreamedUnaryMethod_sendTrackList<WithStreamedUnaryMethod_sendTracks<WithSplitStreamingMethod_sendTrackStream<Service > > > > StreamedService;
 };
 
 

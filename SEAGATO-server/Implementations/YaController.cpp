@@ -25,3 +25,8 @@ int Controller::YaController::disconnect(Entity::User& usr){ return 0; }
 
 //TODO
 bool Controller::YaController::is_connected(){ return 0; }
+
+// std::list<Entity::Track> fetch_tracks(std::list<std::string>& song_names, Entity::User& cur_usr)
+// {
+
+// }

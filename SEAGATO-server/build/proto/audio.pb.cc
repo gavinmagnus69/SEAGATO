@@ -21,6 +21,71 @@ namespace _pb = ::google::protobuf;
 namespace _pbi = ::google::protobuf::internal;
 namespace _fl = ::google::protobuf::internal::field_layout;
 
+inline constexpr Tracks_list::Impl_::Impl_(
+    ::_pbi::ConstantInitialized) noexcept
+      : tracks_names_{},
+        _cached_size_{0} {}
+
+template <typename>
+PROTOBUF_CONSTEXPR Tracks_list::Tracks_list(::_pbi::ConstantInitialized)
+    : _impl_(::_pbi::ConstantInitialized()) {}
+struct Tracks_listDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR Tracks_listDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~Tracks_listDefaultTypeInternal() {}
+  union {
+    Tracks_list _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 Tracks_listDefaultTypeInternal _Tracks_list_default_instance_;
+
+inline constexpr Track::Impl_::Impl_(
+    ::_pbi::ConstantInitialized) noexcept
+      : track_name_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        data_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        song_id_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        _cached_size_{0} {}
+
+template <typename>
+PROTOBUF_CONSTEXPR Track::Track(::_pbi::ConstantInitialized)
+    : _impl_(::_pbi::ConstantInitialized()) {}
+struct TrackDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR TrackDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~TrackDefaultTypeInternal() {}
+  union {
+    Track _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 TrackDefaultTypeInternal _Track_default_instance_;
+
+inline constexpr Request_list::Impl_::Impl_(
+    ::_pbi::ConstantInitialized) noexcept
+      : req_{false},
+        _cached_size_{0} {}
+
+template <typename>
+PROTOBUF_CONSTEXPR Request_list::Request_list(::_pbi::ConstantInitialized)
+    : _impl_(::_pbi::ConstantInitialized()) {}
+struct Request_listDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR Request_listDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~Request_listDefaultTypeInternal() {}
+  union {
+    Request_list _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 Request_listDefaultTypeInternal _Request_list_default_instance_;
+
 inline constexpr Request::Impl_::Impl_(
     ::_pbi::ConstantInitialized) noexcept
       : song_id_(
@@ -62,7 +127,26 @@ struct AudioDefaultTypeInternal {
 
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
     PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 AudioDefaultTypeInternal _Audio_default_instance_;
-static ::_pb::Metadata file_level_metadata_proto_2faudio_2eproto[2];
+
+inline constexpr Tracks::Impl_::Impl_(
+    ::_pbi::ConstantInitialized) noexcept
+      : tracks_{},
+        _cached_size_{0} {}
+
+template <typename>
+PROTOBUF_CONSTEXPR Tracks::Tracks(::_pbi::ConstantInitialized)
+    : _impl_(::_pbi::ConstantInitialized()) {}
+struct TracksDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR TracksDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~TracksDefaultTypeInternal() {}
+  union {
+    Tracks _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 TracksDefaultTypeInternal _Tracks_default_instance_;
+static ::_pb::Metadata file_level_metadata_proto_2faudio_2eproto[6];
 static constexpr const ::_pb::EnumDescriptor**
     file_level_enum_descriptors_proto_2faudio_2eproto = nullptr;
 static constexpr const ::_pb::ServiceDescriptor**
@@ -87,35 +171,88 @@ const ::uint32_t TableStruct_proto_2faudio_2eproto::offsets[] PROTOBUF_SECTION_V
     ~0u,  // no _split_
     ~0u,  // no sizeof(Split)
     PROTOBUF_FIELD_OFFSET(::Audio, _impl_.data_),
+    ~0u,  // no _has_bits_
+    PROTOBUF_FIELD_OFFSET(::Track, _internal_metadata_),
+    ~0u,  // no _extensions_
+    ~0u,  // no _oneof_case_
+    ~0u,  // no _weak_field_map_
+    ~0u,  // no _inlined_string_donated_
+    ~0u,  // no _split_
+    ~0u,  // no sizeof(Split)
+    PROTOBUF_FIELD_OFFSET(::Track, _impl_.track_name_),
+    PROTOBUF_FIELD_OFFSET(::Track, _impl_.data_),
+    PROTOBUF_FIELD_OFFSET(::Track, _impl_.song_id_),
+    ~0u,  // no _has_bits_
+    PROTOBUF_FIELD_OFFSET(::Tracks, _internal_metadata_),
+    ~0u,  // no _extensions_
+    ~0u,  // no _oneof_case_
+    ~0u,  // no _weak_field_map_
+    ~0u,  // no _inlined_string_donated_
+    ~0u,  // no _split_
+    ~0u,  // no sizeof(Split)
+    PROTOBUF_FIELD_OFFSET(::Tracks, _impl_.tracks_),
+    ~0u,  // no _has_bits_
+    PROTOBUF_FIELD_OFFSET(::Request_list, _internal_metadata_),
+    ~0u,  // no _extensions_
+    ~0u,  // no _oneof_case_
+    ~0u,  // no _weak_field_map_
+    ~0u,  // no _inlined_string_donated_
+    ~0u,  // no _split_
+    ~0u,  // no sizeof(Split)
+    PROTOBUF_FIELD_OFFSET(::Request_list, _impl_.req_),
+    ~0u,  // no _has_bits_
+    PROTOBUF_FIELD_OFFSET(::Tracks_list, _internal_metadata_),
+    ~0u,  // no _extensions_
+    ~0u,  // no _oneof_case_
+    ~0u,  // no _weak_field_map_
+    ~0u,  // no _inlined_string_donated_
+    ~0u,  // no _split_
+    ~0u,  // no sizeof(Split)
+    PROTOBUF_FIELD_OFFSET(::Tracks_list, _impl_.tracks_names_),
 };
 
 static const ::_pbi::MigrationSchema
     schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
         {0, -1, -1, sizeof(::Request)},
         {9, -1, -1, sizeof(::Audio)},
+        {18, -1, -1, sizeof(::Track)},
+        {29, -1, -1, sizeof(::Tracks)},
+        {38, -1, -1, sizeof(::Request_list)},
+        {47, -1, -1, sizeof(::Tracks_list)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
     &::_Request_default_instance_._instance,
     &::_Audio_default_instance_._instance,
+    &::_Track_default_instance_._instance,
+    &::_Tracks_default_instance_._instance,
+    &::_Request_list_default_instance_._instance,
+    &::_Tracks_list_default_instance_._instance,
 };
 const char descriptor_table_protodef_proto_2faudio_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
     "\n\021proto/audio.proto\"\032\n\007Request\022\017\n\007song_i"
-    "d\030\001 \001(\t\"\025\n\005Audio\022\014\n\004data\030\001 \001(\01420\n\rAudioS"
-    "ervices\022\037\n\tsendAudio\022\010.Request\032\006.Audio\"\000"
-    "b\006proto3"
+    "d\030\001 \001(\t\"\025\n\005Audio\022\014\n\004data\030\001 \001(\014\":\n\005Track\022"
+    "\022\n\ntrack_name\030\001 \001(\t\022\014\n\004data\030\002 \001(\014\022\017\n\007son"
+    "g_id\030\003 \001(\t\" \n\006Tracks\022\026\n\006tracks\030\001 \003(\0132\006.T"
+    "rack\"\033\n\014Request_list\022\013\n\003req\030\001 \001(\010\"#\n\013Tra"
+    "cks_list\022\024\n\014tracks_names\030\001 \003(\t2\264\001\n\rAudio"
+    "Services\022\037\n\tsendAudio\022\010.Request\032\006.Audio\""
+    "\000\022.\n\rsendTrackList\022\r.Request_list\032\014.Trac"
+    "ks_list\"\000\022%\n\nsendTracks\022\014.Tracks_list\032\007."
+    "Tracks\"\000\022+\n\017sendTrackStream\022\014.Tracks_lis"
+    "t\032\006.Track\"\0000\001b\006proto3"
 };
 static ::absl::once_flag descriptor_table_proto_2faudio_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_proto_2faudio_2eproto = {
     false,
     false,
-    128,
+    421,
     descriptor_table_protodef_proto_2faudio_2eproto,
     "proto/audio.proto",
     &descriptor_table_proto_2faudio_2eproto_once,
     nullptr,
     0,
-    2,
+    6,
     schemas,
     file_default_instances,
     TableStruct_proto_2faudio_2eproto::offsets,
@@ -515,6 +652,789 @@ void Audio::InternalSwap(Audio* PROTOBUF_RESTRICT other) {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_proto_2faudio_2eproto_getter, &descriptor_table_proto_2faudio_2eproto_once,
       file_level_metadata_proto_2faudio_2eproto[1]);
+}
+// ===================================================================
+
+class Track::_Internal {
+ public:
+};
+
+Track::Track(::google::protobuf::Arena* arena)
+    : ::google::protobuf::Message(arena) {
+  SharedCtor(arena);
+  // @@protoc_insertion_point(arena_constructor:Track)
+}
+inline PROTOBUF_NDEBUG_INLINE Track::Impl_::Impl_(
+    ::google::protobuf::internal::InternalVisibility visibility, ::google::protobuf::Arena* arena,
+    const Impl_& from)
+      : track_name_(arena, from.track_name_),
+        data_(arena, from.data_),
+        song_id_(arena, from.song_id_),
+        _cached_size_{0} {}
+
+Track::Track(
+    ::google::protobuf::Arena* arena,
+    const Track& from)
+    : ::google::protobuf::Message(arena) {
+  Track* const _this = this;
+  (void)_this;
+  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
+      from._internal_metadata_);
+  new (&_impl_) Impl_(internal_visibility(), arena, from._impl_);
+
+  // @@protoc_insertion_point(copy_constructor:Track)
+}
+inline PROTOBUF_NDEBUG_INLINE Track::Impl_::Impl_(
+    ::google::protobuf::internal::InternalVisibility visibility,
+    ::google::protobuf::Arena* arena)
+      : track_name_(arena),
+        data_(arena),
+        song_id_(arena),
+        _cached_size_{0} {}
+
+inline void Track::SharedCtor(::_pb::Arena* arena) {
+  new (&_impl_) Impl_(internal_visibility(), arena);
+}
+Track::~Track() {
+  // @@protoc_insertion_point(destructor:Track)
+  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  SharedDtor();
+}
+inline void Track::SharedDtor() {
+  ABSL_DCHECK(GetArena() == nullptr);
+  _impl_.track_name_.Destroy();
+  _impl_.data_.Destroy();
+  _impl_.song_id_.Destroy();
+  _impl_.~Impl_();
+}
+
+PROTOBUF_NOINLINE void Track::Clear() {
+// @@protoc_insertion_point(message_clear_start:Track)
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.track_name_.ClearToEmpty();
+  _impl_.data_.ClearToEmpty();
+  _impl_.song_id_.ClearToEmpty();
+  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+}
+
+const char* Track::_InternalParse(
+    const char* ptr, ::_pbi::ParseContext* ctx) {
+  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
+  return ptr;
+}
+
+
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::_pbi::TcParseTable<2, 3, 0, 31, 2> Track::_table_ = {
+  {
+    0,  // no _has_bits_
+    0, // no _extensions_
+    3, 24,  // max_field_number, fast_idx_mask
+    offsetof(decltype(_table_), field_lookup_table),
+    4294967288,  // skipmap
+    offsetof(decltype(_table_), field_entries),
+    3,  // num_field_entries
+    0,  // num_aux_entries
+    offsetof(decltype(_table_), field_names),  // no aux_entries
+    &_Track_default_instance_._instance,
+    ::_pbi::TcParser::GenericFallback,  // fallback
+  }, {{
+    {::_pbi::TcParser::MiniParse, {}},
+    // string track_name = 1;
+    {::_pbi::TcParser::FastUS1,
+     {10, 63, 0, PROTOBUF_FIELD_OFFSET(Track, _impl_.track_name_)}},
+    // bytes data = 2;
+    {::_pbi::TcParser::FastBS1,
+     {18, 63, 0, PROTOBUF_FIELD_OFFSET(Track, _impl_.data_)}},
+    // string song_id = 3;
+    {::_pbi::TcParser::FastUS1,
+     {26, 63, 0, PROTOBUF_FIELD_OFFSET(Track, _impl_.song_id_)}},
+  }}, {{
+    65535, 65535
+  }}, {{
+    // string track_name = 1;
+    {PROTOBUF_FIELD_OFFSET(Track, _impl_.track_name_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kUtf8String | ::_fl::kRepAString)},
+    // bytes data = 2;
+    {PROTOBUF_FIELD_OFFSET(Track, _impl_.data_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kBytes | ::_fl::kRepAString)},
+    // string song_id = 3;
+    {PROTOBUF_FIELD_OFFSET(Track, _impl_.song_id_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kUtf8String | ::_fl::kRepAString)},
+  }},
+  // no aux_entries
+  {{
+    "\5\12\0\7\0\0\0\0"
+    "Track"
+    "track_name"
+    "song_id"
+  }},
+};
+
+::uint8_t* Track::_InternalSerialize(
+    ::uint8_t* target,
+    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:Track)
+  ::uint32_t cached_has_bits = 0;
+  (void)cached_has_bits;
+
+  // string track_name = 1;
+  if (!this->_internal_track_name().empty()) {
+    const std::string& _s = this->_internal_track_name();
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+        _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "Track.track_name");
+    target = stream->WriteStringMaybeAliased(1, _s, target);
+  }
+
+  // bytes data = 2;
+  if (!this->_internal_data().empty()) {
+    const std::string& _s = this->_internal_data();
+    target = stream->WriteBytesMaybeAliased(2, _s, target);
+  }
+
+  // string song_id = 3;
+  if (!this->_internal_song_id().empty()) {
+    const std::string& _s = this->_internal_song_id();
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+        _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "Track.song_id");
+    target = stream->WriteStringMaybeAliased(3, _s, target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target =
+        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:Track)
+  return target;
+}
+
+::size_t Track::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:Track)
+  ::size_t total_size = 0;
+
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string track_name = 1;
+  if (!this->_internal_track_name().empty()) {
+    total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                    this->_internal_track_name());
+  }
+
+  // bytes data = 2;
+  if (!this->_internal_data().empty()) {
+    total_size += 1 + ::google::protobuf::internal::WireFormatLite::BytesSize(
+                                    this->_internal_data());
+  }
+
+  // string song_id = 3;
+  if (!this->_internal_song_id().empty()) {
+    total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                    this->_internal_song_id());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::google::protobuf::Message::ClassData Track::_class_data_ = {
+    Track::MergeImpl,
+    nullptr,  // OnDemandRegisterArenaDtor
+};
+const ::google::protobuf::Message::ClassData* Track::GetClassData() const {
+  return &_class_data_;
+}
+
+void Track::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+  auto* const _this = static_cast<Track*>(&to_msg);
+  auto& from = static_cast<const Track&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:Track)
+  ABSL_DCHECK_NE(&from, _this);
+  ::uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (!from._internal_track_name().empty()) {
+    _this->_internal_set_track_name(from._internal_track_name());
+  }
+  if (!from._internal_data().empty()) {
+    _this->_internal_set_data(from._internal_data());
+  }
+  if (!from._internal_song_id().empty()) {
+    _this->_internal_set_song_id(from._internal_song_id());
+  }
+  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void Track::CopyFrom(const Track& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:Track)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+PROTOBUF_NOINLINE bool Track::IsInitialized() const {
+  return true;
+}
+
+::_pbi::CachedSize* Track::AccessCachedSize() const {
+  return &_impl_._cached_size_;
+}
+void Track::InternalSwap(Track* PROTOBUF_RESTRICT other) {
+  using std::swap;
+  auto* arena = GetArena();
+  ABSL_DCHECK_EQ(arena, other->GetArena());
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.track_name_, &other->_impl_.track_name_, arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.data_, &other->_impl_.data_, arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.song_id_, &other->_impl_.song_id_, arena);
+}
+
+::google::protobuf::Metadata Track::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_proto_2faudio_2eproto_getter, &descriptor_table_proto_2faudio_2eproto_once,
+      file_level_metadata_proto_2faudio_2eproto[2]);
+}
+// ===================================================================
+
+class Tracks::_Internal {
+ public:
+};
+
+Tracks::Tracks(::google::protobuf::Arena* arena)
+    : ::google::protobuf::Message(arena) {
+  SharedCtor(arena);
+  // @@protoc_insertion_point(arena_constructor:Tracks)
+}
+inline PROTOBUF_NDEBUG_INLINE Tracks::Impl_::Impl_(
+    ::google::protobuf::internal::InternalVisibility visibility, ::google::protobuf::Arena* arena,
+    const Impl_& from)
+      : tracks_{visibility, arena, from.tracks_},
+        _cached_size_{0} {}
+
+Tracks::Tracks(
+    ::google::protobuf::Arena* arena,
+    const Tracks& from)
+    : ::google::protobuf::Message(arena) {
+  Tracks* const _this = this;
+  (void)_this;
+  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
+      from._internal_metadata_);
+  new (&_impl_) Impl_(internal_visibility(), arena, from._impl_);
+
+  // @@protoc_insertion_point(copy_constructor:Tracks)
+}
+inline PROTOBUF_NDEBUG_INLINE Tracks::Impl_::Impl_(
+    ::google::protobuf::internal::InternalVisibility visibility,
+    ::google::protobuf::Arena* arena)
+      : tracks_{visibility, arena},
+        _cached_size_{0} {}
+
+inline void Tracks::SharedCtor(::_pb::Arena* arena) {
+  new (&_impl_) Impl_(internal_visibility(), arena);
+}
+Tracks::~Tracks() {
+  // @@protoc_insertion_point(destructor:Tracks)
+  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  SharedDtor();
+}
+inline void Tracks::SharedDtor() {
+  ABSL_DCHECK(GetArena() == nullptr);
+  _impl_.~Impl_();
+}
+
+PROTOBUF_NOINLINE void Tracks::Clear() {
+// @@protoc_insertion_point(message_clear_start:Tracks)
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.tracks_.Clear();
+  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+}
+
+const char* Tracks::_InternalParse(
+    const char* ptr, ::_pbi::ParseContext* ctx) {
+  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
+  return ptr;
+}
+
+
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::_pbi::TcParseTable<0, 1, 1, 0, 2> Tracks::_table_ = {
+  {
+    0,  // no _has_bits_
+    0, // no _extensions_
+    1, 0,  // max_field_number, fast_idx_mask
+    offsetof(decltype(_table_), field_lookup_table),
+    4294967294,  // skipmap
+    offsetof(decltype(_table_), field_entries),
+    1,  // num_field_entries
+    1,  // num_aux_entries
+    offsetof(decltype(_table_), aux_entries),
+    &_Tracks_default_instance_._instance,
+    ::_pbi::TcParser::GenericFallback,  // fallback
+  }, {{
+    // repeated .Track tracks = 1;
+    {::_pbi::TcParser::FastMtR1,
+     {10, 63, 0, PROTOBUF_FIELD_OFFSET(Tracks, _impl_.tracks_)}},
+  }}, {{
+    65535, 65535
+  }}, {{
+    // repeated .Track tracks = 1;
+    {PROTOBUF_FIELD_OFFSET(Tracks, _impl_.tracks_), 0, 0,
+    (0 | ::_fl::kFcRepeated | ::_fl::kMessage | ::_fl::kTvTable)},
+  }}, {{
+    {::_pbi::TcParser::GetTable<::Track>()},
+  }}, {{
+  }},
+};
+
+::uint8_t* Tracks::_InternalSerialize(
+    ::uint8_t* target,
+    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:Tracks)
+  ::uint32_t cached_has_bits = 0;
+  (void)cached_has_bits;
+
+  // repeated .Track tracks = 1;
+  for (unsigned i = 0,
+      n = static_cast<unsigned>(this->_internal_tracks_size()); i < n; i++) {
+    const auto& repfield = this->_internal_tracks().Get(i);
+    target = ::google::protobuf::internal::WireFormatLite::
+        InternalWriteMessage(1, repfield, repfield.GetCachedSize(), target, stream);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target =
+        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:Tracks)
+  return target;
+}
+
+::size_t Tracks::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:Tracks)
+  ::size_t total_size = 0;
+
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // repeated .Track tracks = 1;
+  total_size += 1UL * this->_internal_tracks_size();
+  for (const auto& msg : this->_internal_tracks()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormatLite::MessageSize(msg);
+  }
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::google::protobuf::Message::ClassData Tracks::_class_data_ = {
+    Tracks::MergeImpl,
+    nullptr,  // OnDemandRegisterArenaDtor
+};
+const ::google::protobuf::Message::ClassData* Tracks::GetClassData() const {
+  return &_class_data_;
+}
+
+void Tracks::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+  auto* const _this = static_cast<Tracks*>(&to_msg);
+  auto& from = static_cast<const Tracks&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:Tracks)
+  ABSL_DCHECK_NE(&from, _this);
+  ::uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  _this->_internal_mutable_tracks()->MergeFrom(
+      from._internal_tracks());
+  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void Tracks::CopyFrom(const Tracks& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:Tracks)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+PROTOBUF_NOINLINE bool Tracks::IsInitialized() const {
+  return true;
+}
+
+::_pbi::CachedSize* Tracks::AccessCachedSize() const {
+  return &_impl_._cached_size_;
+}
+void Tracks::InternalSwap(Tracks* PROTOBUF_RESTRICT other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  _impl_.tracks_.InternalSwap(&other->_impl_.tracks_);
+}
+
+::google::protobuf::Metadata Tracks::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_proto_2faudio_2eproto_getter, &descriptor_table_proto_2faudio_2eproto_once,
+      file_level_metadata_proto_2faudio_2eproto[3]);
+}
+// ===================================================================
+
+class Request_list::_Internal {
+ public:
+};
+
+Request_list::Request_list(::google::protobuf::Arena* arena)
+    : ::google::protobuf::Message(arena) {
+  SharedCtor(arena);
+  // @@protoc_insertion_point(arena_constructor:Request_list)
+}
+Request_list::Request_list(
+    ::google::protobuf::Arena* arena, const Request_list& from)
+    : Request_list(arena) {
+  MergeFrom(from);
+}
+inline PROTOBUF_NDEBUG_INLINE Request_list::Impl_::Impl_(
+    ::google::protobuf::internal::InternalVisibility visibility,
+    ::google::protobuf::Arena* arena)
+      : _cached_size_{0} {}
+
+inline void Request_list::SharedCtor(::_pb::Arena* arena) {
+  new (&_impl_) Impl_(internal_visibility(), arena);
+  _impl_.req_ = {};
+}
+Request_list::~Request_list() {
+  // @@protoc_insertion_point(destructor:Request_list)
+  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  SharedDtor();
+}
+inline void Request_list::SharedDtor() {
+  ABSL_DCHECK(GetArena() == nullptr);
+  _impl_.~Impl_();
+}
+
+PROTOBUF_NOINLINE void Request_list::Clear() {
+// @@protoc_insertion_point(message_clear_start:Request_list)
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.req_ = false;
+  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+}
+
+const char* Request_list::_InternalParse(
+    const char* ptr, ::_pbi::ParseContext* ctx) {
+  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
+  return ptr;
+}
+
+
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::_pbi::TcParseTable<0, 1, 0, 0, 2> Request_list::_table_ = {
+  {
+    0,  // no _has_bits_
+    0, // no _extensions_
+    1, 0,  // max_field_number, fast_idx_mask
+    offsetof(decltype(_table_), field_lookup_table),
+    4294967294,  // skipmap
+    offsetof(decltype(_table_), field_entries),
+    1,  // num_field_entries
+    0,  // num_aux_entries
+    offsetof(decltype(_table_), field_names),  // no aux_entries
+    &_Request_list_default_instance_._instance,
+    ::_pbi::TcParser::GenericFallback,  // fallback
+  }, {{
+    // bool req = 1;
+    {::_pbi::TcParser::SingularVarintNoZag1<bool, offsetof(Request_list, _impl_.req_), 63>(),
+     {8, 63, 0, PROTOBUF_FIELD_OFFSET(Request_list, _impl_.req_)}},
+  }}, {{
+    65535, 65535
+  }}, {{
+    // bool req = 1;
+    {PROTOBUF_FIELD_OFFSET(Request_list, _impl_.req_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kBool)},
+  }},
+  // no aux_entries
+  {{
+  }},
+};
+
+::uint8_t* Request_list::_InternalSerialize(
+    ::uint8_t* target,
+    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:Request_list)
+  ::uint32_t cached_has_bits = 0;
+  (void)cached_has_bits;
+
+  // bool req = 1;
+  if (this->_internal_req() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(
+        1, this->_internal_req(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target =
+        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:Request_list)
+  return target;
+}
+
+::size_t Request_list::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:Request_list)
+  ::size_t total_size = 0;
+
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // bool req = 1;
+  if (this->_internal_req() != 0) {
+    total_size += 2;
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::google::protobuf::Message::ClassData Request_list::_class_data_ = {
+    Request_list::MergeImpl,
+    nullptr,  // OnDemandRegisterArenaDtor
+};
+const ::google::protobuf::Message::ClassData* Request_list::GetClassData() const {
+  return &_class_data_;
+}
+
+void Request_list::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+  auto* const _this = static_cast<Request_list*>(&to_msg);
+  auto& from = static_cast<const Request_list&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:Request_list)
+  ABSL_DCHECK_NE(&from, _this);
+  ::uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from._internal_req() != 0) {
+    _this->_internal_set_req(from._internal_req());
+  }
+  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void Request_list::CopyFrom(const Request_list& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:Request_list)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+PROTOBUF_NOINLINE bool Request_list::IsInitialized() const {
+  return true;
+}
+
+::_pbi::CachedSize* Request_list::AccessCachedSize() const {
+  return &_impl_._cached_size_;
+}
+void Request_list::InternalSwap(Request_list* PROTOBUF_RESTRICT other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+        swap(_impl_.req_, other->_impl_.req_);
+}
+
+::google::protobuf::Metadata Request_list::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_proto_2faudio_2eproto_getter, &descriptor_table_proto_2faudio_2eproto_once,
+      file_level_metadata_proto_2faudio_2eproto[4]);
+}
+// ===================================================================
+
+class Tracks_list::_Internal {
+ public:
+};
+
+Tracks_list::Tracks_list(::google::protobuf::Arena* arena)
+    : ::google::protobuf::Message(arena) {
+  SharedCtor(arena);
+  // @@protoc_insertion_point(arena_constructor:Tracks_list)
+}
+inline PROTOBUF_NDEBUG_INLINE Tracks_list::Impl_::Impl_(
+    ::google::protobuf::internal::InternalVisibility visibility, ::google::protobuf::Arena* arena,
+    const Impl_& from)
+      : tracks_names_{visibility, arena, from.tracks_names_},
+        _cached_size_{0} {}
+
+Tracks_list::Tracks_list(
+    ::google::protobuf::Arena* arena,
+    const Tracks_list& from)
+    : ::google::protobuf::Message(arena) {
+  Tracks_list* const _this = this;
+  (void)_this;
+  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
+      from._internal_metadata_);
+  new (&_impl_) Impl_(internal_visibility(), arena, from._impl_);
+
+  // @@protoc_insertion_point(copy_constructor:Tracks_list)
+}
+inline PROTOBUF_NDEBUG_INLINE Tracks_list::Impl_::Impl_(
+    ::google::protobuf::internal::InternalVisibility visibility,
+    ::google::protobuf::Arena* arena)
+      : tracks_names_{visibility, arena},
+        _cached_size_{0} {}
+
+inline void Tracks_list::SharedCtor(::_pb::Arena* arena) {
+  new (&_impl_) Impl_(internal_visibility(), arena);
+}
+Tracks_list::~Tracks_list() {
+  // @@protoc_insertion_point(destructor:Tracks_list)
+  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  SharedDtor();
+}
+inline void Tracks_list::SharedDtor() {
+  ABSL_DCHECK(GetArena() == nullptr);
+  _impl_.~Impl_();
+}
+
+PROTOBUF_NOINLINE void Tracks_list::Clear() {
+// @@protoc_insertion_point(message_clear_start:Tracks_list)
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.tracks_names_.Clear();
+  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+}
+
+const char* Tracks_list::_InternalParse(
+    const char* ptr, ::_pbi::ParseContext* ctx) {
+  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
+  return ptr;
+}
+
+
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::_pbi::TcParseTable<0, 1, 0, 32, 2> Tracks_list::_table_ = {
+  {
+    0,  // no _has_bits_
+    0, // no _extensions_
+    1, 0,  // max_field_number, fast_idx_mask
+    offsetof(decltype(_table_), field_lookup_table),
+    4294967294,  // skipmap
+    offsetof(decltype(_table_), field_entries),
+    1,  // num_field_entries
+    0,  // num_aux_entries
+    offsetof(decltype(_table_), field_names),  // no aux_entries
+    &_Tracks_list_default_instance_._instance,
+    ::_pbi::TcParser::GenericFallback,  // fallback
+  }, {{
+    // repeated string tracks_names = 1;
+    {::_pbi::TcParser::FastUR1,
+     {10, 63, 0, PROTOBUF_FIELD_OFFSET(Tracks_list, _impl_.tracks_names_)}},
+  }}, {{
+    65535, 65535
+  }}, {{
+    // repeated string tracks_names = 1;
+    {PROTOBUF_FIELD_OFFSET(Tracks_list, _impl_.tracks_names_), 0, 0,
+    (0 | ::_fl::kFcRepeated | ::_fl::kUtf8String | ::_fl::kRepSString)},
+  }},
+  // no aux_entries
+  {{
+    "\13\14\0\0\0\0\0\0"
+    "Tracks_list"
+    "tracks_names"
+  }},
+};
+
+::uint8_t* Tracks_list::_InternalSerialize(
+    ::uint8_t* target,
+    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:Tracks_list)
+  ::uint32_t cached_has_bits = 0;
+  (void)cached_has_bits;
+
+  // repeated string tracks_names = 1;
+  for (int i = 0, n = this->_internal_tracks_names_size(); i < n; ++i) {
+    const auto& s = this->_internal_tracks_names().Get(i);
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+        s.data(), static_cast<int>(s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "Tracks_list.tracks_names");
+    target = stream->WriteString(1, s, target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target =
+        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:Tracks_list)
+  return target;
+}
+
+::size_t Tracks_list::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:Tracks_list)
+  ::size_t total_size = 0;
+
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // repeated string tracks_names = 1;
+  total_size += 1 * ::google::protobuf::internal::FromIntSize(_internal_tracks_names().size());
+  for (int i = 0, n = _internal_tracks_names().size(); i < n; ++i) {
+    total_size += ::google::protobuf::internal::WireFormatLite::StringSize(
+        _internal_tracks_names().Get(i));
+  }
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::google::protobuf::Message::ClassData Tracks_list::_class_data_ = {
+    Tracks_list::MergeImpl,
+    nullptr,  // OnDemandRegisterArenaDtor
+};
+const ::google::protobuf::Message::ClassData* Tracks_list::GetClassData() const {
+  return &_class_data_;
+}
+
+void Tracks_list::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+  auto* const _this = static_cast<Tracks_list*>(&to_msg);
+  auto& from = static_cast<const Tracks_list&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:Tracks_list)
+  ABSL_DCHECK_NE(&from, _this);
+  ::uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  _this->_internal_mutable_tracks_names()->MergeFrom(from._internal_tracks_names());
+  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void Tracks_list::CopyFrom(const Tracks_list& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:Tracks_list)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+PROTOBUF_NOINLINE bool Tracks_list::IsInitialized() const {
+  return true;
+}
+
+::_pbi::CachedSize* Tracks_list::AccessCachedSize() const {
+  return &_impl_._cached_size_;
+}
+void Tracks_list::InternalSwap(Tracks_list* PROTOBUF_RESTRICT other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  _impl_.tracks_names_.InternalSwap(&other->_impl_.tracks_names_);
+}
+
+::google::protobuf::Metadata Tracks_list::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_proto_2faudio_2eproto_getter, &descriptor_table_proto_2faudio_2eproto_once,
+      file_level_metadata_proto_2faudio_2eproto[5]);
 }
 // @@protoc_insertion_point(namespace_scope)
 namespace google {

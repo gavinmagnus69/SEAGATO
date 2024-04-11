@@ -22,7 +22,10 @@ namespace Controller
             Entity::Track fetch_track(std::string song_id, Entity::User& usr) override;
             int connect(std::string ip_port, Entity::User& usr) override;
             int disconnect(Entity::User& usr) override;
-            bool is_connected() override; 
+            bool is_connected() override;
+
+            //TEST
+            //std::list<Entity::Track> fetch_tracks(std::list<std::string>& song_names, Entity::User& cur_usr) override;  
     }; 
 
 }

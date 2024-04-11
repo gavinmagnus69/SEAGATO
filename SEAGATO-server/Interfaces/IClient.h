@@ -4,6 +4,7 @@
 
 #include <string>
 #include "../Entities/User.h"
+#include <list>
 
 namespace Interface {
     class IClient
@@ -11,6 +12,7 @@ namespace Interface {
         //TODO virtual destructor
         public:
             virtual std::string sendData(std::string song_id, Entity::User& usr) = 0;
+            //virtual std::list<Entity::Track> 
     };
 }
 

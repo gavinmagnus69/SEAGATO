@@ -3,14 +3,25 @@
 
 CMakeFiles/server-sg.dir/src/main.cpp.o: /home/roman/Desktop/project/SEAGATO/SEAGATO-server/src/main.cpp \
   /home/roman/Desktop/project/SEAGATO/SEAGATO-server/Entities/User.h \
-  proto/audio.grpc.pb.h \
-  proto/audio.pb.h \
-  /home/roman/Desktop/project/SEAGATO/SEAGATO-server/Entities/Track.h \
+  /home/roman/Desktop/project/SEAGATO/SEAGATO-server/Interfaces/IClient.h \
+  /home/roman/Desktop/project/SEAGATO/SEAGATO-server/Interfaces/IController.h \
+  /home/roman/Desktop/project/SEAGATO/SEAGATO-server/GRPC_Implementations/GRPCServer.h \
+  /home/roman/Desktop/project/SEAGATO/SEAGATO-server/GRPC_Implementations/grpc.h \
   /home/roman/Desktop/project/SEAGATO/SEAGATO-server/Entities/User.h \
   /home/roman/Desktop/project/SEAGATO/SEAGATO-server/Interfaces/IClient.h \
   /home/roman/Desktop/project/SEAGATO/SEAGATO-server/Interfaces/IController.h \
+  /home/roman/Desktop/project/SEAGATO/SEAGATO-server/Implementations/ServerController.h \
   /home/roman/Desktop/project/SEAGATO/SEAGATO-server/Implementations/YaController.h \
-  /home/roman/Desktop/project/SEAGATO/SEAGATO-server/Implementations/grpc.h \
+  /home/roman/Desktop/project/SEAGATO/SEAGATO-server/Entities/Track.h \
+  /home/roman/Desktop/project/SEAGATO/SEAGATO-server/Entities/User.h \
+  /home/roman/Desktop/project/SEAGATO/SEAGATO-server/Interfaces/IController.h \
+  /home/roman/Desktop/project/SEAGATO/SEAGATO-server/Interfaces/IServer.h \
+  /home/roman/Desktop/project/SEAGATO/SEAGATO-server/Entities/Track.h \
+  /home/roman/Desktop/project/SEAGATO/SEAGATO-server/Entities/User.h \
+  /home/roman/Desktop/project/SEAGATO/SEAGATO-server/Interfaces/IController.h \
+  /home/roman/Desktop/project/SEAGATO/SEAGATO-server/Services/Interactor.h \
+  proto/audio.grpc.pb.h \
+  proto/audio.pb.h \
   /usr/include/alloca.h \
   /usr/include/asm-generic/errno-base.h \
   /usr/include/asm-generic/errno.h \
@@ -193,6 +204,7 @@ CMakeFiles/server-sg.dir/src/main.cpp.o: /home/roman/Desktop/project/SEAGATO/SEA
   /usr/include/c++/13.2.1/bits/stl_multiset.h \
   /usr/include/c++/13.2.1/bits/stl_numeric.h \
   /usr/include/c++/13.2.1/bits/stl_pair.h \
+  /usr/include/c++/13.2.1/bits/stl_queue.h \
   /usr/include/c++/13.2.1/bits/stl_raw_storage_iter.h \
   /usr/include/c++/13.2.1/bits/stl_relops.h \
   /usr/include/c++/13.2.1/bits/stl_set.h \
@@ -269,6 +281,7 @@ CMakeFiles/server-sg.dir/src/main.cpp.o: /home/roman/Desktop/project/SEAGATO/SEA
   /usr/include/c++/13.2.1/pstl/glue_memory_defs.h \
   /usr/include/c++/13.2.1/pstl/glue_numeric_defs.h \
   /usr/include/c++/13.2.1/pstl/pstl_config.h \
+  /usr/include/c++/13.2.1/queue \
   /usr/include/c++/13.2.1/ratio \
   /usr/include/c++/13.2.1/set \
   /usr/include/c++/13.2.1/sstream \
@@ -793,15 +806,15 @@ CMakeFiles/server-sg.dir/src/main.cpp.o: /home/roman/Desktop/project/SEAGATO/SEA
 
 /usr/local/include/google/protobuf/util/json_util.h:
 
-/usr/local/include/google/protobuf/type.pb.h:
-
 /usr/local/include/google/protobuf/thread_safe_arena.h:
 
-/usr/include/c++/13.2.1/memory:
+/usr/local/include/google/protobuf/stubs/port.h:
 
-/usr/local/include/absl/status/status.h:
+/usr/local/include/google/protobuf/stubs/common.h:
 
-/usr/include/c++/13.2.1/iterator:
+/usr/local/include/google/protobuf/stubs/callback.h:
+
+/usr/local/include/google/protobuf/string_block.h:
 
 /usr/include/c++/13.2.1/ios:
 
@@ -829,8 +842,6 @@ CMakeFiles/server-sg.dir/src/main.cpp.o: /home/roman/Desktop/project/SEAGATO/SEA
 
 /usr/include/c++/13.2.1/bits/stl_set.h:
 
-/usr/include/c++/13.2.1/cwctype:
-
 /usr/include/c++/13.2.1/cwchar:
 
 /usr/include/sys/types.h:
@@ -849,6 +860,10 @@ CMakeFiles/server-sg.dir/src/main.cpp.o: /home/roman/Desktop/project/SEAGATO/SEA
 
 /usr/include/c++/13.2.1/bits/stl_pair.h:
 
+/usr/include/c++/13.2.1/cwctype:
+
+/usr/include/c++/13.2.1/queue:
+
 /usr/local/include/absl/base/const_init.h:
 
 /usr/include/c++/13.2.1/bits/stl_map.h:
@@ -865,9 +880,11 @@ CMakeFiles/server-sg.dir/src/main.cpp.o: /home/roman/Desktop/project/SEAGATO/SEA
 
 /usr/include/c++/13.2.1/bits/stl_deque.h:
 
-/usr/include/c++/13.2.1/bits/stream_iterator.h:
-
 /usr/include/c++/13.2.1/bits/stl_vector.h:
+
+/usr/local/include/google/protobuf/stubs/platform_macros.h:
+
+/usr/include/c++/13.2.1/cstddef:
 
 /usr/include/c++/13.2.1/functional:
 
@@ -969,10 +986,6 @@ CMakeFiles/server-sg.dir/src/main.cpp.o: /home/roman/Desktop/project/SEAGATO/SEA
 
 /usr/include/bits/math-vector.h:
 
-/usr/include/c++/13.2.1/cstddef:
-
-/usr/local/include/google/protobuf/stubs/platform_macros.h:
-
 /usr/local/include/grpcpp/support/proto_buffer_writer.h:
 
 /usr/include/c++/13.2.1/bits/uses_allocator.h:
@@ -993,7 +1006,15 @@ CMakeFiles/server-sg.dir/src/main.cpp.o: /home/roman/Desktop/project/SEAGATO/SEA
 
 /usr/local/include/absl/container/internal/btree_container.h:
 
-/usr/include/c++/13.2.1/locale:
+/usr/include/c++/13.2.1/bits/exception_ptr.h:
+
+/usr/include/c++/13.2.1/bits/list.tcc:
+
+/usr/include/c++/13.2.1/bits/exception_defines.h:
+
+/usr/include/gnu/stubs-64.h:
+
+/usr/include/c++/13.2.1/bits/erase_if.h:
 
 /usr/local/include/absl/time/internal/cctz/include/cctz/time_zone.h:
 
@@ -1015,6 +1036,10 @@ proto/audio.grpc.pb.h:
 
 /usr/include/bits/types/struct_timespec.h:
 
+/home/roman/Desktop/project/SEAGATO/SEAGATO-server/GRPC_Implementations/GRPCServer.h:
+
+/usr/include/c++/13.2.1/bits/basic_string.h:
+
 /usr/include/bits/types/struct_timeval.h:
 
 /usr/include/c++/13.2.1/istream:
@@ -1024,6 +1049,12 @@ proto/audio.grpc.pb.h:
 /usr/include/bits/types/__mbstate_t.h:
 
 /usr/include/bits/types/error_t.h:
+
+/usr/include/bits/waitflags.h:
+
+/usr/include/c++/13.2.1/bits/stl_iterator_base_funcs.h:
+
+/usr/include/bits/setjmp.h:
 
 /usr/include/bits/wchar.h:
 
@@ -1051,19 +1082,9 @@ proto/audio.grpc.pb.h:
 
 /usr/include/bits/pthread_stack_min-dynamic.h:
 
-/usr/include/bits/endian.h:
-
-/usr/include/c++/13.2.1/bits/stl_relops.h:
-
-/usr/local/include/grpcpp/support/message_allocator.h:
-
-/usr/include/c++/13.2.1/x86_64-pc-linux-gnu/bits/c++io.h:
-
 /usr/include/c++/13.2.1/bits/align.h:
 
 /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/stdbool.h:
-
-/usr/include/bits/posix2_lim.h:
 
 /usr/include/c++/13.2.1/bits/basic_string.tcc:
 
@@ -1074,6 +1095,14 @@ proto/audio.grpc.pb.h:
 /usr/include/c++/13.2.1/x86_64-pc-linux-gnu/bits/gthr.h:
 
 /usr/include/bits/fp-fast.h:
+
+/usr/include/c++/13.2.1/bits/streambuf.tcc:
+
+/usr/include/c++/13.2.1/bits/postypes.h:
+
+/usr/local/include/absl/memory/memory.h:
+
+/usr/include/sched.h:
 
 /usr/include/c++/13.2.1/bits/istream.tcc:
 
@@ -1099,9 +1128,99 @@ proto/audio.grpc.pb.h:
 
 /usr/include/c++/13.2.1/atomic:
 
-/usr/local/include/grpc/impl/channel_arg_names.h:
+/usr/local/include/google/protobuf/generated_message_reflection.h:
 
-/usr/include/asm-generic/errno-base.h:
+/usr/include/bits/getopt_posix.h:
+
+/usr/include/c++/13.2.1/bits/shared_ptr.h:
+
+/usr/local/include/absl/container/internal/btree.h:
+
+/usr/include/bits/long-double.h:
+
+/usr/include/c++/13.2.1/bits/ios_base.h:
+
+/usr/include/c++/13.2.1/ext/concurrence.h:
+
+/usr/include/bits/getopt_core.h:
+
+/usr/local/include/absl/strings/internal/str_format/output.h:
+
+/home/roman/Desktop/project/SEAGATO/SEAGATO-server/Interfaces/IController.h:
+
+/usr/include/time.h:
+
+/usr/include/bits/floatn-common.h:
+
+/usr/include/c++/13.2.1/bits/stream_iterator.h:
+
+/home/roman/Desktop/project/SEAGATO/SEAGATO-server/GRPC_Implementations/grpc.h:
+
+/usr/include/bits/floatn.h:
+
+/usr/local/include/google/protobuf/type.pb.h:
+
+/home/roman/Desktop/project/SEAGATO/SEAGATO-server/Implementations/ServerController.h:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/xmmintrin.h:
+
+/usr/include/bits/types/struct_sched_param.h:
+
+/usr/include/c++/13.2.1/bits/chrono.h:
+
+/usr/include/bits/stdint-uintn.h:
+
+/usr/local/include/absl/meta/type_traits.h:
+
+/usr/include/c++/13.2.1/iostream:
+
+/home/roman/Desktop/project/SEAGATO/SEAGATO-server/Implementations/YaController.h:
+
+/usr/include/c++/13.2.1/iterator:
+
+/usr/include/bits/posix2_lim.h:
+
+/home/roman/Desktop/project/SEAGATO/SEAGATO-server/Services/Interactor.h:
+
+/usr/include/c++/13.2.1/bits/move.h:
+
+/usr/include/c++/13.2.1/utility:
+
+/usr/include/c++/13.2.1/bits/fs_path.h:
+
+/usr/local/include/absl/base/internal/low_level_scheduling.h:
+
+/usr/include/bits/environments.h:
+
+/usr/include/c++/13.2.1/sstream:
+
+/usr/include/bits/types/struct_FILE.h:
+
+/usr/local/include/grpcpp/generic/async_generic_service.h:
+
+/usr/local/include/grpc/slice.h:
+
+/usr/include/c++/13.2.1/bits/unique_ptr.h:
+
+/usr/local/include/google/protobuf/internal_visibility.h:
+
+/usr/include/c++/13.2.1/stdlib.h:
+
+/usr/local/include/absl/status/internal/status_internal.h:
+
+/usr/local/include/absl/base/internal/endian.h:
+
+/usr/include/bits/types/clock_t.h:
+
+/usr/include/bits/types/__fpos_t.h:
+
+/usr/include/c++/13.2.1/bits/atomic_base.h:
+
+/usr/include/bits/types/struct___jmp_buf_tag.h:
+
+/home/roman/Desktop/project/SEAGATO/SEAGATO-server/src/main.cpp:
+
+/usr/include/c++/13.2.1/cmath:
 
 /usr/local/include/grpcpp/client_context.h:
 
@@ -1113,47 +1232,29 @@ proto/audio.grpc.pb.h:
 
 /usr/include/alloca.h:
 
-/usr/local/include/google/protobuf/stubs/common.h:
+/usr/include/bits/endian.h:
 
-/usr/include/c++/13.2.1/iostream:
+/usr/include/c++/13.2.1/bits/stl_relops.h:
 
-/home/roman/Desktop/project/SEAGATO/SEAGATO-server/Implementations/YaController.h:
+/usr/local/include/grpcpp/support/message_allocator.h:
 
-/home/roman/Desktop/project/SEAGATO/SEAGATO-server/Interfaces/IController.h:
+/usr/include/c++/13.2.1/x86_64-pc-linux-gnu/bits/c++io.h:
 
-/usr/include/time.h:
+/usr/local/include/grpc/impl/channel_arg_names.h:
 
-/usr/include/bits/environments.h:
+/usr/include/asm-generic/errno-base.h:
 
-/usr/include/c++/13.2.1/sstream:
+/usr/include/c++/13.2.1/iomanip:
 
-/usr/include/bits/types/struct_FILE.h:
+/usr/include/c++/13.2.1/bits/hashtable_policy.h:
 
-/usr/local/include/absl/types/compare.h:
+/usr/local/include/google/protobuf/port_def.inc:
 
-/usr/local/include/absl/strings/internal/str_format/bind.h:
+/usr/include/c++/13.2.1/clocale:
 
-/usr/include/bits/time64.h:
+/usr/include/bits/fp-logb.h:
 
-/usr/include/c++/13.2.1/bits/cpp_type_traits.h:
-
-/usr/include/c++/13.2.1/bits/hash_bytes.h:
-
-/usr/include/c++/13.2.1/bits/alloc_traits.h:
-
-/usr/include/sys/select.h:
-
-/usr/include/c++/13.2.1/bits/basic_string.h:
-
-/usr/include/bits/floatn.h:
-
-/usr/include/c++/13.2.1/bits/atomic_base.h:
-
-/usr/include/bits/types/struct___jmp_buf_tag.h:
-
-/home/roman/Desktop/project/SEAGATO/SEAGATO-server/src/main.cpp:
-
-/usr/include/c++/13.2.1/cmath:
+/usr/local/include/absl/base/thread_annotations.h:
 
 /usr/include/c++/13.2.1/bits/unique_lock.h:
 
@@ -1170,10 +1271,6 @@ proto/audio.grpc.pb.h:
 /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/stddef.h:
 
 /usr/include/c++/13.2.1/ext/alloc_traits.h:
-
-/usr/include/c++/13.2.1/bits/shared_ptr.h:
-
-/usr/local/include/absl/container/internal/btree.h:
 
 /usr/include/c++/13.2.1/bits/forward_list.h:
 
@@ -1197,14 +1294,6 @@ proto/audio.grpc.pb.h:
 
 /usr/include/c++/13.2.1/x86_64-pc-linux-gnu/bits/gthr-default.h:
 
-/usr/include/c++/13.2.1/bits/ios_base.h:
-
-/usr/include/c++/13.2.1/ext/concurrence.h:
-
-/usr/include/bits/getopt_core.h:
-
-/usr/local/include/absl/strings/internal/str_format/output.h:
-
 /usr/include/c++/13.2.1/bits/memoryfwd.h:
 
 /usr/include/bits/endianness.h:
@@ -1227,29 +1316,11 @@ proto/audio.grpc.pb.h:
 
 /usr/local/include/google/protobuf/message.h:
 
-/usr/include/bits/stdio_lim.h:
-
 /usr/include/bits/posix_opt.h:
 
 /usr/include/bits/atomic_wide_counter.h:
 
 /usr/include/c++/13.2.1/bits/stl_list.h:
-
-/usr/include/bits/floatn-common.h:
-
-/usr/include/bits/long-double.h:
-
-/usr/include/c++/13.2.1/iomanip:
-
-/usr/include/c++/13.2.1/bits/hashtable_policy.h:
-
-/usr/local/include/google/protobuf/port_def.inc:
-
-/usr/local/include/absl/base/thread_annotations.h:
-
-/usr/include/c++/13.2.1/clocale:
-
-/usr/include/bits/fp-logb.h:
 
 /home/roman/Desktop/project/SEAGATO/SEAGATO-server/Interfaces/IClient.h:
 
@@ -1263,9 +1334,27 @@ proto/audio.grpc.pb.h:
 
 /usr/local/include/absl/container/flat_hash_map.h:
 
-/usr/local/include/google/protobuf/generated_message_reflection.h:
+/usr/include/bits/stdio_lim.h:
 
-/usr/include/bits/getopt_posix.h:
+/usr/include/c++/13.2.1/bits/fstream.tcc:
+
+/usr/include/c++/13.2.1/bits/exception.h:
+
+/usr/include/bits/time.h:
+
+/usr/include/c++/13.2.1/bits/cpp_type_traits.h:
+
+/usr/include/c++/13.2.1/bits/hash_bytes.h:
+
+/usr/include/c++/13.2.1/bits/alloc_traits.h:
+
+/usr/include/sys/select.h:
+
+/usr/local/include/absl/types/compare.h:
+
+/usr/local/include/absl/strings/internal/str_format/bind.h:
+
+/usr/include/bits/time64.h:
 
 /usr/local/include/grpc/compression.h:
 
@@ -1283,18 +1372,6 @@ proto/audio.grpc.pb.h:
 
 /usr/include/bits/types/FILE.h:
 
-/usr/include/c++/13.2.1/limits:
-
-/usr/include/c++/13.2.1/map:
-
-/usr/local/include/google/protobuf/util/type_resolver.h:
-
-/usr/include/c++/13.2.1/bits/cxxabi_init_exception.h:
-
-/usr/local/include/absl/base/internal/identity.h:
-
-/usr/local/include/absl/log/internal/check_op.h:
-
 /usr/local/include/google/protobuf/json/json.h:
 
 /usr/include/c++/13.2.1/codecvt:
@@ -1308,6 +1385,12 @@ proto/audio.grpc.pb.h:
 /usr/include/bits/types/__locale_t.h:
 
 /usr/include/c++/13.2.1/ostream:
+
+/usr/local/include/grpc/status.h:
+
+/usr/local/include/absl/log/internal/conditions.h:
+
+/usr/include/bits/mathcalls-helper-functions.h:
 
 /usr/include/c++/13.2.1/algorithm:
 
@@ -1325,37 +1408,7 @@ proto/audio.grpc.pb.h:
 
 /usr/local/include/absl/base/internal/low_level_alloc.h:
 
-/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/xmmintrin.h:
-
-/usr/local/include/grpcpp/generic/async_generic_service.h:
-
-/usr/local/include/grpc/slice.h:
-
-/usr/include/c++/13.2.1/bits/unique_ptr.h:
-
-/usr/local/include/google/protobuf/internal_visibility.h:
-
-/usr/include/c++/13.2.1/stdlib.h:
-
-/usr/local/include/grpc/status.h:
-
-/usr/include/bits/mathcalls-helper-functions.h:
-
-/usr/local/include/absl/log/internal/conditions.h:
-
-/usr/local/include/absl/status/internal/status_internal.h:
-
-/usr/local/include/absl/base/internal/endian.h:
-
-/usr/include/bits/types/__fpos_t.h:
-
-/usr/include/bits/types/clock_t.h:
-
 /usr/include/bits/types/locale_t.h:
-
-/usr/include/c++/13.2.1/bits/list.tcc:
-
-/usr/include/c++/13.2.1/bits/exception_defines.h:
 
 /usr/include/bits/sched.h:
 
@@ -1363,7 +1416,11 @@ proto/audio.grpc.pb.h:
 
 /usr/local/include/absl/log/absl_vlog_is_on.h:
 
-/usr/include/bits/waitflags.h:
+/usr/include/c++/13.2.1/bits/basic_ios.h:
+
+/usr/include/c++/13.2.1/array:
+
+/usr/local/include/absl/base/internal/throw_delegate.h:
 
 /usr/include/c++/13.2.1/bits/sstream.tcc:
 
@@ -1376,10 +1433,6 @@ proto/audio.grpc.pb.h:
 /usr/include/errno.h:
 
 /usr/include/c++/13.2.1/bits/predefined_ops.h:
-
-/usr/include/c++/13.2.1/climits:
-
-/usr/include/c++/13.2.1/bits/concept_check.h:
 
 /usr/include/c++/13.2.1/bits/memory_resource.h:
 
@@ -1399,21 +1452,11 @@ proto/audio.grpc.pb.h:
 
 /usr/local/include/absl/numeric/int128.h:
 
-/usr/include/gnu/stubs-64.h:
-
-/usr/local/include/absl/memory/memory.h:
-
-/usr/include/sched.h:
-
-/usr/include/c++/13.2.1/bits/streambuf.tcc:
-
-/usr/include/c++/13.2.1/bits/postypes.h:
-
-/usr/include/c++/13.2.1/bits/erase_if.h:
-
-/usr/include/c++/13.2.1/bits/stl_iterator_base_funcs.h:
-
 /usr/include/c++/13.2.1/bits/localefwd.h:
+
+/usr/include/bits/types/struct_tm.h:
+
+/usr/include/c++/13.2.1/type_traits:
 
 /usr/local/include/absl/log/internal/nullguard.h:
 
@@ -1428,6 +1471,10 @@ proto/audio.grpc.pb.h:
 /usr/include/bits/byteswap.h:
 
 /usr/local/include/absl/base/options.h:
+
+/usr/include/c++/13.2.1/climits:
+
+/usr/include/c++/13.2.1/bits/concept_check.h:
 
 /usr/include/c++/13.2.1/bits/locale_facets_nonio.tcc:
 
@@ -1445,10 +1492,6 @@ proto/audio.grpc.pb.h:
 
 /usr/local/include/google/protobuf/reflection.h:
 
-/usr/include/c++/13.2.1/array:
-
-/usr/include/c++/13.2.1/bits/basic_ios.h:
-
 /usr/include/c++/13.2.1/bit:
 
 /usr/local/include/grpc/support/atm.h:
@@ -1459,23 +1502,9 @@ proto/audio.grpc.pb.h:
 
 /usr/local/include/absl/strings/internal/cordz_handle.h:
 
-/usr/include/c++/13.2.1/type_traits:
-
-/usr/include/bits/types/struct_tm.h:
-
-/usr/local/include/absl/base/internal/throw_delegate.h:
-
 /usr/include/c++/13.2.1/bits/basic_ios.tcc:
 
 /usr/include/c++/13.2.1/bits/char_traits.h:
-
-/usr/include/bits/types/struct_sched_param.h:
-
-/usr/include/c++/13.2.1/bits/chrono.h:
-
-/usr/include/bits/stdint-uintn.h:
-
-/usr/local/include/absl/meta/type_traits.h:
 
 /usr/include/c++/13.2.1/bits/uses_allocator_args.h:
 
@@ -1485,15 +1514,23 @@ proto/audio.grpc.pb.h:
 
 /usr/local/include/absl/base/call_once.h:
 
-/usr/include/bits/setjmp.h:
+/usr/include/c++/13.2.1/limits:
 
-/usr/include/c++/13.2.1/bits/fstream.tcc:
+/usr/include/c++/13.2.1/locale:
 
-/usr/include/bits/time.h:
+/usr/include/c++/13.2.1/map:
 
-/usr/include/c++/13.2.1/bits/exception.h:
+/usr/local/include/google/protobuf/util/type_resolver.h:
 
-/usr/include/c++/13.2.1/bits/exception_ptr.h:
+/usr/include/c++/13.2.1/bits/cxxabi_init_exception.h:
+
+/usr/local/include/absl/base/internal/identity.h:
+
+/usr/local/include/absl/log/internal/check_op.h:
+
+/usr/include/c++/13.2.1/memory:
+
+/usr/local/include/absl/status/status.h:
 
 /usr/include/bits/libm-simd-decl-stubs.h:
 
@@ -1573,8 +1610,6 @@ proto/audio.grpc.pb.h:
 
 /usr/include/c++/13.2.1/tr1/poly_laguerre.tcc:
 
-/home/roman/Desktop/project/SEAGATO/SEAGATO-server/Implementations/grpc.h:
-
 /usr/local/include/absl/base/dynamic_annotations.h:
 
 /usr/include/c++/13.2.1/tr1/riemann_zeta.tcc:
@@ -1599,14 +1634,6 @@ proto/audio.grpc.pb.h:
 
 /usr/include/c++/13.2.1/unordered_set:
 
-/usr/include/c++/13.2.1/bits/move.h:
-
-/usr/include/c++/13.2.1/utility:
-
-/usr/include/c++/13.2.1/bits/fs_path.h:
-
-/usr/local/include/absl/base/internal/low_level_scheduling.h:
-
 /usr/include/bits/uio_lim.h:
 
 /usr/include/c++/13.2.1/variant:
@@ -1620,8 +1647,6 @@ proto/audio.grpc.pb.h:
 /usr/local/include/grpcpp/support/server_interceptor.h:
 
 /usr/local/include/absl/base/log_severity.h:
-
-/usr/local/include/google/protobuf/stubs/port.h:
 
 /usr/include/c++/13.2.1/x86_64-pc-linux-gnu/bits/basic_file.h:
 
@@ -1789,8 +1814,6 @@ proto/audio.pb.h:
 
 /usr/local/include/google/protobuf/io/zero_copy_stream_impl_lite.h:
 
-/usr/local/include/google/protobuf/stubs/callback.h:
-
 /usr/local/include/absl/container/internal/raw_hash_map.h:
 
 /usr/local/include/absl/container/internal/raw_hash_set.h:
@@ -1834,6 +1857,8 @@ proto/audio.pb.h:
 /usr/local/include/absl/log/internal/log_impl.h:
 
 /usr/local/include/grpcpp/create_channel_posix.h:
+
+/home/roman/Desktop/project/SEAGATO/SEAGATO-server/Interfaces/IServer.h:
 
 /usr/local/include/absl/log/internal/log_message.h:
 
@@ -1896,6 +1921,8 @@ proto/audio.pb.h:
 /usr/local/include/absl/strings/str_format.h:
 
 /usr/local/include/grpcpp/support/method_handler.h:
+
+/usr/include/c++/13.2.1/bits/stl_queue.h:
 
 /usr/local/include/absl/strings/string_view.h:
 
@@ -1966,5 +1993,3 @@ proto/audio.pb.h:
 /usr/local/include/google/protobuf/repeated_field.h:
 
 /usr/local/include/google/protobuf/serial_arena.h:
-
-/usr/local/include/google/protobuf/string_block.h:

@@ -141,7 +141,11 @@ CMakeFiles/ent.dir/GRPC_Implementations/GRPCServer.cpp.o: \
  /usr/include/c++/13.2.1/bits/ostream.tcc /usr/include/c++/13.2.1/istream \
  /usr/include/c++/13.2.1/bits/istream.tcc \
  /home/roman/Desktop/project/SEAGATO/SEAGATO-server/GRPC_Implementations/../Interfaces/../Entities/User.h \
- /usr/local/include/grpcpp/grpcpp.h /usr/local/include/grpc/grpc.h \
+ /usr/include/c++/13.2.1/list /usr/include/c++/13.2.1/bits/stl_list.h \
+ /usr/include/c++/13.2.1/bits/allocated_ptr.h \
+ /usr/include/c++/13.2.1/ext/aligned_buffer.h \
+ /usr/include/c++/13.2.1/bits/list.tcc /usr/local/include/grpcpp/grpcpp.h \
+ /usr/local/include/grpc/grpc.h \
  /usr/local/include/grpc/support/port_platform.h \
  /usr/include/linux/version.h \
  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/stdint.h \
@@ -169,8 +173,6 @@ CMakeFiles/ent.dir/GRPC_Implementations/GRPCServer.cpp.o: \
  /usr/include/c++/13.2.1/bits/unique_ptr.h \
  /usr/include/c++/13.2.1/bits/shared_ptr.h \
  /usr/include/c++/13.2.1/bits/shared_ptr_base.h \
- /usr/include/c++/13.2.1/bits/allocated_ptr.h \
- /usr/include/c++/13.2.1/ext/aligned_buffer.h \
  /usr/include/c++/13.2.1/ext/concurrence.h \
  /usr/include/c++/13.2.1/bits/shared_ptr_atomic.h \
  /usr/include/c++/13.2.1/bits/atomic_base.h \
@@ -179,8 +181,6 @@ CMakeFiles/ent.dir/GRPC_Implementations/GRPCServer.cpp.o: \
  /usr/include/c++/13.2.1/pstl/glue_memory_defs.h \
  /usr/include/c++/13.2.1/pstl/execution_defs.h \
  /usr/local/include/grpcpp/completion_queue.h \
- /usr/include/c++/13.2.1/list /usr/include/c++/13.2.1/bits/stl_list.h \
- /usr/include/c++/13.2.1/bits/list.tcc \
  /usr/local/include/grpc/support/log.h /usr/include/c++/13.2.1/stdlib.h \
  /usr/local/include/grpcpp/impl/codegen/rpc_service_method.h \
  /usr/local/include/grpcpp/impl/rpc_service_method.h \
@@ -557,4 +557,5 @@ CMakeFiles/ent.dir/GRPC_Implementations/GRPCServer.cpp.o: \
  /usr/local/include/grpcpp/support/proto_buffer_writer.h \
  /usr/local/include/grpcpp/support/stub_options.h \
  /home/roman/Desktop/project/SEAGATO/SEAGATO-server/Entities/Track.h \
- /home/roman/Desktop/project/SEAGATO/SEAGATO-server/Entities/User.h
+ /home/roman/Desktop/project/SEAGATO/SEAGATO-server/Entities/User.h \
+ /home/roman/Desktop/project/SEAGATO/SEAGATO-server/build/proto/audio.pb.h

@@ -3,6 +3,7 @@
 
 #include "../Entities/Track.h"
 #include "../Entities/User.h"
+#include <list>
 namespace Interface
 {
     class IController
@@ -12,9 +13,14 @@ namespace Interface
             //TODO
             //PROBABLY CHANGE RETURN VAL TO PTR
             virtual Entity::Track fetch_track(std::string song_id, Entity::User& cur_usr) = 0;
+              
             virtual int connect(std::string ip_port, Entity::User& cur_usr) = 0;
             virtual int disconnect(Entity::User& cur_usr) = 0;
             virtual bool is_connected() = 0; 
+            
+            
+            //TEST
+            //virtual std::list<Entity::Track> fetch_tracks(std::list<std::string>& song_names, Entity::User& cur_usr) = 0;
     };
 }
 

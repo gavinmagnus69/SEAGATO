@@ -4,14 +4,25 @@
 CMakeFiles/server-sg.dir/src/main.cpp.o
  /home/roman/Desktop/project/SEAGATO/SEAGATO-server/src/main.cpp
  /home/roman/Desktop/project/SEAGATO/SEAGATO-server/Entities/User.h
- /home/roman/Desktop/project/SEAGATO/SEAGATO-server/build/proto/audio.grpc.pb.h
- /home/roman/Desktop/project/SEAGATO/SEAGATO-server/build/proto/audio.pb.h
- /home/roman/Desktop/project/SEAGATO/SEAGATO-server/Entities/Track.h
+ /home/roman/Desktop/project/SEAGATO/SEAGATO-server/Interfaces/IClient.h
+ /home/roman/Desktop/project/SEAGATO/SEAGATO-server/Interfaces/IController.h
+ /home/roman/Desktop/project/SEAGATO/SEAGATO-server/GRPC_Implementations/GRPCServer.h
+ /home/roman/Desktop/project/SEAGATO/SEAGATO-server/GRPC_Implementations/grpc.h
  /home/roman/Desktop/project/SEAGATO/SEAGATO-server/Entities/User.h
  /home/roman/Desktop/project/SEAGATO/SEAGATO-server/Interfaces/IClient.h
  /home/roman/Desktop/project/SEAGATO/SEAGATO-server/Interfaces/IController.h
+ /home/roman/Desktop/project/SEAGATO/SEAGATO-server/Implementations/ServerController.h
  /home/roman/Desktop/project/SEAGATO/SEAGATO-server/Implementations/YaController.h
- /home/roman/Desktop/project/SEAGATO/SEAGATO-server/Implementations/grpc.h
+ /home/roman/Desktop/project/SEAGATO/SEAGATO-server/Entities/Track.h
+ /home/roman/Desktop/project/SEAGATO/SEAGATO-server/Entities/User.h
+ /home/roman/Desktop/project/SEAGATO/SEAGATO-server/Interfaces/IController.h
+ /home/roman/Desktop/project/SEAGATO/SEAGATO-server/Interfaces/IServer.h
+ /home/roman/Desktop/project/SEAGATO/SEAGATO-server/Entities/Track.h
+ /home/roman/Desktop/project/SEAGATO/SEAGATO-server/Entities/User.h
+ /home/roman/Desktop/project/SEAGATO/SEAGATO-server/Interfaces/IController.h
+ /home/roman/Desktop/project/SEAGATO/SEAGATO-server/Services/Interactor.h
+ /home/roman/Desktop/project/SEAGATO/SEAGATO-server/build/proto/audio.grpc.pb.h
+ /home/roman/Desktop/project/SEAGATO/SEAGATO-server/build/proto/audio.pb.h
  /usr/include/alloca.h
  /usr/include/asm-generic/errno-base.h
  /usr/include/asm-generic/errno.h
@@ -194,6 +205,7 @@ CMakeFiles/server-sg.dir/src/main.cpp.o
  /usr/include/c++/13.2.1/bits/stl_multiset.h
  /usr/include/c++/13.2.1/bits/stl_numeric.h
  /usr/include/c++/13.2.1/bits/stl_pair.h
+ /usr/include/c++/13.2.1/bits/stl_queue.h
  /usr/include/c++/13.2.1/bits/stl_raw_storage_iter.h
  /usr/include/c++/13.2.1/bits/stl_relops.h
  /usr/include/c++/13.2.1/bits/stl_set.h
@@ -270,6 +282,7 @@ CMakeFiles/server-sg.dir/src/main.cpp.o
  /usr/include/c++/13.2.1/pstl/glue_memory_defs.h
  /usr/include/c++/13.2.1/pstl/glue_numeric_defs.h
  /usr/include/c++/13.2.1/pstl/pstl_config.h
+ /usr/include/c++/13.2.1/queue
  /usr/include/c++/13.2.1/ratio
  /usr/include/c++/13.2.1/set
  /usr/include/c++/13.2.1/sstream

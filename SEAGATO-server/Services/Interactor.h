@@ -45,9 +45,9 @@ namespace Service
             int start();
             int stop();
             //returns an error code?
-            int get_tracks_yandex();
-            int get_tracks_tg();
-            int send_tracks();
+            // int get_tracks_yandex();
+            // int get_tracks_tg();
+            // int send_tracks();
     };
 }
 

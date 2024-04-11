@@ -22,6 +22,9 @@
 
 static const char* AudioServices_method_names[] = {
   "/AudioServices/sendAudio",
+  "/AudioServices/sendTrackList",
+  "/AudioServices/sendTracks",
+  "/AudioServices/sendTrackStream",
 };
 
 std::unique_ptr< AudioServices::Stub> AudioServices::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
@@ -32,6 +35,9 @@ std::unique_ptr< AudioServices::Stub> AudioServices::NewStub(const std::shared_p
 
 AudioServices::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options)
   : channel_(channel), rpcmethod_sendAudio_(AudioServices_method_names[0], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_sendTrackList_(AudioServices_method_names[1], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_sendTracks_(AudioServices_method_names[2], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_sendTrackStream_(AudioServices_method_names[3], options.suffix_for_stats(),::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
   {}
 
 ::grpc::Status AudioServices::Stub::sendAudio(::grpc::ClientContext* context, const ::Request& request, ::Audio* response) {
@@ -57,6 +63,68 @@ void AudioServices::Stub::async::sendAudio(::grpc::ClientContext* context, const
   return result;
 }
 
+::grpc::Status AudioServices::Stub::sendTrackList(::grpc::ClientContext* context, const ::Request_list& request, ::Tracks_list* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::Request_list, ::Tracks_list, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_sendTrackList_, context, request, response);
+}
+
+void AudioServices::Stub::async::sendTrackList(::grpc::ClientContext* context, const ::Request_list* request, ::Tracks_list* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::Request_list, ::Tracks_list, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_sendTrackList_, context, request, response, std::move(f));
+}
+
+void AudioServices::Stub::async::sendTrackList(::grpc::ClientContext* context, const ::Request_list* request, ::Tracks_list* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_sendTrackList_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::Tracks_list>* AudioServices::Stub::PrepareAsyncsendTrackListRaw(::grpc::ClientContext* context, const ::Request_list& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::Tracks_list, ::Request_list, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_sendTrackList_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::Tracks_list>* AudioServices::Stub::AsyncsendTrackListRaw(::grpc::ClientContext* context, const ::Request_list& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncsendTrackListRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
+::grpc::Status AudioServices::Stub::sendTracks(::grpc::ClientContext* context, const ::Tracks_list& request, ::Tracks* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::Tracks_list, ::Tracks, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_sendTracks_, context, request, response);
+}
+
+void AudioServices::Stub::async::sendTracks(::grpc::ClientContext* context, const ::Tracks_list* request, ::Tracks* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::Tracks_list, ::Tracks, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_sendTracks_, context, request, response, std::move(f));
+}
+
+void AudioServices::Stub::async::sendTracks(::grpc::ClientContext* context, const ::Tracks_list* request, ::Tracks* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_sendTracks_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::Tracks>* AudioServices::Stub::PrepareAsyncsendTracksRaw(::grpc::ClientContext* context, const ::Tracks_list& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::Tracks, ::Tracks_list, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_sendTracks_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::Tracks>* AudioServices::Stub::AsyncsendTracksRaw(::grpc::ClientContext* context, const ::Tracks_list& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncsendTracksRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
+::grpc::ClientReader< ::Track>* AudioServices::Stub::sendTrackStreamRaw(::grpc::ClientContext* context, const ::Tracks_list& request) {
+  return ::grpc::internal::ClientReaderFactory< ::Track>::Create(channel_.get(), rpcmethod_sendTrackStream_, context, request);
+}
+
+void AudioServices::Stub::async::sendTrackStream(::grpc::ClientContext* context, const ::Tracks_list* request, ::grpc::ClientReadReactor< ::Track>* reactor) {
+  ::grpc::internal::ClientCallbackReaderFactory< ::Track>::Create(stub_->channel_.get(), stub_->rpcmethod_sendTrackStream_, context, request, reactor);
+}
+
+::grpc::ClientAsyncReader< ::Track>* AudioServices::Stub::AsyncsendTrackStreamRaw(::grpc::ClientContext* context, const ::Tracks_list& request, ::grpc::CompletionQueue* cq, void* tag) {
+  return ::grpc::internal::ClientAsyncReaderFactory< ::Track>::Create(channel_.get(), cq, rpcmethod_sendTrackStream_, context, request, true, tag);
+}
+
+::grpc::ClientAsyncReader< ::Track>* AudioServices::Stub::PrepareAsyncsendTrackStreamRaw(::grpc::ClientContext* context, const ::Tracks_list& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncReaderFactory< ::Track>::Create(channel_.get(), cq, rpcmethod_sendTrackStream_, context, request, false, nullptr);
+}
+
 AudioServices::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       AudioServices_method_names[0],
@@ -68,6 +136,36 @@ AudioServices::Service::Service() {
              ::Audio* resp) {
                return service->sendAudio(ctx, req, resp);
              }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      AudioServices_method_names[1],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< AudioServices::Service, ::Request_list, ::Tracks_list, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](AudioServices::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::Request_list* req,
+             ::Tracks_list* resp) {
+               return service->sendTrackList(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      AudioServices_method_names[2],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< AudioServices::Service, ::Tracks_list, ::Tracks, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](AudioServices::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::Tracks_list* req,
+             ::Tracks* resp) {
+               return service->sendTracks(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      AudioServices_method_names[3],
+      ::grpc::internal::RpcMethod::SERVER_STREAMING,
+      new ::grpc::internal::ServerStreamingHandler< AudioServices::Service, ::Tracks_list, ::Track>(
+          [](AudioServices::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::Tracks_list* req,
+             ::grpc::ServerWriter<::Track>* writer) {
+               return service->sendTrackStream(ctx, req, writer);
+             }, this)));
 }
 
 AudioServices::Service::~Service() {
@@ -77,6 +175,27 @@ AudioServices::Service::~Service() {
   (void) context;
   (void) request;
   (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status AudioServices::Service::sendTrackList(::grpc::ServerContext* context, const ::Request_list* request, ::Tracks_list* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status AudioServices::Service::sendTracks(::grpc::ServerContext* context, const ::Tracks_list* request, ::Tracks* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status AudioServices::Service::sendTrackStream(::grpc::ServerContext* context, const ::Tracks_list* request, ::grpc::ServerWriter< ::Track>* writer) {
+  (void) context;
+  (void) request;
+  (void) writer;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
