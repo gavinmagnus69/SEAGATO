@@ -17,15 +17,3 @@ int Service::Interactor::stop()
     return 0;
 }
             
-// int Service::Interactor::get_tracks_yandex()
-// {
-//     return 0;
-// }
-// int Service::Interactor::get_tracks_tg()
-// {
-//     return 0;
-// }
-// int Service::Interactor::send_tracks()
-// {
-//     return 0;
-// }

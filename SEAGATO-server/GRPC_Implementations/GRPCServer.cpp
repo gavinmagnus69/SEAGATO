@@ -4,6 +4,7 @@
 #include "audio.pb.h"
 #include <grpcpp/support/status.h>
 #include <string>
+#include <vector>
 
 
 void GRPCServer::set_ycontroller(std::shared_ptr<Interface::IController> ycntrl)
@@ -44,6 +45,7 @@ void GRPCServer::set_tgcontroller(std::shared_ptr<Interface::IController> ycntrl
     Entity::User usr;
     for(auto track_name : request->tracks_names())
     {
+        std::cout << track_name << '\n';
         Entity::Track trc = ya_controller->fetch_track(track_name, usr);
         //std::cout << trc.get_track_bytes_len() << '\n';
         ::Track tmp_track;
@@ -55,3 +57,32 @@ void GRPCServer::set_tgcontroller(std::shared_ptr<Interface::IController> ycntrl
 
     return grpc::Status::OK;
 }
+
+  ::grpc::Status GRPCServer::sendTrackStream(::grpc::ServerContext* context, const ::Tracks_list* request, ::grpc::ServerWriter< ::Track>* writer)
+  {
+    std::cout << "sendTracksStream called\n";
+
+    std::vector<::Track> tracks;
+    Entity::User usr;
+
+    for(const auto& track_name : request->tracks_names())
+    {
+
+        std::cout << track_name << "\n";
+        Entity::Track trc = ya_controller->fetch_track(track_name, usr);
+
+        ::Track proto_track;
+        proto_track.set_track_name(trc.get_track_name());
+        proto_track.set_data(trc.get_track_bytes(), trc.get_track_bytes_len());
+        proto_track.set_song_id(trc.get_track_name());
+        if(writer->Write(proto_track))
+        {
+            std::cout << "sended\n";
+        }
+        else
+        {
+            std::cout << "not sended\n";
+        }
+    }
+    return grpc::Status::OK;
+  }

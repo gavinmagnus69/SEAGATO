@@ -14,6 +14,7 @@ Entity::Track Controller::YaController::fetch_track(std::string song_id, Entity:
     //TODO REWORK govno 
     char* tmp = new char[response.size()];
     memcpy(tmp, response.data(), response.size());
+    //delete[] tmp;
     return Entity::Track(song_id, 228, tmp, response.size());
 }
 
