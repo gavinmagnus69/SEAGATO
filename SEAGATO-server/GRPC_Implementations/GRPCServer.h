@@ -20,7 +20,6 @@ class GRPCServer : public AudioServices::Service
     public:
         ::grpc::Status sendAudio(::grpc::ServerContext* context, const ::Request* request, ::Audio* response);
         ::grpc::Status sendTrackList(::grpc::ServerContext* context, const ::Request_list* request, ::Tracks_list* response);
-        ::grpc::Status sendTracks(::grpc::ServerContext* context, const ::Tracks_list* request, ::Tracks* response);
         ::grpc::Status sendTrackStream(::grpc::ServerContext* context, const ::Tracks_list* request, ::grpc::ServerWriter< ::Track>* writer);
 }; 
 

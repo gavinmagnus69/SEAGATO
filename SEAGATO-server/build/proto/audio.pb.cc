@@ -21,6 +21,30 @@ namespace _pb = ::google::protobuf;
 namespace _pbi = ::google::protobuf::internal;
 namespace _fl = ::google::protobuf::internal::field_layout;
 
+inline constexpr User::Impl_::Impl_(
+    ::_pbi::ConstantInitialized) noexcept
+      : yandex_token_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        tg_id_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        _cached_size_{0} {}
+
+template <typename>
+PROTOBUF_CONSTEXPR User::User(::_pbi::ConstantInitialized)
+    : _impl_(::_pbi::ConstantInitialized()) {}
+struct UserDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR UserDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~UserDefaultTypeInternal() {}
+  union {
+    User _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 UserDefaultTypeInternal _User_default_instance_;
+
 inline constexpr Tracks_list::Impl_::Impl_(
     ::_pbi::ConstantInitialized) noexcept
       : tracks_names_{},
@@ -127,25 +151,6 @@ struct AudioDefaultTypeInternal {
 
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
     PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 AudioDefaultTypeInternal _Audio_default_instance_;
-
-inline constexpr Tracks::Impl_::Impl_(
-    ::_pbi::ConstantInitialized) noexcept
-      : tracks_{},
-        _cached_size_{0} {}
-
-template <typename>
-PROTOBUF_CONSTEXPR Tracks::Tracks(::_pbi::ConstantInitialized)
-    : _impl_(::_pbi::ConstantInitialized()) {}
-struct TracksDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR TracksDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
-  ~TracksDefaultTypeInternal() {}
-  union {
-    Tracks _instance;
-  };
-};
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 TracksDefaultTypeInternal _Tracks_default_instance_;
 static ::_pb::Metadata file_level_metadata_proto_2faudio_2eproto[6];
 static constexpr const ::_pb::EnumDescriptor**
     file_level_enum_descriptors_proto_2faudio_2eproto = nullptr;
@@ -183,15 +188,6 @@ const ::uint32_t TableStruct_proto_2faudio_2eproto::offsets[] PROTOBUF_SECTION_V
     PROTOBUF_FIELD_OFFSET(::Track, _impl_.data_),
     PROTOBUF_FIELD_OFFSET(::Track, _impl_.song_id_),
     ~0u,  // no _has_bits_
-    PROTOBUF_FIELD_OFFSET(::Tracks, _internal_metadata_),
-    ~0u,  // no _extensions_
-    ~0u,  // no _oneof_case_
-    ~0u,  // no _weak_field_map_
-    ~0u,  // no _inlined_string_donated_
-    ~0u,  // no _split_
-    ~0u,  // no sizeof(Split)
-    PROTOBUF_FIELD_OFFSET(::Tracks, _impl_.tracks_),
-    ~0u,  // no _has_bits_
     PROTOBUF_FIELD_OFFSET(::Request_list, _internal_metadata_),
     ~0u,  // no _extensions_
     ~0u,  // no _oneof_case_
@@ -209,6 +205,16 @@ const ::uint32_t TableStruct_proto_2faudio_2eproto::offsets[] PROTOBUF_SECTION_V
     ~0u,  // no _split_
     ~0u,  // no sizeof(Split)
     PROTOBUF_FIELD_OFFSET(::Tracks_list, _impl_.tracks_names_),
+    ~0u,  // no _has_bits_
+    PROTOBUF_FIELD_OFFSET(::User, _internal_metadata_),
+    ~0u,  // no _extensions_
+    ~0u,  // no _oneof_case_
+    ~0u,  // no _weak_field_map_
+    ~0u,  // no _inlined_string_donated_
+    ~0u,  // no _split_
+    ~0u,  // no sizeof(Split)
+    PROTOBUF_FIELD_OFFSET(::User, _impl_.yandex_token_),
+    PROTOBUF_FIELD_OFFSET(::User, _impl_.tg_id_),
 };
 
 static const ::_pbi::MigrationSchema
@@ -216,37 +222,37 @@ static const ::_pbi::MigrationSchema
         {0, -1, -1, sizeof(::Request)},
         {9, -1, -1, sizeof(::Audio)},
         {18, -1, -1, sizeof(::Track)},
-        {29, -1, -1, sizeof(::Tracks)},
-        {38, -1, -1, sizeof(::Request_list)},
-        {47, -1, -1, sizeof(::Tracks_list)},
+        {29, -1, -1, sizeof(::Request_list)},
+        {38, -1, -1, sizeof(::Tracks_list)},
+        {47, -1, -1, sizeof(::User)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
     &::_Request_default_instance_._instance,
     &::_Audio_default_instance_._instance,
     &::_Track_default_instance_._instance,
-    &::_Tracks_default_instance_._instance,
     &::_Request_list_default_instance_._instance,
     &::_Tracks_list_default_instance_._instance,
+    &::_User_default_instance_._instance,
 };
 const char descriptor_table_protodef_proto_2faudio_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
     "\n\021proto/audio.proto\"\032\n\007Request\022\017\n\007song_i"
     "d\030\001 \001(\t\"\025\n\005Audio\022\014\n\004data\030\001 \001(\014\":\n\005Track\022"
     "\022\n\ntrack_name\030\001 \001(\t\022\014\n\004data\030\002 \001(\014\022\017\n\007son"
-    "g_id\030\003 \001(\t\" \n\006Tracks\022\026\n\006tracks\030\001 \003(\0132\006.T"
-    "rack\"\033\n\014Request_list\022\013\n\003req\030\001 \001(\010\"#\n\013Tra"
-    "cks_list\022\024\n\014tracks_names\030\001 \003(\t2\264\001\n\rAudio"
-    "Services\022\037\n\tsendAudio\022\010.Request\032\006.Audio\""
-    "\000\022.\n\rsendTrackList\022\r.Request_list\032\014.Trac"
-    "ks_list\"\000\022%\n\nsendTracks\022\014.Tracks_list\032\007."
-    "Tracks\"\000\022+\n\017sendTrackStream\022\014.Tracks_lis"
-    "t\032\006.Track\"\0000\001b\006proto3"
+    "g_id\030\003 \001(\t\"\033\n\014Request_list\022\013\n\003req\030\001 \001(\010\""
+    "#\n\013Tracks_list\022\024\n\014tracks_names\030\001 \003(\t\"+\n\004"
+    "User\022\024\n\014yandex_token\030\001 \001(\t\022\r\n\005tg_id\030\002 \001("
+    "\t2\262\001\n\rAudioServices\022\037\n\tsendAudio\022\010.Reque"
+    "st\032\006.Audio\"\000\022.\n\rsendTrackList\022\r.Request_"
+    "list\032\014.Tracks_list\"\000\022+\n\017sendTrackStream\022"
+    "\014.Tracks_list\032\006.Track\"\0000\001\022#\n\016sendTracksT"
+    "est\022\005.User\032\006.Track\"\0000\001b\006proto3"
 };
 static ::absl::once_flag descriptor_table_proto_2faudio_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_proto_2faudio_2eproto = {
     false,
     false,
-    421,
+    430,
     descriptor_table_protodef_proto_2faudio_2eproto,
     "proto/audio.proto",
     &descriptor_table_proto_2faudio_2eproto_once,
@@ -901,189 +907,6 @@ void Track::InternalSwap(Track* PROTOBUF_RESTRICT other) {
 }
 // ===================================================================
 
-class Tracks::_Internal {
- public:
-};
-
-Tracks::Tracks(::google::protobuf::Arena* arena)
-    : ::google::protobuf::Message(arena) {
-  SharedCtor(arena);
-  // @@protoc_insertion_point(arena_constructor:Tracks)
-}
-inline PROTOBUF_NDEBUG_INLINE Tracks::Impl_::Impl_(
-    ::google::protobuf::internal::InternalVisibility visibility, ::google::protobuf::Arena* arena,
-    const Impl_& from)
-      : tracks_{visibility, arena, from.tracks_},
-        _cached_size_{0} {}
-
-Tracks::Tracks(
-    ::google::protobuf::Arena* arena,
-    const Tracks& from)
-    : ::google::protobuf::Message(arena) {
-  Tracks* const _this = this;
-  (void)_this;
-  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
-      from._internal_metadata_);
-  new (&_impl_) Impl_(internal_visibility(), arena, from._impl_);
-
-  // @@protoc_insertion_point(copy_constructor:Tracks)
-}
-inline PROTOBUF_NDEBUG_INLINE Tracks::Impl_::Impl_(
-    ::google::protobuf::internal::InternalVisibility visibility,
-    ::google::protobuf::Arena* arena)
-      : tracks_{visibility, arena},
-        _cached_size_{0} {}
-
-inline void Tracks::SharedCtor(::_pb::Arena* arena) {
-  new (&_impl_) Impl_(internal_visibility(), arena);
-}
-Tracks::~Tracks() {
-  // @@protoc_insertion_point(destructor:Tracks)
-  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
-  SharedDtor();
-}
-inline void Tracks::SharedDtor() {
-  ABSL_DCHECK(GetArena() == nullptr);
-  _impl_.~Impl_();
-}
-
-PROTOBUF_NOINLINE void Tracks::Clear() {
-// @@protoc_insertion_point(message_clear_start:Tracks)
-  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
-  ::uint32_t cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  _impl_.tracks_.Clear();
-  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
-}
-
-const char* Tracks::_InternalParse(
-    const char* ptr, ::_pbi::ParseContext* ctx) {
-  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
-  return ptr;
-}
-
-
-PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<0, 1, 1, 0, 2> Tracks::_table_ = {
-  {
-    0,  // no _has_bits_
-    0, // no _extensions_
-    1, 0,  // max_field_number, fast_idx_mask
-    offsetof(decltype(_table_), field_lookup_table),
-    4294967294,  // skipmap
-    offsetof(decltype(_table_), field_entries),
-    1,  // num_field_entries
-    1,  // num_aux_entries
-    offsetof(decltype(_table_), aux_entries),
-    &_Tracks_default_instance_._instance,
-    ::_pbi::TcParser::GenericFallback,  // fallback
-  }, {{
-    // repeated .Track tracks = 1;
-    {::_pbi::TcParser::FastMtR1,
-     {10, 63, 0, PROTOBUF_FIELD_OFFSET(Tracks, _impl_.tracks_)}},
-  }}, {{
-    65535, 65535
-  }}, {{
-    // repeated .Track tracks = 1;
-    {PROTOBUF_FIELD_OFFSET(Tracks, _impl_.tracks_), 0, 0,
-    (0 | ::_fl::kFcRepeated | ::_fl::kMessage | ::_fl::kTvTable)},
-  }}, {{
-    {::_pbi::TcParser::GetTable<::Track>()},
-  }}, {{
-  }},
-};
-
-::uint8_t* Tracks::_InternalSerialize(
-    ::uint8_t* target,
-    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:Tracks)
-  ::uint32_t cached_has_bits = 0;
-  (void)cached_has_bits;
-
-  // repeated .Track tracks = 1;
-  for (unsigned i = 0,
-      n = static_cast<unsigned>(this->_internal_tracks_size()); i < n; i++) {
-    const auto& repfield = this->_internal_tracks().Get(i);
-    target = ::google::protobuf::internal::WireFormatLite::
-        InternalWriteMessage(1, repfield, repfield.GetCachedSize(), target, stream);
-  }
-
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target =
-        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
-  }
-  // @@protoc_insertion_point(serialize_to_array_end:Tracks)
-  return target;
-}
-
-::size_t Tracks::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:Tracks)
-  ::size_t total_size = 0;
-
-  ::uint32_t cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  // repeated .Track tracks = 1;
-  total_size += 1UL * this->_internal_tracks_size();
-  for (const auto& msg : this->_internal_tracks()) {
-    total_size +=
-      ::google::protobuf::internal::WireFormatLite::MessageSize(msg);
-  }
-  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
-}
-
-const ::google::protobuf::Message::ClassData Tracks::_class_data_ = {
-    Tracks::MergeImpl,
-    nullptr,  // OnDemandRegisterArenaDtor
-};
-const ::google::protobuf::Message::ClassData* Tracks::GetClassData() const {
-  return &_class_data_;
-}
-
-void Tracks::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
-  auto* const _this = static_cast<Tracks*>(&to_msg);
-  auto& from = static_cast<const Tracks&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:Tracks)
-  ABSL_DCHECK_NE(&from, _this);
-  ::uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  _this->_internal_mutable_tracks()->MergeFrom(
-      from._internal_tracks());
-  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
-}
-
-void Tracks::CopyFrom(const Tracks& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:Tracks)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-PROTOBUF_NOINLINE bool Tracks::IsInitialized() const {
-  return true;
-}
-
-::_pbi::CachedSize* Tracks::AccessCachedSize() const {
-  return &_impl_._cached_size_;
-}
-void Tracks::InternalSwap(Tracks* PROTOBUF_RESTRICT other) {
-  using std::swap;
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  _impl_.tracks_.InternalSwap(&other->_impl_.tracks_);
-}
-
-::google::protobuf::Metadata Tracks::GetMetadata() const {
-  return ::_pbi::AssignDescriptors(
-      &descriptor_table_proto_2faudio_2eproto_getter, &descriptor_table_proto_2faudio_2eproto_once,
-      file_level_metadata_proto_2faudio_2eproto[3]);
-}
-// ===================================================================
-
 class Request_list::_Internal {
  public:
 };
@@ -1249,7 +1072,7 @@ void Request_list::InternalSwap(Request_list* PROTOBUF_RESTRICT other) {
 ::google::protobuf::Metadata Request_list::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_proto_2faudio_2eproto_getter, &descriptor_table_proto_2faudio_2eproto_once,
-      file_level_metadata_proto_2faudio_2eproto[4]);
+      file_level_metadata_proto_2faudio_2eproto[3]);
 }
 // ===================================================================
 
@@ -1432,6 +1255,225 @@ void Tracks_list::InternalSwap(Tracks_list* PROTOBUF_RESTRICT other) {
 }
 
 ::google::protobuf::Metadata Tracks_list::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_proto_2faudio_2eproto_getter, &descriptor_table_proto_2faudio_2eproto_once,
+      file_level_metadata_proto_2faudio_2eproto[4]);
+}
+// ===================================================================
+
+class User::_Internal {
+ public:
+};
+
+User::User(::google::protobuf::Arena* arena)
+    : ::google::protobuf::Message(arena) {
+  SharedCtor(arena);
+  // @@protoc_insertion_point(arena_constructor:User)
+}
+inline PROTOBUF_NDEBUG_INLINE User::Impl_::Impl_(
+    ::google::protobuf::internal::InternalVisibility visibility, ::google::protobuf::Arena* arena,
+    const Impl_& from)
+      : yandex_token_(arena, from.yandex_token_),
+        tg_id_(arena, from.tg_id_),
+        _cached_size_{0} {}
+
+User::User(
+    ::google::protobuf::Arena* arena,
+    const User& from)
+    : ::google::protobuf::Message(arena) {
+  User* const _this = this;
+  (void)_this;
+  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
+      from._internal_metadata_);
+  new (&_impl_) Impl_(internal_visibility(), arena, from._impl_);
+
+  // @@protoc_insertion_point(copy_constructor:User)
+}
+inline PROTOBUF_NDEBUG_INLINE User::Impl_::Impl_(
+    ::google::protobuf::internal::InternalVisibility visibility,
+    ::google::protobuf::Arena* arena)
+      : yandex_token_(arena),
+        tg_id_(arena),
+        _cached_size_{0} {}
+
+inline void User::SharedCtor(::_pb::Arena* arena) {
+  new (&_impl_) Impl_(internal_visibility(), arena);
+}
+User::~User() {
+  // @@protoc_insertion_point(destructor:User)
+  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  SharedDtor();
+}
+inline void User::SharedDtor() {
+  ABSL_DCHECK(GetArena() == nullptr);
+  _impl_.yandex_token_.Destroy();
+  _impl_.tg_id_.Destroy();
+  _impl_.~Impl_();
+}
+
+PROTOBUF_NOINLINE void User::Clear() {
+// @@protoc_insertion_point(message_clear_start:User)
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.yandex_token_.ClearToEmpty();
+  _impl_.tg_id_.ClearToEmpty();
+  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+}
+
+const char* User::_InternalParse(
+    const char* ptr, ::_pbi::ParseContext* ctx) {
+  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
+  return ptr;
+}
+
+
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::_pbi::TcParseTable<1, 2, 0, 30, 2> User::_table_ = {
+  {
+    0,  // no _has_bits_
+    0, // no _extensions_
+    2, 8,  // max_field_number, fast_idx_mask
+    offsetof(decltype(_table_), field_lookup_table),
+    4294967292,  // skipmap
+    offsetof(decltype(_table_), field_entries),
+    2,  // num_field_entries
+    0,  // num_aux_entries
+    offsetof(decltype(_table_), field_names),  // no aux_entries
+    &_User_default_instance_._instance,
+    ::_pbi::TcParser::GenericFallback,  // fallback
+  }, {{
+    // string tg_id = 2;
+    {::_pbi::TcParser::FastUS1,
+     {18, 63, 0, PROTOBUF_FIELD_OFFSET(User, _impl_.tg_id_)}},
+    // string yandex_token = 1;
+    {::_pbi::TcParser::FastUS1,
+     {10, 63, 0, PROTOBUF_FIELD_OFFSET(User, _impl_.yandex_token_)}},
+  }}, {{
+    65535, 65535
+  }}, {{
+    // string yandex_token = 1;
+    {PROTOBUF_FIELD_OFFSET(User, _impl_.yandex_token_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kUtf8String | ::_fl::kRepAString)},
+    // string tg_id = 2;
+    {PROTOBUF_FIELD_OFFSET(User, _impl_.tg_id_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kUtf8String | ::_fl::kRepAString)},
+  }},
+  // no aux_entries
+  {{
+    "\4\14\5\0\0\0\0\0"
+    "User"
+    "yandex_token"
+    "tg_id"
+  }},
+};
+
+::uint8_t* User::_InternalSerialize(
+    ::uint8_t* target,
+    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:User)
+  ::uint32_t cached_has_bits = 0;
+  (void)cached_has_bits;
+
+  // string yandex_token = 1;
+  if (!this->_internal_yandex_token().empty()) {
+    const std::string& _s = this->_internal_yandex_token();
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+        _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "User.yandex_token");
+    target = stream->WriteStringMaybeAliased(1, _s, target);
+  }
+
+  // string tg_id = 2;
+  if (!this->_internal_tg_id().empty()) {
+    const std::string& _s = this->_internal_tg_id();
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+        _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "User.tg_id");
+    target = stream->WriteStringMaybeAliased(2, _s, target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target =
+        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:User)
+  return target;
+}
+
+::size_t User::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:User)
+  ::size_t total_size = 0;
+
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string yandex_token = 1;
+  if (!this->_internal_yandex_token().empty()) {
+    total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                    this->_internal_yandex_token());
+  }
+
+  // string tg_id = 2;
+  if (!this->_internal_tg_id().empty()) {
+    total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                    this->_internal_tg_id());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::google::protobuf::Message::ClassData User::_class_data_ = {
+    User::MergeImpl,
+    nullptr,  // OnDemandRegisterArenaDtor
+};
+const ::google::protobuf::Message::ClassData* User::GetClassData() const {
+  return &_class_data_;
+}
+
+void User::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+  auto* const _this = static_cast<User*>(&to_msg);
+  auto& from = static_cast<const User&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:User)
+  ABSL_DCHECK_NE(&from, _this);
+  ::uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (!from._internal_yandex_token().empty()) {
+    _this->_internal_set_yandex_token(from._internal_yandex_token());
+  }
+  if (!from._internal_tg_id().empty()) {
+    _this->_internal_set_tg_id(from._internal_tg_id());
+  }
+  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void User::CopyFrom(const User& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:User)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+PROTOBUF_NOINLINE bool User::IsInitialized() const {
+  return true;
+}
+
+::_pbi::CachedSize* User::AccessCachedSize() const {
+  return &_impl_._cached_size_;
+}
+void User::InternalSwap(User* PROTOBUF_RESTRICT other) {
+  using std::swap;
+  auto* arena = GetArena();
+  ABSL_DCHECK_EQ(arena, other->GetArena());
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.yandex_token_, &other->_impl_.yandex_token_, arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.tg_id_, &other->_impl_.tg_id_, arena);
+}
+
+::google::protobuf::Metadata User::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_proto_2faudio_2eproto_getter, &descriptor_table_proto_2faudio_2eproto_once,
       file_level_metadata_proto_2faudio_2eproto[5]);

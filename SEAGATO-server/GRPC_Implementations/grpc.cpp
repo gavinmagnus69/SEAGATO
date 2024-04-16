@@ -32,6 +32,7 @@ std::string Client::sendData(std::string song_id, Entity::User& usr)
      {
 
         std::cout << "error in grpc client\n";
+        std::cout << status.error_code() << ":" << status.error_message() << std::endl;
         return "";
      }
 }

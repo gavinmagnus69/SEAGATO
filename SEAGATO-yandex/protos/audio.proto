@@ -1,0 +1,58 @@
+syntax = "proto3";
+
+
+
+message Request
+{
+    string song_id = 1;
+}
+
+message Audio
+{
+    bytes data = 1;
+}
+
+
+message Track
+{
+    string track_name = 1;
+    bytes data = 2;
+    string song_id = 3;
+}
+
+message Request_list
+{
+    bool req = 1;
+}
+
+message Tracks_list
+{
+    repeated string tracks_names = 1;
+}
+
+
+message User{
+    string yandex_token = 1;
+    string tg_id = 2;
+}
+
+message Hello{
+    string msg = 1;
+}
+message Asnwer{
+    string ans = 1;
+}
+
+service AudioServices
+{
+    rpc sendAudio(Request) returns (Audio){}
+
+    rpc sendTrackList(Request_list) returns (Tracks_list){}
+
+    rpc sendTrackStream(Tracks_list) returns(stream Track){}
+
+    rpc sendTracksTest(User) returns(stream Track){}
+
+    rpc sendHello(Hello) returns (Asnwer);
+}
+

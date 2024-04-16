@@ -67,12 +67,12 @@ extern Request_listDefaultTypeInternal _Request_list_default_instance_;
 class Track;
 struct TrackDefaultTypeInternal;
 extern TrackDefaultTypeInternal _Track_default_instance_;
-class Tracks;
-struct TracksDefaultTypeInternal;
-extern TracksDefaultTypeInternal _Tracks_default_instance_;
 class Tracks_list;
 struct Tracks_listDefaultTypeInternal;
 extern Tracks_listDefaultTypeInternal _Tracks_list_default_instance_;
+class User;
+struct UserDefaultTypeInternal;
+extern UserDefaultTypeInternal _User_default_instance_;
 namespace google {
 namespace protobuf {
 }  // namespace protobuf
@@ -83,6 +83,205 @@ namespace protobuf {
 
 
 // -------------------------------------------------------------------
+
+class User final :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:User) */ {
+ public:
+  inline User() : User(nullptr) {}
+  ~User() override;
+  template<typename = void>
+  explicit PROTOBUF_CONSTEXPR User(::google::protobuf::internal::ConstantInitialized);
+
+  inline User(const User& from)
+      : User(nullptr, from) {}
+  User(User&& from) noexcept
+    : User() {
+    *this = ::std::move(from);
+  }
+
+  inline User& operator=(const User& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline User& operator=(User&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetArena() == from.GetArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance);
+  }
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields()
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::google::protobuf::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::google::protobuf::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const User& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const User* internal_default_instance() {
+    return reinterpret_cast<const User*>(
+               &_User_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    5;
+
+  friend void swap(User& a, User& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(User* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetArena() != nullptr &&
+        GetArena() == other->GetArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetArena() == other->GetArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::google::protobuf::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(User* other) {
+    if (other == this) return;
+    ABSL_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  User* New(::google::protobuf::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<User>(arena);
+  }
+  using ::google::protobuf::Message::CopyFrom;
+  void CopyFrom(const User& from);
+  using ::google::protobuf::Message::MergeFrom;
+  void MergeFrom( const User& from) {
+    User::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  ::size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::google::protobuf::internal::ParseContext* ctx) final;
+  ::uint8_t* _InternalSerialize(
+      ::uint8_t* target, ::google::protobuf::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const { return _impl_._cached_size_.Get(); }
+
+  private:
+  ::google::protobuf::internal::CachedSize* AccessCachedSize() const final;
+  void SharedCtor(::google::protobuf::Arena* arena);
+  void SharedDtor();
+  void InternalSwap(User* other);
+
+  private:
+  friend class ::google::protobuf::internal::AnyMetadata;
+  static ::absl::string_view FullMessageName() {
+    return "User";
+  }
+  protected:
+  explicit User(::google::protobuf::Arena* arena);
+  User(::google::protobuf::Arena* arena, const User& from);
+  public:
+
+  static const ClassData _class_data_;
+  const ::google::protobuf::Message::ClassData*GetClassData() const final;
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kYandexTokenFieldNumber = 1,
+    kTgIdFieldNumber = 2,
+  };
+  // string yandex_token = 1;
+  void clear_yandex_token() ;
+  const std::string& yandex_token() const;
+  template <typename Arg_ = const std::string&, typename... Args_>
+  void set_yandex_token(Arg_&& arg, Args_... args);
+  std::string* mutable_yandex_token();
+  PROTOBUF_NODISCARD std::string* release_yandex_token();
+  void set_allocated_yandex_token(std::string* value);
+
+  private:
+  const std::string& _internal_yandex_token() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_yandex_token(
+      const std::string& value);
+  std::string* _internal_mutable_yandex_token();
+
+  public:
+  // string tg_id = 2;
+  void clear_tg_id() ;
+  const std::string& tg_id() const;
+  template <typename Arg_ = const std::string&, typename... Args_>
+  void set_tg_id(Arg_&& arg, Args_... args);
+  std::string* mutable_tg_id();
+  PROTOBUF_NODISCARD std::string* release_tg_id();
+  void set_allocated_tg_id(std::string* value);
+
+  private:
+  const std::string& _internal_tg_id() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_tg_id(
+      const std::string& value);
+  std::string* _internal_mutable_tg_id();
+
+  public:
+  // @@protoc_insertion_point(class_scope:User)
+ private:
+  class _Internal;
+
+  friend class ::google::protobuf::internal::TcParser;
+  static const ::google::protobuf::internal::TcParseTable<
+      1, 2, 0,
+      30, 2>
+      _table_;
+  friend class ::google::protobuf::MessageLite;
+  friend class ::google::protobuf::Arena;
+  template <typename T>
+  friend class ::google::protobuf::Arena::InternalHelper;
+  using InternalArenaConstructable_ = void;
+  using DestructorSkippable_ = void;
+  struct Impl_ {
+
+        inline explicit constexpr Impl_(
+            ::google::protobuf::internal::ConstantInitialized) noexcept;
+        inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
+                              ::google::protobuf::Arena* arena);
+        inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
+                              ::google::protobuf::Arena* arena, const Impl_& from);
+    ::google::protobuf::internal::ArenaStringPtr yandex_token_;
+    ::google::protobuf::internal::ArenaStringPtr tg_id_;
+    mutable ::google::protobuf::internal::CachedSize _cached_size_;
+    PROTOBUF_TSAN_DECLARE_MEMBER
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_proto_2faudio_2eproto;
+};// -------------------------------------------------------------------
 
 class Tracks_list final :
     public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:Tracks_list) */ {
@@ -143,7 +342,7 @@ class Tracks_list final :
                &_Tracks_list_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    5;
+    4;
 
   friend void swap(Tracks_list& a, Tracks_list& b) {
     a.Swap(&b);
@@ -553,7 +752,7 @@ class Request_list final :
                &_Request_list_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    4;
+    3;
 
   friend void swap(Request_list& a, Request_list& b) {
     a.Swap(&b);
@@ -1029,189 +1228,6 @@ class Audio final :
   };
   union { Impl_ _impl_; };
   friend struct ::TableStruct_proto_2faudio_2eproto;
-};// -------------------------------------------------------------------
-
-class Tracks final :
-    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:Tracks) */ {
- public:
-  inline Tracks() : Tracks(nullptr) {}
-  ~Tracks() override;
-  template<typename = void>
-  explicit PROTOBUF_CONSTEXPR Tracks(::google::protobuf::internal::ConstantInitialized);
-
-  inline Tracks(const Tracks& from)
-      : Tracks(nullptr, from) {}
-  Tracks(Tracks&& from) noexcept
-    : Tracks() {
-    *this = ::std::move(from);
-  }
-
-  inline Tracks& operator=(const Tracks& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  inline Tracks& operator=(Tracks&& from) noexcept {
-    if (this == &from) return *this;
-    if (GetArena() == from.GetArena()
-  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
-        && GetArena() != nullptr
-  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
-    ) {
-      InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-
-  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const
-      ABSL_ATTRIBUTE_LIFETIME_BOUND {
-    return _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance);
-  }
-  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields()
-      ABSL_ATTRIBUTE_LIFETIME_BOUND {
-    return _internal_metadata_.mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
-  }
-
-  static const ::google::protobuf::Descriptor* descriptor() {
-    return GetDescriptor();
-  }
-  static const ::google::protobuf::Descriptor* GetDescriptor() {
-    return default_instance().GetMetadata().descriptor;
-  }
-  static const ::google::protobuf::Reflection* GetReflection() {
-    return default_instance().GetMetadata().reflection;
-  }
-  static const Tracks& default_instance() {
-    return *internal_default_instance();
-  }
-  static inline const Tracks* internal_default_instance() {
-    return reinterpret_cast<const Tracks*>(
-               &_Tracks_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    3;
-
-  friend void swap(Tracks& a, Tracks& b) {
-    a.Swap(&b);
-  }
-  inline void Swap(Tracks* other) {
-    if (other == this) return;
-  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
-    if (GetArena() != nullptr &&
-        GetArena() == other->GetArena()) {
-   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
-    if (GetArena() == other->GetArena()) {
-  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
-      InternalSwap(other);
-    } else {
-      ::google::protobuf::internal::GenericSwap(this, other);
-    }
-  }
-  void UnsafeArenaSwap(Tracks* other) {
-    if (other == this) return;
-    ABSL_DCHECK(GetArena() == other->GetArena());
-    InternalSwap(other);
-  }
-
-  // implements Message ----------------------------------------------
-
-  Tracks* New(::google::protobuf::Arena* arena = nullptr) const final {
-    return CreateMaybeMessage<Tracks>(arena);
-  }
-  using ::google::protobuf::Message::CopyFrom;
-  void CopyFrom(const Tracks& from);
-  using ::google::protobuf::Message::MergeFrom;
-  void MergeFrom( const Tracks& from) {
-    Tracks::MergeImpl(*this, from);
-  }
-  private:
-  static void MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg);
-  public:
-  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
-  bool IsInitialized() const final;
-
-  ::size_t ByteSizeLong() const final;
-  const char* _InternalParse(const char* ptr, ::google::protobuf::internal::ParseContext* ctx) final;
-  ::uint8_t* _InternalSerialize(
-      ::uint8_t* target, ::google::protobuf::io::EpsCopyOutputStream* stream) const final;
-  int GetCachedSize() const { return _impl_._cached_size_.Get(); }
-
-  private:
-  ::google::protobuf::internal::CachedSize* AccessCachedSize() const final;
-  void SharedCtor(::google::protobuf::Arena* arena);
-  void SharedDtor();
-  void InternalSwap(Tracks* other);
-
-  private:
-  friend class ::google::protobuf::internal::AnyMetadata;
-  static ::absl::string_view FullMessageName() {
-    return "Tracks";
-  }
-  protected:
-  explicit Tracks(::google::protobuf::Arena* arena);
-  Tracks(::google::protobuf::Arena* arena, const Tracks& from);
-  public:
-
-  static const ClassData _class_data_;
-  const ::google::protobuf::Message::ClassData*GetClassData() const final;
-
-  ::google::protobuf::Metadata GetMetadata() const final;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  enum : int {
-    kTracksFieldNumber = 1,
-  };
-  // repeated .Track tracks = 1;
-  int tracks_size() const;
-  private:
-  int _internal_tracks_size() const;
-
-  public:
-  void clear_tracks() ;
-  ::Track* mutable_tracks(int index);
-  ::google::protobuf::RepeatedPtrField< ::Track >*
-      mutable_tracks();
-  private:
-  const ::google::protobuf::RepeatedPtrField<::Track>& _internal_tracks() const;
-  ::google::protobuf::RepeatedPtrField<::Track>* _internal_mutable_tracks();
-  public:
-  const ::Track& tracks(int index) const;
-  ::Track* add_tracks();
-  const ::google::protobuf::RepeatedPtrField< ::Track >&
-      tracks() const;
-  // @@protoc_insertion_point(class_scope:Tracks)
- private:
-  class _Internal;
-
-  friend class ::google::protobuf::internal::TcParser;
-  static const ::google::protobuf::internal::TcParseTable<
-      0, 1, 1,
-      0, 2>
-      _table_;
-  friend class ::google::protobuf::MessageLite;
-  friend class ::google::protobuf::Arena;
-  template <typename T>
-  friend class ::google::protobuf::Arena::InternalHelper;
-  using InternalArenaConstructable_ = void;
-  using DestructorSkippable_ = void;
-  struct Impl_ {
-
-        inline explicit constexpr Impl_(
-            ::google::protobuf::internal::ConstantInitialized) noexcept;
-        inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
-                              ::google::protobuf::Arena* arena);
-        inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
-                              ::google::protobuf::Arena* arena, const Impl_& from);
-    ::google::protobuf::RepeatedPtrField< ::Track > tracks_;
-    mutable ::google::protobuf::internal::CachedSize _cached_size_;
-    PROTOBUF_TSAN_DECLARE_MEMBER
-  };
-  union { Impl_ _impl_; };
-  friend struct ::TableStruct_proto_2faudio_2eproto;
 };
 
 // ===================================================================
@@ -1505,59 +1521,6 @@ inline void Track::set_allocated_song_id(std::string* value) {
 
 // -------------------------------------------------------------------
 
-// Tracks
-
-// repeated .Track tracks = 1;
-inline int Tracks::_internal_tracks_size() const {
-  return _internal_tracks().size();
-}
-inline int Tracks::tracks_size() const {
-  return _internal_tracks_size();
-}
-inline void Tracks::clear_tracks() {
-  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
-  _impl_.tracks_.Clear();
-}
-inline ::Track* Tracks::mutable_tracks(int index)
-    ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_mutable:Tracks.tracks)
-  return _internal_mutable_tracks()->Mutable(index);
-}
-inline ::google::protobuf::RepeatedPtrField<::Track>* Tracks::mutable_tracks()
-    ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_mutable_list:Tracks.tracks)
-  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
-  return _internal_mutable_tracks();
-}
-inline const ::Track& Tracks::tracks(int index) const
-    ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_get:Tracks.tracks)
-  return _internal_tracks().Get(index);
-}
-inline ::Track* Tracks::add_tracks() ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
-  ::Track* _add = _internal_mutable_tracks()->Add();
-  // @@protoc_insertion_point(field_add:Tracks.tracks)
-  return _add;
-}
-inline const ::google::protobuf::RepeatedPtrField<::Track>& Tracks::tracks() const
-    ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_list:Tracks.tracks)
-  return _internal_tracks();
-}
-inline const ::google::protobuf::RepeatedPtrField<::Track>&
-Tracks::_internal_tracks() const {
-  PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
-  return _impl_.tracks_;
-}
-inline ::google::protobuf::RepeatedPtrField<::Track>*
-Tracks::_internal_mutable_tracks() {
-  PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
-  return &_impl_.tracks_;
-}
-
-// -------------------------------------------------------------------
-
 // Request_list
 
 // bool req = 1;
@@ -1686,6 +1649,116 @@ inline ::google::protobuf::RepeatedPtrField<std::string>*
 Tracks_list::_internal_mutable_tracks_names() {
   PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
   return &_impl_.tracks_names_;
+}
+
+// -------------------------------------------------------------------
+
+// User
+
+// string yandex_token = 1;
+inline void User::clear_yandex_token() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_.yandex_token_.ClearToEmpty();
+}
+inline const std::string& User::yandex_token() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:User.yandex_token)
+  return _internal_yandex_token();
+}
+template <typename Arg_, typename... Args_>
+inline PROTOBUF_ALWAYS_INLINE void User::set_yandex_token(Arg_&& arg,
+                                                     Args_... args) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ;
+  _impl_.yandex_token_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:User.yandex_token)
+}
+inline std::string* User::mutable_yandex_token() ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  std::string* _s = _internal_mutable_yandex_token();
+  // @@protoc_insertion_point(field_mutable:User.yandex_token)
+  return _s;
+}
+inline const std::string& User::_internal_yandex_token() const {
+  PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
+  return _impl_.yandex_token_.Get();
+}
+inline void User::_internal_set_yandex_token(const std::string& value) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ;
+  _impl_.yandex_token_.Set(value, GetArena());
+}
+inline std::string* User::_internal_mutable_yandex_token() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ;
+  return _impl_.yandex_token_.Mutable( GetArena());
+}
+inline std::string* User::release_yandex_token() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  // @@protoc_insertion_point(field_release:User.yandex_token)
+  return _impl_.yandex_token_.Release();
+}
+inline void User::set_allocated_yandex_token(std::string* value) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_.yandex_token_.SetAllocated(value, GetArena());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        if (_impl_.yandex_token_.IsDefault()) {
+          _impl_.yandex_token_.Set("", GetArena());
+        }
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:User.yandex_token)
+}
+
+// string tg_id = 2;
+inline void User::clear_tg_id() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_.tg_id_.ClearToEmpty();
+}
+inline const std::string& User::tg_id() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:User.tg_id)
+  return _internal_tg_id();
+}
+template <typename Arg_, typename... Args_>
+inline PROTOBUF_ALWAYS_INLINE void User::set_tg_id(Arg_&& arg,
+                                                     Args_... args) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ;
+  _impl_.tg_id_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:User.tg_id)
+}
+inline std::string* User::mutable_tg_id() ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  std::string* _s = _internal_mutable_tg_id();
+  // @@protoc_insertion_point(field_mutable:User.tg_id)
+  return _s;
+}
+inline const std::string& User::_internal_tg_id() const {
+  PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
+  return _impl_.tg_id_.Get();
+}
+inline void User::_internal_set_tg_id(const std::string& value) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ;
+  _impl_.tg_id_.Set(value, GetArena());
+}
+inline std::string* User::_internal_mutable_tg_id() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ;
+  return _impl_.tg_id_.Mutable( GetArena());
+}
+inline std::string* User::release_tg_id() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  // @@protoc_insertion_point(field_release:User.tg_id)
+  return _impl_.tg_id_.Release();
+}
+inline void User::set_allocated_tg_id(std::string* value) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_.tg_id_.SetAllocated(value, GetArena());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        if (_impl_.tg_id_.IsDefault()) {
+          _impl_.tg_id_.Set("", GetArena());
+        }
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:User.tg_id)
 }
 
 #ifdef __GNUC__

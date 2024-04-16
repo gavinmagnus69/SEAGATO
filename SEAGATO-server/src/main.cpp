@@ -16,8 +16,11 @@ void to_bin(Entity::Track& ent)
 
 int main()
 {
+    //test port c++ 9999
+    //python port 2888
+    //INIT ORDER: YACONTROLLER TGCONTROLLER SERVERCONTROLLER
     Service::Interactor server(new Controller::YaController(
-        new Client(grpc::CreateChannel("localhost:9999", grpc::InsecureChannelCredentials()))),
+        new Client(grpc::CreateChannel("localhost:2888", grpc::InsecureChannelCredentials()))),
         new Controller::YaController(
         new Client(grpc::CreateChannel("localhost:9998", grpc::InsecureChannelCredentials()))),
         new Controller::ServerController()

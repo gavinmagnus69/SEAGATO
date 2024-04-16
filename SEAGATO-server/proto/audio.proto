@@ -20,13 +20,6 @@ message Track
     string song_id = 3;
 }
 
-message Tracks
-{
-    repeated Track tracks = 1;
-}
-
-
-
 message Request_list
 {
     bool req = 1;
@@ -38,6 +31,11 @@ message Tracks_list
 }
 
 
+message User{
+    string yandex_token = 1;
+    string tg_id = 2;
+}
+
 
 service AudioServices
 {
@@ -45,9 +43,8 @@ service AudioServices
 
     rpc sendTrackList(Request_list) returns (Tracks_list){}
 
-    rpc sendTracks(Tracks_list) returns(Tracks){}
-
     rpc sendTrackStream(Tracks_list) returns(stream Track){}
 
+    rpc sendTracksTest(User) returns(stream Track){}
 }
 

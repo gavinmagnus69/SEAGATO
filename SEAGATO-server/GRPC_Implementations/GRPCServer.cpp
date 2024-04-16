@@ -17,6 +17,10 @@ void GRPCServer::set_tgcontroller(std::shared_ptr<Interface::IController> ycntrl
     tg_controller = ycntrl;
 }
 
+
+
+
+//SEND SINGLE TRACK TO CLIENT
 ::grpc::Status GRPCServer::sendAudio(::grpc::ServerContext* context, const ::Request* request, ::Audio* response)
 {
     std::cout << "requested\n";
@@ -28,6 +32,9 @@ void GRPCServer::set_tgcontroller(std::shared_ptr<Interface::IController> ycntrl
 }
 
 
+
+
+//TODO стоит заглушка (стоит задуматься)
 ::grpc::Status GRPCServer::sendTrackList(::grpc::ServerContext* context, const ::Request_list* request, ::Tracks_list* response)
 {
 
@@ -39,28 +46,12 @@ void GRPCServer::set_tgcontroller(std::shared_ptr<Interface::IController> ycntrl
 }
 
 
-::grpc::Status GRPCServer::sendTracks(::grpc::ServerContext* context, const ::Tracks_list* request, ::Tracks* response)
-{
-    std::cout << "sendTracks called\n";
-    Entity::User usr;
-    for(auto track_name : request->tracks_names())
-    {
-        std::cout << track_name << '\n';
-        Entity::Track trc = ya_controller->fetch_track(track_name, usr);
-        //std::cout << trc.get_track_bytes_len() << '\n';
-        ::Track tmp_track;
-        tmp_track.set_track_name(trc.get_track_name());
-        tmp_track.set_data(trc.get_track_bytes(), trc.get_track_bytes_len());
-        tmp_track.set_song_id(trc.get_track_name());
-        response->mutable_tracks()->Add(std::move(tmp_track));
-    }
 
-    return grpc::Status::OK;
-}
+//THIS FUNCTION SENDS TRACKS FROM SERVICES TO CLIENT
 
   ::grpc::Status GRPCServer::sendTrackStream(::grpc::ServerContext* context, const ::Tracks_list* request, ::grpc::ServerWriter< ::Track>* writer)
   {
-    std::cout << "sendTracksStream called\n";
+    //std::cout << "sendTracksStream called\n";
 
     std::vector<::Track> tracks;
     Entity::User usr;
@@ -68,9 +59,8 @@ void GRPCServer::set_tgcontroller(std::shared_ptr<Interface::IController> ycntrl
     for(const auto& track_name : request->tracks_names())
     {
 
-        std::cout << track_name << "\n";
+        //std::cout << track_name << "\n";
         Entity::Track trc = ya_controller->fetch_track(track_name, usr);
-
         ::Track proto_track;
         proto_track.set_track_name(trc.get_track_name());
         proto_track.set_data(trc.get_track_bytes(), trc.get_track_bytes_len());

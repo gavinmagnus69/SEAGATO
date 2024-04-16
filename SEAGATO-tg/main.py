@@ -1,7 +1,7 @@
 import telebot
 import os
 import bot_token as bp
-import mutagen
+
 
 bot = telebot.TeleBot(bp.token)
 
@@ -29,3 +29,6 @@ def default_reply(message):
     bot.send_photo(message.chat.id, file)
 
 bot.polling(none_stop = True)
+
+print("b3bra")
+
