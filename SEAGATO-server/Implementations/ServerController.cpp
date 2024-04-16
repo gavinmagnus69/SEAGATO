@@ -4,11 +4,13 @@
 #include <grpcpp/security/server_credentials.h>
 #include <memory>
 
+
+//STARTS SERVER MAIN FUNCTION
 int Controller::ServerController::start()
 {
     std::cout << "start server\n";
     
-    
+
     grpc::ServerBuilder builder;
     builder.AddListeningPort("localhost:1488", grpc::InsecureServerCredentials());
     builder.RegisterService(&this->AudioImpl);
@@ -17,7 +19,7 @@ int Controller::ServerController::start()
     
     std::cout << "server dropped\n";
 }
-//TODO
+//TODO need?
 int Controller::ServerController::stop()
 {
     return 0;
@@ -36,6 +38,8 @@ void Controller::ServerController::set_ycontroller(std::shared_ptr<Interface::IC
 {
     this->AudioImpl.set_ycontroller(contrl);
 }
+
+//TODO заглушка (хз что с этим делать)
 Entity::User Controller::ServerController::send_track(Entity::Track& track)
 {
     return Entity::User();

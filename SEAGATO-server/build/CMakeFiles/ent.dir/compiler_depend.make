@@ -463,6 +463,7 @@ CMakeFiles/ent.dir/GRPC_Implementations/GRPCServer.cpp.o: /home/roman/Desktop/pr
   /usr/include/c++/13.2.1/bits/fs_fwd.h \
   /usr/include/c++/13.2.1/bits/fs_ops.h \
   /usr/include/c++/13.2.1/bits/fs_path.h \
+  /usr/include/c++/13.2.1/bits/fstream.tcc \
   /usr/include/c++/13.2.1/bits/functexcept.h \
   /usr/include/c++/13.2.1/bits/functional_hash.h \
   /usr/include/c++/13.2.1/bits/hash_bytes.h \
@@ -572,6 +573,7 @@ CMakeFiles/ent.dir/GRPC_Implementations/GRPCServer.cpp.o: /home/roman/Desktop/pr
   /usr/include/c++/13.2.1/ext/type_traits.h \
   /usr/include/c++/13.2.1/filesystem \
   /usr/include/c++/13.2.1/forward_list \
+  /usr/include/c++/13.2.1/fstream \
   /usr/include/c++/13.2.1/functional \
   /usr/include/c++/13.2.1/initializer_list \
   /usr/include/c++/13.2.1/iomanip \
@@ -625,8 +627,10 @@ CMakeFiles/ent.dir/GRPC_Implementations/GRPCServer.cpp.o: /home/roman/Desktop/pr
   /usr/include/c++/13.2.1/variant \
   /usr/include/c++/13.2.1/vector \
   /usr/include/c++/13.2.1/x86_64-pc-linux-gnu/bits/atomic_word.h \
+  /usr/include/c++/13.2.1/x86_64-pc-linux-gnu/bits/basic_file.h \
   /usr/include/c++/13.2.1/x86_64-pc-linux-gnu/bits/c++allocator.h \
   /usr/include/c++/13.2.1/x86_64-pc-linux-gnu/bits/c++config.h \
+  /usr/include/c++/13.2.1/x86_64-pc-linux-gnu/bits/c++io.h \
   /usr/include/c++/13.2.1/x86_64-pc-linux-gnu/bits/c++locale.h \
   /usr/include/c++/13.2.1/x86_64-pc-linux-gnu/bits/cpu_defines.h \
   /usr/include/c++/13.2.1/x86_64-pc-linux-gnu/bits/ctype_base.h \
@@ -2290,6 +2294,7 @@ CMakeFiles/ent.dir/Implementations/TgController.cpp.o: /home/roman/Desktop/proje
   /usr/include/stdc-predef.h
 
 CMakeFiles/ent.dir/Implementations/YaController.cpp.o: /home/roman/Desktop/project/SEAGATO/SEAGATO-server/Implementations/YaController.cpp \
+  /home/roman/Desktop/project/SEAGATO/SEAGATO-server/Entities/Track.h \
   /home/roman/Desktop/project/SEAGATO/SEAGATO-server/Entities/User.h \
   /home/roman/Desktop/project/SEAGATO/SEAGATO-server/Entities/Track.h \
   /home/roman/Desktop/project/SEAGATO/SEAGATO-server/Entities/User.h \
@@ -2413,6 +2418,7 @@ CMakeFiles/ent.dir/Implementations/YaController.cpp.o: /home/roman/Desktop/proje
   /usr/include/c++/13.2.1/bits/shared_ptr_base.h \
   /usr/include/c++/13.2.1/bits/std_abs.h \
   /usr/include/c++/13.2.1/bits/stl_algobase.h \
+  /usr/include/c++/13.2.1/bits/stl_bvector.h \
   /usr/include/c++/13.2.1/bits/stl_construct.h \
   /usr/include/c++/13.2.1/bits/stl_function.h \
   /usr/include/c++/13.2.1/bits/stl_iterator.h \
@@ -2423,6 +2429,7 @@ CMakeFiles/ent.dir/Implementations/YaController.cpp.o: /home/roman/Desktop/proje
   /usr/include/c++/13.2.1/bits/stl_raw_storage_iter.h \
   /usr/include/c++/13.2.1/bits/stl_tempbuf.h \
   /usr/include/c++/13.2.1/bits/stl_uninitialized.h \
+  /usr/include/c++/13.2.1/bits/stl_vector.h \
   /usr/include/c++/13.2.1/bits/streambuf.tcc \
   /usr/include/c++/13.2.1/bits/streambuf_iterator.h \
   /usr/include/c++/13.2.1/bits/string_view.tcc \
@@ -2431,6 +2438,7 @@ CMakeFiles/ent.dir/Implementations/YaController.cpp.o: /home/roman/Desktop/proje
   /usr/include/c++/13.2.1/bits/uses_allocator.h \
   /usr/include/c++/13.2.1/bits/uses_allocator_args.h \
   /usr/include/c++/13.2.1/bits/utility.h \
+  /usr/include/c++/13.2.1/bits/vector.tcc \
   /usr/include/c++/13.2.1/cctype \
   /usr/include/c++/13.2.1/cerrno \
   /usr/include/c++/13.2.1/clocale \
@@ -2470,6 +2478,7 @@ CMakeFiles/ent.dir/Implementations/YaController.cpp.o: /home/roman/Desktop/proje
   /usr/include/c++/13.2.1/tuple \
   /usr/include/c++/13.2.1/type_traits \
   /usr/include/c++/13.2.1/typeinfo \
+  /usr/include/c++/13.2.1/vector \
   /usr/include/c++/13.2.1/x86_64-pc-linux-gnu/bits/atomic_word.h \
   /usr/include/c++/13.2.1/x86_64-pc-linux-gnu/bits/c++allocator.h \
   /usr/include/c++/13.2.1/x86_64-pc-linux-gnu/bits/c++config.h \
@@ -2766,8 +2775,6 @@ CMakeFiles/ent.dir/Services/Interactor.cpp.o: /home/roman/Desktop/project/SEAGAT
 
 /usr/local/include/grpcpp/support/server_callback.h:
 
-/usr/local/include/grpcpp/support/message_allocator.h:
-
 /usr/local/include/grpcpp/support/async_unary_call.h:
 
 /usr/local/include/grpcpp/support/async_stream.h:
@@ -2884,6 +2891,14 @@ CMakeFiles/ent.dir/Services/Interactor.cpp.o: /home/roman/Desktop/project/SEAGAT
 
 /usr/local/include/google/protobuf/wire_format_lite.h:
 
+/usr/local/include/google/protobuf/util/json_util.h:
+
+/home/roman/Desktop/project/SEAGATO/SEAGATO-server/Implementations/ServerController.h:
+
+/usr/local/include/google/protobuf/type.pb.h:
+
+/usr/local/include/google/protobuf/thread_safe_arena.h:
+
 /usr/include/c++/13.2.1/x86_64-pc-linux-gnu/bits/error_constants.h:
 
 /usr/include/bits/wordsize.h:
@@ -2989,8 +3004,6 @@ CMakeFiles/ent.dir/Services/Interactor.cpp.o: /home/roman/Desktop/project/SEAGAT
 /usr/include/c++/13.2.1/bits/forward_list.tcc:
 
 /usr/include/stdc-predef.h:
-
-/usr/include/c++/13.2.1/bits/stl_deque.h:
 
 /usr/local/include/grpcpp/impl/status.h:
 
@@ -3123,10 +3136,6 @@ CMakeFiles/ent.dir/Services/Interactor.cpp.o: /home/roman/Desktop/project/SEAGAT
 /usr/include/ctype.h:
 
 /usr/include/bits/waitflags.h:
-
-/home/roman/Desktop/project/SEAGATO/SEAGATO-server/Implementations/ServerController.h:
-
-/usr/local/include/google/protobuf/type.pb.h:
 
 /usr/include/c++/13.2.1/bits/stl_pair.h:
 
@@ -3474,6 +3483,8 @@ proto/audio.grpc.pb.h:
 
 /usr/include/c++/13.2.1/tr1/ell_integral.tcc:
 
+/usr/include/c++/13.2.1/fstream:
+
 /usr/local/include/absl/strings/has_ostream_operator.h:
 
 /usr/include/c++/13.2.1/bits/stl_algobase.h:
@@ -3498,10 +3509,6 @@ proto/audio.grpc.pb.h:
 
 /usr/include/bits/setjmp.h:
 
-/usr/include/bits/time.h:
-
-/usr/include/c++/13.2.1/bits/exception.h:
-
 /usr/include/c++/13.2.1/debug/assertions.h:
 
 /usr/include/c++/13.2.1/bits/string_view.tcc:
@@ -3509,6 +3516,12 @@ proto/audio.grpc.pb.h:
 /usr/local/include/google/protobuf/arenaz_sampler.h:
 
 /usr/include/c++/13.2.1/bits/stringfwd.h:
+
+/usr/include/bits/time.h:
+
+/usr/include/c++/13.2.1/bits/exception.h:
+
+/usr/include/c++/13.2.1/bits/fstream.tcc:
 
 /usr/local/include/grpcpp/support/proto_buffer_writer.h:
 
@@ -3536,6 +3549,8 @@ proto/audio.grpc.pb.h:
 
 /usr/include/c++/13.2.1/cstdio:
 
+/usr/include/c++/13.2.1/bits/stl_deque.h:
+
 /usr/local/include/grpcpp/support/byte_buffer.h:
 
 /usr/local/include/google/protobuf/util/type_resolver_util.h:
@@ -3557,6 +3572,10 @@ proto/audio.grpc.pb.h:
 /usr/local/include/absl/algorithm/container.h:
 
 /usr/include/c++/13.2.1/bits/stl_relops.h:
+
+/usr/local/include/grpcpp/support/message_allocator.h:
+
+/usr/include/c++/13.2.1/x86_64-pc-linux-gnu/bits/c++io.h:
 
 /usr/include/c++/13.2.1/bits/stl_set.h:
 
@@ -3720,6 +3739,10 @@ proto/audio.grpc.pb.h:
 
 /usr/include/c++/13.2.1/tr1/exp_integral.tcc:
 
+/usr/local/include/google/protobuf/generated_message_util.h:
+
+/usr/include/c++/13.2.1/tr1/gamma.tcc:
+
 /usr/include/c++/13.2.1/tr1/legendre_function.tcc:
 
 /usr/include/c++/13.2.1/tr1/modified_bessel_func.tcc:
@@ -3761,6 +3784,8 @@ proto/audio.grpc.pb.h:
 /usr/include/bits/uio_lim.h:
 
 /usr/include/c++/13.2.1/variant:
+
+/usr/include/c++/13.2.1/x86_64-pc-linux-gnu/bits/basic_file.h:
 
 /usr/include/c++/13.2.1/x86_64-pc-linux-gnu/bits/time_members.h:
 
@@ -3861,8 +3886,6 @@ proto/audio.pb.h:
 /usr/local/include/absl/strings/internal/str_format/checker.h:
 
 /usr/local/include/absl/container/fixed_array.h:
-
-/usr/local/include/google/protobuf/util/json_util.h:
 
 /usr/local/include/grpcpp/support/callback_common.h:
 
@@ -4030,10 +4053,6 @@ proto/audio.pb.h:
 
 /usr/local/include/google/protobuf/generated_enum_util.h:
 
-/usr/include/c++/13.2.1/tr1/gamma.tcc:
-
-/usr/local/include/google/protobuf/generated_message_util.h:
-
 /usr/local/include/google/protobuf/has_bits.h:
 
 /usr/local/include/google/protobuf/implicit_weak_message.h:
@@ -4041,6 +4060,14 @@ proto/audio.pb.h:
 /usr/include/c++/13.2.1/bits/stl_numeric.h:
 
 /usr/local/include/google/protobuf/io/zero_copy_stream.h:
+
+/usr/local/include/grpcpp/impl/codegen/rpc_service_method.h:
+
+/usr/local/include/google/protobuf/unknown_field_set.h:
+
+/usr/local/include/absl/log/internal/check_impl.h:
+
+/usr/local/include/google/protobuf/parse_context.h:
 
 /usr/include/bits/flt-eval-method.h:
 
@@ -4057,13 +4084,3 @@ proto/audio.pb.h:
 /usr/local/include/google/protobuf/string_block.h:
 
 /usr/local/include/google/protobuf/stubs/common.h:
-
-/usr/local/include/google/protobuf/thread_safe_arena.h:
-
-/usr/local/include/grpcpp/impl/codegen/rpc_service_method.h:
-
-/usr/local/include/absl/log/internal/check_impl.h:
-
-/usr/local/include/google/protobuf/parse_context.h:
-
-/usr/local/include/google/protobuf/unknown_field_set.h:

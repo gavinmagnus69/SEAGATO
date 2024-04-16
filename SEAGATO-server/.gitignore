@@ -1,2 +1,5 @@
 .cache/
 .vscode/
+build/server-sg
+build/libent.a
+build/libprotolib.a

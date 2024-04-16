@@ -58,6 +58,9 @@ extern const ::google::protobuf::internal::DescriptorTable
 class Audio;
 struct AudioDefaultTypeInternal;
 extern AudioDefaultTypeInternal _Audio_default_instance_;
+class Batch;
+struct BatchDefaultTypeInternal;
+extern BatchDefaultTypeInternal _Batch_default_instance_;
 class Request;
 struct RequestDefaultTypeInternal;
 extern RequestDefaultTypeInternal _Request_default_instance_;
@@ -1049,6 +1052,217 @@ class Request final :
   friend struct ::TableStruct_proto_2faudio_2eproto;
 };// -------------------------------------------------------------------
 
+class Batch final :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:Batch) */ {
+ public:
+  inline Batch() : Batch(nullptr) {}
+  ~Batch() override;
+  template<typename = void>
+  explicit PROTOBUF_CONSTEXPR Batch(::google::protobuf::internal::ConstantInitialized);
+
+  inline Batch(const Batch& from)
+      : Batch(nullptr, from) {}
+  Batch(Batch&& from) noexcept
+    : Batch() {
+    *this = ::std::move(from);
+  }
+
+  inline Batch& operator=(const Batch& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline Batch& operator=(Batch&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetArena() == from.GetArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance);
+  }
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields()
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::google::protobuf::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::google::protobuf::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const Batch& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const Batch* internal_default_instance() {
+    return reinterpret_cast<const Batch*>(
+               &_Batch_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    6;
+
+  friend void swap(Batch& a, Batch& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(Batch* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetArena() != nullptr &&
+        GetArena() == other->GetArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetArena() == other->GetArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::google::protobuf::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(Batch* other) {
+    if (other == this) return;
+    ABSL_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  Batch* New(::google::protobuf::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<Batch>(arena);
+  }
+  using ::google::protobuf::Message::CopyFrom;
+  void CopyFrom(const Batch& from);
+  using ::google::protobuf::Message::MergeFrom;
+  void MergeFrom( const Batch& from) {
+    Batch::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  ::size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::google::protobuf::internal::ParseContext* ctx) final;
+  ::uint8_t* _InternalSerialize(
+      ::uint8_t* target, ::google::protobuf::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const { return _impl_._cached_size_.Get(); }
+
+  private:
+  ::google::protobuf::internal::CachedSize* AccessCachedSize() const final;
+  void SharedCtor(::google::protobuf::Arena* arena);
+  void SharedDtor();
+  void InternalSwap(Batch* other);
+
+  private:
+  friend class ::google::protobuf::internal::AnyMetadata;
+  static ::absl::string_view FullMessageName() {
+    return "Batch";
+  }
+  protected:
+  explicit Batch(::google::protobuf::Arena* arena);
+  Batch(::google::protobuf::Arena* arena, const Batch& from);
+  public:
+
+  static const ClassData _class_data_;
+  const ::google::protobuf::Message::ClassData*GetClassData() const final;
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kTrackNameFieldNumber = 1,
+    kDataFieldNumber = 2,
+    kCodeFieldNumber = 3,
+  };
+  // string track_name = 1;
+  void clear_track_name() ;
+  const std::string& track_name() const;
+  template <typename Arg_ = const std::string&, typename... Args_>
+  void set_track_name(Arg_&& arg, Args_... args);
+  std::string* mutable_track_name();
+  PROTOBUF_NODISCARD std::string* release_track_name();
+  void set_allocated_track_name(std::string* value);
+
+  private:
+  const std::string& _internal_track_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_track_name(
+      const std::string& value);
+  std::string* _internal_mutable_track_name();
+
+  public:
+  // bytes data = 2;
+  void clear_data() ;
+  const std::string& data() const;
+  template <typename Arg_ = const std::string&, typename... Args_>
+  void set_data(Arg_&& arg, Args_... args);
+  std::string* mutable_data();
+  PROTOBUF_NODISCARD std::string* release_data();
+  void set_allocated_data(std::string* value);
+
+  private:
+  const std::string& _internal_data() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_data(
+      const std::string& value);
+  std::string* _internal_mutable_data();
+
+  public:
+  // int32 code = 3;
+  void clear_code() ;
+  ::int32_t code() const;
+  void set_code(::int32_t value);
+
+  private:
+  ::int32_t _internal_code() const;
+  void _internal_set_code(::int32_t value);
+
+  public:
+  // @@protoc_insertion_point(class_scope:Batch)
+ private:
+  class _Internal;
+
+  friend class ::google::protobuf::internal::TcParser;
+  static const ::google::protobuf::internal::TcParseTable<
+      2, 3, 0,
+      24, 2>
+      _table_;
+  friend class ::google::protobuf::MessageLite;
+  friend class ::google::protobuf::Arena;
+  template <typename T>
+  friend class ::google::protobuf::Arena::InternalHelper;
+  using InternalArenaConstructable_ = void;
+  using DestructorSkippable_ = void;
+  struct Impl_ {
+
+        inline explicit constexpr Impl_(
+            ::google::protobuf::internal::ConstantInitialized) noexcept;
+        inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
+                              ::google::protobuf::Arena* arena);
+        inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
+                              ::google::protobuf::Arena* arena, const Impl_& from);
+    ::google::protobuf::internal::ArenaStringPtr track_name_;
+    ::google::protobuf::internal::ArenaStringPtr data_;
+    ::int32_t code_;
+    mutable ::google::protobuf::internal::CachedSize _cached_size_;
+    PROTOBUF_TSAN_DECLARE_MEMBER
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_proto_2faudio_2eproto;
+};// -------------------------------------------------------------------
+
 class Audio final :
     public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:Audio) */ {
  public:
@@ -1759,6 +1973,139 @@ inline void User::set_allocated_tg_id(std::string* value) {
         }
   #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   // @@protoc_insertion_point(field_set_allocated:User.tg_id)
+}
+
+// -------------------------------------------------------------------
+
+// Batch
+
+// string track_name = 1;
+inline void Batch::clear_track_name() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_.track_name_.ClearToEmpty();
+}
+inline const std::string& Batch::track_name() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:Batch.track_name)
+  return _internal_track_name();
+}
+template <typename Arg_, typename... Args_>
+inline PROTOBUF_ALWAYS_INLINE void Batch::set_track_name(Arg_&& arg,
+                                                     Args_... args) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ;
+  _impl_.track_name_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:Batch.track_name)
+}
+inline std::string* Batch::mutable_track_name() ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  std::string* _s = _internal_mutable_track_name();
+  // @@protoc_insertion_point(field_mutable:Batch.track_name)
+  return _s;
+}
+inline const std::string& Batch::_internal_track_name() const {
+  PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
+  return _impl_.track_name_.Get();
+}
+inline void Batch::_internal_set_track_name(const std::string& value) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ;
+  _impl_.track_name_.Set(value, GetArena());
+}
+inline std::string* Batch::_internal_mutable_track_name() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ;
+  return _impl_.track_name_.Mutable( GetArena());
+}
+inline std::string* Batch::release_track_name() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  // @@protoc_insertion_point(field_release:Batch.track_name)
+  return _impl_.track_name_.Release();
+}
+inline void Batch::set_allocated_track_name(std::string* value) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_.track_name_.SetAllocated(value, GetArena());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        if (_impl_.track_name_.IsDefault()) {
+          _impl_.track_name_.Set("", GetArena());
+        }
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:Batch.track_name)
+}
+
+// bytes data = 2;
+inline void Batch::clear_data() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_.data_.ClearToEmpty();
+}
+inline const std::string& Batch::data() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:Batch.data)
+  return _internal_data();
+}
+template <typename Arg_, typename... Args_>
+inline PROTOBUF_ALWAYS_INLINE void Batch::set_data(Arg_&& arg,
+                                                     Args_... args) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ;
+  _impl_.data_.SetBytes(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:Batch.data)
+}
+inline std::string* Batch::mutable_data() ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  std::string* _s = _internal_mutable_data();
+  // @@protoc_insertion_point(field_mutable:Batch.data)
+  return _s;
+}
+inline const std::string& Batch::_internal_data() const {
+  PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
+  return _impl_.data_.Get();
+}
+inline void Batch::_internal_set_data(const std::string& value) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ;
+  _impl_.data_.Set(value, GetArena());
+}
+inline std::string* Batch::_internal_mutable_data() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ;
+  return _impl_.data_.Mutable( GetArena());
+}
+inline std::string* Batch::release_data() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  // @@protoc_insertion_point(field_release:Batch.data)
+  return _impl_.data_.Release();
+}
+inline void Batch::set_allocated_data(std::string* value) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_.data_.SetAllocated(value, GetArena());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        if (_impl_.data_.IsDefault()) {
+          _impl_.data_.Set("", GetArena());
+        }
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:Batch.data)
+}
+
+// int32 code = 3;
+inline void Batch::clear_code() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_.code_ = 0;
+}
+inline ::int32_t Batch::code() const {
+  // @@protoc_insertion_point(field_get:Batch.code)
+  return _internal_code();
+}
+inline void Batch::set_code(::int32_t value) {
+  _internal_set_code(value);
+  // @@protoc_insertion_point(field_set:Batch.code)
+}
+inline ::int32_t Batch::_internal_code() const {
+  PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
+  return _impl_.code_;
+}
+inline void Batch::_internal_set_code(::int32_t value) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ;
+  _impl_.code_ = value;
 }
 
 #ifdef __GNUC__

@@ -25,6 +25,7 @@ static const char* AudioServices_method_names[] = {
   "/AudioServices/sendTrackList",
   "/AudioServices/sendTrackStream",
   "/AudioServices/sendTracksTest",
+  "/AudioServices/SendTracksButched",
 };
 
 std::unique_ptr< AudioServices::Stub> AudioServices::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
@@ -38,6 +39,7 @@ AudioServices::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& chan
   , rpcmethod_sendTrackList_(AudioServices_method_names[1], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_sendTrackStream_(AudioServices_method_names[2], options.suffix_for_stats(),::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
   , rpcmethod_sendTracksTest_(AudioServices_method_names[3], options.suffix_for_stats(),::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
+  , rpcmethod_SendTracksButched_(AudioServices_method_names[4], options.suffix_for_stats(),::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
   {}
 
 ::grpc::Status AudioServices::Stub::sendAudio(::grpc::ClientContext* context, const ::Request& request, ::Audio* response) {
@@ -118,6 +120,22 @@ void AudioServices::Stub::async::sendTracksTest(::grpc::ClientContext* context, 
   return ::grpc::internal::ClientAsyncReaderFactory< ::Track>::Create(channel_.get(), cq, rpcmethod_sendTracksTest_, context, request, false, nullptr);
 }
 
+::grpc::ClientReader< ::Batch>* AudioServices::Stub::SendTracksButchedRaw(::grpc::ClientContext* context, const ::Tracks_list& request) {
+  return ::grpc::internal::ClientReaderFactory< ::Batch>::Create(channel_.get(), rpcmethod_SendTracksButched_, context, request);
+}
+
+void AudioServices::Stub::async::SendTracksButched(::grpc::ClientContext* context, const ::Tracks_list* request, ::grpc::ClientReadReactor< ::Batch>* reactor) {
+  ::grpc::internal::ClientCallbackReaderFactory< ::Batch>::Create(stub_->channel_.get(), stub_->rpcmethod_SendTracksButched_, context, request, reactor);
+}
+
+::grpc::ClientAsyncReader< ::Batch>* AudioServices::Stub::AsyncSendTracksButchedRaw(::grpc::ClientContext* context, const ::Tracks_list& request, ::grpc::CompletionQueue* cq, void* tag) {
+  return ::grpc::internal::ClientAsyncReaderFactory< ::Batch>::Create(channel_.get(), cq, rpcmethod_SendTracksButched_, context, request, true, tag);
+}
+
+::grpc::ClientAsyncReader< ::Batch>* AudioServices::Stub::PrepareAsyncSendTracksButchedRaw(::grpc::ClientContext* context, const ::Tracks_list& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncReaderFactory< ::Batch>::Create(channel_.get(), cq, rpcmethod_SendTracksButched_, context, request, false, nullptr);
+}
+
 AudioServices::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       AudioServices_method_names[0],
@@ -159,6 +177,16 @@ AudioServices::Service::Service() {
              ::grpc::ServerWriter<::Track>* writer) {
                return service->sendTracksTest(ctx, req, writer);
              }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      AudioServices_method_names[4],
+      ::grpc::internal::RpcMethod::SERVER_STREAMING,
+      new ::grpc::internal::ServerStreamingHandler< AudioServices::Service, ::Tracks_list, ::Batch>(
+          [](AudioServices::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::Tracks_list* req,
+             ::grpc::ServerWriter<::Batch>* writer) {
+               return service->SendTracksButched(ctx, req, writer);
+             }, this)));
 }
 
 AudioServices::Service::~Service() {
@@ -186,6 +214,13 @@ AudioServices::Service::~Service() {
 }
 
 ::grpc::Status AudioServices::Service::sendTracksTest(::grpc::ServerContext* context, const ::User* request, ::grpc::ServerWriter< ::Track>* writer) {
+  (void) context;
+  (void) request;
+  (void) writer;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status AudioServices::Service::SendTracksButched(::grpc::ServerContext* context, const ::Tracks_list* request, ::grpc::ServerWriter< ::Batch>* writer) {
   (void) context;
   (void) request;
   (void) writer;

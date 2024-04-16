@@ -14,7 +14,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0b\x61udio.proto\"\x1a\n\x07Request\x12\x0f\n\x07song_id\x18\x01 \x01(\t\"\x15\n\x05\x41udio\x12\x0c\n\x04\x64\x61ta\x18\x01 \x01(\x0c\":\n\x05Track\x12\x12\n\ntrack_name\x18\x01 \x01(\t\x12\x0c\n\x04\x64\x61ta\x18\x02 \x01(\x0c\x12\x0f\n\x07song_id\x18\x03 \x01(\t\"\x1b\n\x0cRequest_list\x12\x0b\n\x03req\x18\x01 \x01(\x08\"#\n\x0bTracks_list\x12\x14\n\x0ctracks_names\x18\x01 \x03(\t\"+\n\x04User\x12\x14\n\x0cyandex_token\x18\x01 \x01(\t\x12\r\n\x05tg_id\x18\x02 \x01(\t\"\x14\n\x05Hello\x12\x0b\n\x03msg\x18\x01 \x01(\t\"\x15\n\x06\x41snwer\x12\x0b\n\x03\x61ns\x18\x01 \x01(\t2\xd2\x01\n\rAudioServices\x12\x1f\n\tsendAudio\x12\x08.Request\x1a\x06.Audio\"\x00\x12.\n\rsendTrackList\x12\r.Request_list\x1a\x0c.Tracks_list\"\x00\x12+\n\x0fsendTrackStream\x12\x0c.Tracks_list\x1a\x06.Track\"\x00\x30\x01\x12#\n\x0esendTracksTest\x12\x05.User\x1a\x06.Track\"\x00\x30\x01\x12\x1e\n\tsendHello\x12\x06.Hello\x1a\x07.Asnwer\"\x00\x62\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0b\x61udio.proto\"\x1a\n\x07Request\x12\x0f\n\x07song_id\x18\x01 \x01(\t\"\x15\n\x05\x41udio\x12\x0c\n\x04\x64\x61ta\x18\x01 \x01(\x0c\":\n\x05Track\x12\x12\n\ntrack_name\x18\x01 \x01(\t\x12\x0c\n\x04\x64\x61ta\x18\x02 \x01(\x0c\x12\x0f\n\x07song_id\x18\x03 \x01(\t\"\x1b\n\x0cRequest_list\x12\x0b\n\x03req\x18\x01 \x01(\x08\"#\n\x0bTracks_list\x12\x14\n\x0ctracks_names\x18\x01 \x03(\t\"+\n\x04User\x12\x14\n\x0cyandex_token\x18\x01 \x01(\t\x12\r\n\x05tg_id\x18\x02 \x01(\t\"7\n\x05\x42\x61tch\x12\x12\n\ntrack_name\x18\x01 \x01(\t\x12\x0c\n\x04\x64\x61ta\x18\x02 \x01(\x0c\x12\x0c\n\x04\x63ode\x18\x03 \x01(\x05\x32\xba\x01\n\rAudioServices\x12\x1f\n\tsendAudio\x12\x08.Request\x1a\x06.Audio\"\x00\x12.\n\rsendTrackList\x12\r.Request_list\x1a\x0c.Tracks_list\"\x00\x12+\n\x0fsendTrackStream\x12\x0c.Tracks_list\x1a\x06.Track\"\x00\x30\x01\x12+\n\x11SendTracksButched\x12\x0c.Tracks_list\x1a\x06.Batch0\x01\x62\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -33,10 +33,8 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _globals['_TRACKS_LIST']._serialized_end=190
   _globals['_USER']._serialized_start=192
   _globals['_USER']._serialized_end=235
-  _globals['_HELLO']._serialized_start=237
-  _globals['_HELLO']._serialized_end=257
-  _globals['_ASNWER']._serialized_start=259
-  _globals['_ASNWER']._serialized_end=280
-  _globals['_AUDIOSERVICES']._serialized_start=283
-  _globals['_AUDIOSERVICES']._serialized_end=493
+  _globals['_BATCH']._serialized_start=237
+  _globals['_BATCH']._serialized_end=292
+  _globals['_AUDIOSERVICES']._serialized_start=295
+  _globals['_AUDIOSERVICES']._serialized_end=481
 # @@protoc_insertion_point(module_scope)

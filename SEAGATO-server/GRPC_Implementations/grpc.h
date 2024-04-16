@@ -15,7 +15,7 @@ using grpc::ClientContext;
 using grpc::Status;
 
 
-
+// CLASS NAME????????????
 class Client : public Interface::IClient 
 {
     private:
@@ -23,8 +23,11 @@ class Client : public Interface::IClient
     public:
         Client(std::shared_ptr<Channel>);
     public:
-        std::string sendData(std::string song_id, Entity::User& usr) override;  
-        //std::list<Entity::Track> sendTracks()  
+        std::string sendData(std::string song_id, Entity::User& usr) override;
+
+
+        //batches!!!!!!!!!
+        void getTracksByStream(const std::vector<std::string>& request, std::vector<std::string>& response) override;  
 };
 
 

@@ -21,6 +21,8 @@ class GRPCServer : public AudioServices::Service
         ::grpc::Status sendAudio(::grpc::ServerContext* context, const ::Request* request, ::Audio* response);
         ::grpc::Status sendTrackList(::grpc::ServerContext* context, const ::Request_list* request, ::Tracks_list* response);
         ::grpc::Status sendTrackStream(::grpc::ServerContext* context, const ::Tracks_list* request, ::grpc::ServerWriter< ::Track>* writer);
+        ::grpc::Status SendTracksButched(::grpc::ServerContext* context, const ::Tracks_list* request, ::grpc::ServerWriter< ::Batch>* writer);
+
 }; 
 
 

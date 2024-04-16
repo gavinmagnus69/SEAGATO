@@ -131,6 +131,31 @@ struct RequestDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
     PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 RequestDefaultTypeInternal _Request_default_instance_;
 
+inline constexpr Batch::Impl_::Impl_(
+    ::_pbi::ConstantInitialized) noexcept
+      : track_name_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        data_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        code_{0},
+        _cached_size_{0} {}
+
+template <typename>
+PROTOBUF_CONSTEXPR Batch::Batch(::_pbi::ConstantInitialized)
+    : _impl_(::_pbi::ConstantInitialized()) {}
+struct BatchDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR BatchDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~BatchDefaultTypeInternal() {}
+  union {
+    Batch _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 BatchDefaultTypeInternal _Batch_default_instance_;
+
 inline constexpr Audio::Impl_::Impl_(
     ::_pbi::ConstantInitialized) noexcept
       : data_(
@@ -151,7 +176,7 @@ struct AudioDefaultTypeInternal {
 
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
     PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 AudioDefaultTypeInternal _Audio_default_instance_;
-static ::_pb::Metadata file_level_metadata_proto_2faudio_2eproto[6];
+static ::_pb::Metadata file_level_metadata_proto_2faudio_2eproto[7];
 static constexpr const ::_pb::EnumDescriptor**
     file_level_enum_descriptors_proto_2faudio_2eproto = nullptr;
 static constexpr const ::_pb::ServiceDescriptor**
@@ -215,6 +240,17 @@ const ::uint32_t TableStruct_proto_2faudio_2eproto::offsets[] PROTOBUF_SECTION_V
     ~0u,  // no sizeof(Split)
     PROTOBUF_FIELD_OFFSET(::User, _impl_.yandex_token_),
     PROTOBUF_FIELD_OFFSET(::User, _impl_.tg_id_),
+    ~0u,  // no _has_bits_
+    PROTOBUF_FIELD_OFFSET(::Batch, _internal_metadata_),
+    ~0u,  // no _extensions_
+    ~0u,  // no _oneof_case_
+    ~0u,  // no _weak_field_map_
+    ~0u,  // no _inlined_string_donated_
+    ~0u,  // no _split_
+    ~0u,  // no sizeof(Split)
+    PROTOBUF_FIELD_OFFSET(::Batch, _impl_.track_name_),
+    PROTOBUF_FIELD_OFFSET(::Batch, _impl_.data_),
+    PROTOBUF_FIELD_OFFSET(::Batch, _impl_.code_),
 };
 
 static const ::_pbi::MigrationSchema
@@ -225,6 +261,7 @@ static const ::_pbi::MigrationSchema
         {29, -1, -1, sizeof(::Request_list)},
         {38, -1, -1, sizeof(::Tracks_list)},
         {47, -1, -1, sizeof(::User)},
+        {57, -1, -1, sizeof(::Batch)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
@@ -234,6 +271,7 @@ static const ::_pb::Message* const file_default_instances[] = {
     &::_Request_list_default_instance_._instance,
     &::_Tracks_list_default_instance_._instance,
     &::_User_default_instance_._instance,
+    &::_Batch_default_instance_._instance,
 };
 const char descriptor_table_protodef_proto_2faudio_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
     "\n\021proto/audio.proto\"\032\n\007Request\022\017\n\007song_i"
@@ -242,23 +280,26 @@ const char descriptor_table_protodef_proto_2faudio_2eproto[] PROTOBUF_SECTION_VA
     "g_id\030\003 \001(\t\"\033\n\014Request_list\022\013\n\003req\030\001 \001(\010\""
     "#\n\013Tracks_list\022\024\n\014tracks_names\030\001 \003(\t\"+\n\004"
     "User\022\024\n\014yandex_token\030\001 \001(\t\022\r\n\005tg_id\030\002 \001("
-    "\t2\262\001\n\rAudioServices\022\037\n\tsendAudio\022\010.Reque"
-    "st\032\006.Audio\"\000\022.\n\rsendTrackList\022\r.Request_"
-    "list\032\014.Tracks_list\"\000\022+\n\017sendTrackStream\022"
-    "\014.Tracks_list\032\006.Track\"\0000\001\022#\n\016sendTracksT"
-    "est\022\005.User\032\006.Track\"\0000\001b\006proto3"
+    "\t\"7\n\005Batch\022\022\n\ntrack_name\030\001 \001(\t\022\014\n\004data\030\002"
+    " \001(\014\022\014\n\004code\030\003 \001(\0052\337\001\n\rAudioServices\022\037\n\t"
+    "sendAudio\022\010.Request\032\006.Audio\"\000\022.\n\rsendTra"
+    "ckList\022\r.Request_list\032\014.Tracks_list\"\000\022+\n"
+    "\017sendTrackStream\022\014.Tracks_list\032\006.Track\"\000"
+    "0\001\022#\n\016sendTracksTest\022\005.User\032\006.Track\"\0000\001\022"
+    "+\n\021SendTracksButched\022\014.Tracks_list\032\006.Bat"
+    "ch0\001b\006proto3"
 };
 static ::absl::once_flag descriptor_table_proto_2faudio_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_proto_2faudio_2eproto = {
     false,
     false,
-    430,
+    532,
     descriptor_table_protodef_proto_2faudio_2eproto,
     "proto/audio.proto",
     &descriptor_table_proto_2faudio_2eproto_once,
     nullptr,
     0,
-    6,
+    7,
     schemas,
     file_default_instances,
     TableStruct_proto_2faudio_2eproto::offsets,
@@ -1477,6 +1518,249 @@ void User::InternalSwap(User* PROTOBUF_RESTRICT other) {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_proto_2faudio_2eproto_getter, &descriptor_table_proto_2faudio_2eproto_once,
       file_level_metadata_proto_2faudio_2eproto[5]);
+}
+// ===================================================================
+
+class Batch::_Internal {
+ public:
+};
+
+Batch::Batch(::google::protobuf::Arena* arena)
+    : ::google::protobuf::Message(arena) {
+  SharedCtor(arena);
+  // @@protoc_insertion_point(arena_constructor:Batch)
+}
+inline PROTOBUF_NDEBUG_INLINE Batch::Impl_::Impl_(
+    ::google::protobuf::internal::InternalVisibility visibility, ::google::protobuf::Arena* arena,
+    const Impl_& from)
+      : track_name_(arena, from.track_name_),
+        data_(arena, from.data_),
+        _cached_size_{0} {}
+
+Batch::Batch(
+    ::google::protobuf::Arena* arena,
+    const Batch& from)
+    : ::google::protobuf::Message(arena) {
+  Batch* const _this = this;
+  (void)_this;
+  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
+      from._internal_metadata_);
+  new (&_impl_) Impl_(internal_visibility(), arena, from._impl_);
+  _impl_.code_ = from._impl_.code_;
+
+  // @@protoc_insertion_point(copy_constructor:Batch)
+}
+inline PROTOBUF_NDEBUG_INLINE Batch::Impl_::Impl_(
+    ::google::protobuf::internal::InternalVisibility visibility,
+    ::google::protobuf::Arena* arena)
+      : track_name_(arena),
+        data_(arena),
+        _cached_size_{0} {}
+
+inline void Batch::SharedCtor(::_pb::Arena* arena) {
+  new (&_impl_) Impl_(internal_visibility(), arena);
+  _impl_.code_ = {};
+}
+Batch::~Batch() {
+  // @@protoc_insertion_point(destructor:Batch)
+  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  SharedDtor();
+}
+inline void Batch::SharedDtor() {
+  ABSL_DCHECK(GetArena() == nullptr);
+  _impl_.track_name_.Destroy();
+  _impl_.data_.Destroy();
+  _impl_.~Impl_();
+}
+
+PROTOBUF_NOINLINE void Batch::Clear() {
+// @@protoc_insertion_point(message_clear_start:Batch)
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.track_name_.ClearToEmpty();
+  _impl_.data_.ClearToEmpty();
+  _impl_.code_ = 0;
+  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+}
+
+const char* Batch::_InternalParse(
+    const char* ptr, ::_pbi::ParseContext* ctx) {
+  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
+  return ptr;
+}
+
+
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::_pbi::TcParseTable<2, 3, 0, 24, 2> Batch::_table_ = {
+  {
+    0,  // no _has_bits_
+    0, // no _extensions_
+    3, 24,  // max_field_number, fast_idx_mask
+    offsetof(decltype(_table_), field_lookup_table),
+    4294967288,  // skipmap
+    offsetof(decltype(_table_), field_entries),
+    3,  // num_field_entries
+    0,  // num_aux_entries
+    offsetof(decltype(_table_), field_names),  // no aux_entries
+    &_Batch_default_instance_._instance,
+    ::_pbi::TcParser::GenericFallback,  // fallback
+  }, {{
+    {::_pbi::TcParser::MiniParse, {}},
+    // string track_name = 1;
+    {::_pbi::TcParser::FastUS1,
+     {10, 63, 0, PROTOBUF_FIELD_OFFSET(Batch, _impl_.track_name_)}},
+    // bytes data = 2;
+    {::_pbi::TcParser::FastBS1,
+     {18, 63, 0, PROTOBUF_FIELD_OFFSET(Batch, _impl_.data_)}},
+    // int32 code = 3;
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(Batch, _impl_.code_), 63>(),
+     {24, 63, 0, PROTOBUF_FIELD_OFFSET(Batch, _impl_.code_)}},
+  }}, {{
+    65535, 65535
+  }}, {{
+    // string track_name = 1;
+    {PROTOBUF_FIELD_OFFSET(Batch, _impl_.track_name_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kUtf8String | ::_fl::kRepAString)},
+    // bytes data = 2;
+    {PROTOBUF_FIELD_OFFSET(Batch, _impl_.data_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kBytes | ::_fl::kRepAString)},
+    // int32 code = 3;
+    {PROTOBUF_FIELD_OFFSET(Batch, _impl_.code_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kInt32)},
+  }},
+  // no aux_entries
+  {{
+    "\5\12\0\0\0\0\0\0"
+    "Batch"
+    "track_name"
+  }},
+};
+
+::uint8_t* Batch::_InternalSerialize(
+    ::uint8_t* target,
+    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:Batch)
+  ::uint32_t cached_has_bits = 0;
+  (void)cached_has_bits;
+
+  // string track_name = 1;
+  if (!this->_internal_track_name().empty()) {
+    const std::string& _s = this->_internal_track_name();
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+        _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "Batch.track_name");
+    target = stream->WriteStringMaybeAliased(1, _s, target);
+  }
+
+  // bytes data = 2;
+  if (!this->_internal_data().empty()) {
+    const std::string& _s = this->_internal_data();
+    target = stream->WriteBytesMaybeAliased(2, _s, target);
+  }
+
+  // int32 code = 3;
+  if (this->_internal_code() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::
+        WriteInt32ToArrayWithField<3>(
+            stream, this->_internal_code(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target =
+        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:Batch)
+  return target;
+}
+
+::size_t Batch::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:Batch)
+  ::size_t total_size = 0;
+
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string track_name = 1;
+  if (!this->_internal_track_name().empty()) {
+    total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                    this->_internal_track_name());
+  }
+
+  // bytes data = 2;
+  if (!this->_internal_data().empty()) {
+    total_size += 1 + ::google::protobuf::internal::WireFormatLite::BytesSize(
+                                    this->_internal_data());
+  }
+
+  // int32 code = 3;
+  if (this->_internal_code() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
+        this->_internal_code());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::google::protobuf::Message::ClassData Batch::_class_data_ = {
+    Batch::MergeImpl,
+    nullptr,  // OnDemandRegisterArenaDtor
+};
+const ::google::protobuf::Message::ClassData* Batch::GetClassData() const {
+  return &_class_data_;
+}
+
+void Batch::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+  auto* const _this = static_cast<Batch*>(&to_msg);
+  auto& from = static_cast<const Batch&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:Batch)
+  ABSL_DCHECK_NE(&from, _this);
+  ::uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (!from._internal_track_name().empty()) {
+    _this->_internal_set_track_name(from._internal_track_name());
+  }
+  if (!from._internal_data().empty()) {
+    _this->_internal_set_data(from._internal_data());
+  }
+  if (from._internal_code() != 0) {
+    _this->_internal_set_code(from._internal_code());
+  }
+  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void Batch::CopyFrom(const Batch& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:Batch)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+PROTOBUF_NOINLINE bool Batch::IsInitialized() const {
+  return true;
+}
+
+::_pbi::CachedSize* Batch::AccessCachedSize() const {
+  return &_impl_._cached_size_;
+}
+void Batch::InternalSwap(Batch* PROTOBUF_RESTRICT other) {
+  using std::swap;
+  auto* arena = GetArena();
+  ABSL_DCHECK_EQ(arena, other->GetArena());
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.track_name_, &other->_impl_.track_name_, arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.data_, &other->_impl_.data_, arena);
+        swap(_impl_.code_, other->_impl_.code_);
+}
+
+::google::protobuf::Metadata Batch::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_proto_2faudio_2eproto_getter, &descriptor_table_proto_2faudio_2eproto_once,
+      file_level_metadata_proto_2faudio_2eproto[6]);
 }
 // @@protoc_insertion_point(namespace_scope)
 namespace google {

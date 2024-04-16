@@ -6,12 +6,12 @@
 #include "ServerController.h"
 #include "grpc.h"
 
-void to_bin(Entity::Track& ent)
-{
-    std::ofstream output_file("1.mp3", std::ios::binary);
-    output_file.write(ent.get_track_bytes(), ent.get_track_bytes_len());
-    output_file.close();
-}
+// void to_bin(Entity::Track& ent)
+// {
+//     std::ofstream output_file("1.mp3", std::ios::binary);
+//     output_file.write(ent.get_track_bytes().data());
+//     output_file.close();
+// }
 
 
 int main()

@@ -47,14 +47,12 @@ class User(_message.Message):
     tg_id: str
     def __init__(self, yandex_token: _Optional[str] = ..., tg_id: _Optional[str] = ...) -> None: ...
 
-class Hello(_message.Message):
-    __slots__ = ("msg",)
-    MSG_FIELD_NUMBER: _ClassVar[int]
-    msg: str
-    def __init__(self, msg: _Optional[str] = ...) -> None: ...
-
-class Asnwer(_message.Message):
-    __slots__ = ("ans",)
-    ANS_FIELD_NUMBER: _ClassVar[int]
-    ans: str
-    def __init__(self, ans: _Optional[str] = ...) -> None: ...
+class Batch(_message.Message):
+    __slots__ = ("track_name", "data", "code")
+    TRACK_NAME_FIELD_NUMBER: _ClassVar[int]
+    DATA_FIELD_NUMBER: _ClassVar[int]
+    CODE_FIELD_NUMBER: _ClassVar[int]
+    track_name: str
+    data: bytes
+    code: int
+    def __init__(self, track_name: _Optional[str] = ..., data: _Optional[bytes] = ..., code: _Optional[int] = ...) -> None: ...

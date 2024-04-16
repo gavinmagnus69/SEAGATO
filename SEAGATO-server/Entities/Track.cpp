@@ -3,14 +3,13 @@
     //getters and setters
 
     Entity::Track::Track(const std::string& name,
-     int length, char* bytes, int len) noexcept :
+     int length, const std::string& bytes, int len) noexcept :
      track_name(name), track_length(length),
      track_bytes(bytes), track_bytes_len(len)
     {}
 
     Entity::Track::~Track()
     {
-        delete [] track_bytes;
     }
     
     Entity::Track::Track() noexcept : track_name("null"), track_length(0){}
@@ -35,7 +34,7 @@
         this->track_name = name;
     }
 
-    void Entity::Track::set_track_bytes(char* bytes)
+    void Entity::Track::set_track_bytes(const std::string& bytes)
     {
         this->track_bytes = bytes;
     }
@@ -45,6 +44,11 @@
         this->track_bytes_len = len;
     }
 
-    char* Entity::Track::get_track_bytes() { return track_bytes;}
+    const std::string& Entity::Track::get_track_bytes() { return track_bytes;}
 
     int Entity::Track::get_track_bytes_len() const { return track_bytes_len;}
+
+    std::string& Entity::Track::data()
+    {
+        return track_bytes;
+    }

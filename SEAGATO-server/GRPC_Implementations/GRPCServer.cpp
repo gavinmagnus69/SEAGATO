@@ -5,6 +5,26 @@
 #include <grpcpp/support/status.h>
 #include <string>
 #include <vector>
+#include <fstream>
+
+//TOOLS////////////////////////////////////
+void to_bin(const std::string& tr_name, char* bytes, int sz)
+{
+
+    std::ofstream output_file(tr_name + ".mp3", std::ios::binary);
+    output_file.write(bytes, sz);
+    output_file.close();
+
+}
+void vector_to_bin(std::vector<std::string> &sngs,
+                   std::vector<std::string> &bytes_tracks) {
+    int i = 0;
+    for (auto it = bytes_tracks.begin(); it != bytes_tracks.end(); ++it) {
+        to_bin(sngs[i], it->data(), it->length());
+        ++i;
+    }
+}
+///////////////////////////////////////////
 
 
 void GRPCServer::set_ycontroller(std::shared_ptr<Interface::IController> ycntrl)
@@ -27,7 +47,7 @@ void GRPCServer::set_tgcontroller(std::shared_ptr<Interface::IController> ycntrl
     Entity::User usr;
     std::string str = request->song_id();
     Entity::Track trc = ya_controller->fetch_track(str, usr);
-    response->set_data(trc.get_track_bytes(), trc.get_track_bytes_len());
+    response->set_data(trc.get_track_bytes());
     return grpc::Status::OK;
 }
 
@@ -48,6 +68,7 @@ void GRPCServer::set_tgcontroller(std::shared_ptr<Interface::IController> ycntrl
 
 
 //THIS FUNCTION SENDS TRACKS FROM SERVICES TO CLIENT
+//OUTDATED!!!!!!!!
 
   ::grpc::Status GRPCServer::sendTrackStream(::grpc::ServerContext* context, const ::Tracks_list* request, ::grpc::ServerWriter< ::Track>* writer)
   {
@@ -63,7 +84,7 @@ void GRPCServer::set_tgcontroller(std::shared_ptr<Interface::IController> ycntrl
         Entity::Track trc = ya_controller->fetch_track(track_name, usr);
         ::Track proto_track;
         proto_track.set_track_name(trc.get_track_name());
-        proto_track.set_data(trc.get_track_bytes(), trc.get_track_bytes_len());
+        proto_track.set_data(trc.get_track_bytes());
         proto_track.set_song_id(trc.get_track_name());
         if(writer->Write(proto_track))
         {
@@ -76,3 +97,24 @@ void GRPCServer::set_tgcontroller(std::shared_ptr<Interface::IController> ycntrl
     }
     return grpc::Status::OK;
   }
+
+
+
+
+   ::grpc::Status GRPCServer::SendTracksButched(::grpc::ServerContext* context, const ::Tracks_list* request, ::grpc::ServerWriter< ::Batch>* writer)
+   {
+        std::vector<std::string> track_names;
+        for(const std::string& tr : request->tracks_names())
+        {
+            track_names.push_back(tr);
+        }
+        std::vector<Entity::Track> tracks = ya_controller->fetch_tracks_batches(track_names);
+
+
+
+
+
+        return grpc::Status::OK;
+    
+
+   }

@@ -29,15 +29,10 @@ class AudioServicesStub(object):
                 request_serializer=audio__pb2.Tracks_list.SerializeToString,
                 response_deserializer=audio__pb2.Track.FromString,
                 )
-        self.sendTracksTest = channel.unary_stream(
-                '/AudioServices/sendTracksTest',
-                request_serializer=audio__pb2.User.SerializeToString,
-                response_deserializer=audio__pb2.Track.FromString,
-                )
-        self.sendHello = channel.unary_unary(
-                '/AudioServices/sendHello',
-                request_serializer=audio__pb2.Hello.SerializeToString,
-                response_deserializer=audio__pb2.Asnwer.FromString,
+        self.SendTracksButched = channel.unary_stream(
+                '/AudioServices/SendTracksButched',
+                request_serializer=audio__pb2.Tracks_list.SerializeToString,
+                response_deserializer=audio__pb2.Batch.FromString,
                 )
 
 
@@ -62,13 +57,7 @@ class AudioServicesServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def sendTracksTest(self, request, context):
-        """Missing associated documentation comment in .proto file."""
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def sendHello(self, request, context):
+    def SendTracksButched(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -92,15 +81,10 @@ def add_AudioServicesServicer_to_server(servicer, server):
                     request_deserializer=audio__pb2.Tracks_list.FromString,
                     response_serializer=audio__pb2.Track.SerializeToString,
             ),
-            'sendTracksTest': grpc.unary_stream_rpc_method_handler(
-                    servicer.sendTracksTest,
-                    request_deserializer=audio__pb2.User.FromString,
-                    response_serializer=audio__pb2.Track.SerializeToString,
-            ),
-            'sendHello': grpc.unary_unary_rpc_method_handler(
-                    servicer.sendHello,
-                    request_deserializer=audio__pb2.Hello.FromString,
-                    response_serializer=audio__pb2.Asnwer.SerializeToString,
+            'SendTracksButched': grpc.unary_stream_rpc_method_handler(
+                    servicer.SendTracksButched,
+                    request_deserializer=audio__pb2.Tracks_list.FromString,
+                    response_serializer=audio__pb2.Batch.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -164,7 +148,7 @@ class AudioServices(object):
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def sendTracksTest(request,
+    def SendTracksButched(request,
             target,
             options=(),
             channel_credentials=None,
@@ -174,25 +158,8 @@ class AudioServices(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_stream(request, target, '/AudioServices/sendTracksTest',
-            audio__pb2.User.SerializeToString,
-            audio__pb2.Track.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def sendHello(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/AudioServices/sendHello',
-            audio__pb2.Hello.SerializeToString,
-            audio__pb2.Asnwer.FromString,
+        return grpc.experimental.unary_stream(request, target, '/AudioServices/SendTracksButched',
+            audio__pb2.Tracks_list.SerializeToString,
+            audio__pb2.Batch.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

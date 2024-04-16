@@ -105,10 +105,11 @@ CMakeFiles/ent.dir/Implementations/YaController.cpp.o: \
  /usr/include/c++/13.2.1/bits/uses_allocator_args.h \
  /usr/include/c++/13.2.1/tuple \
  /home/roman/Desktop/project/SEAGATO/SEAGATO-server/Implementations/../Interfaces/../Entities/User.h \
- /usr/include/c++/13.2.1/list /usr/include/c++/13.2.1/bits/stl_list.h \
- /usr/include/c++/13.2.1/bits/allocated_ptr.h \
- /usr/include/c++/13.2.1/ext/aligned_buffer.h \
- /usr/include/c++/13.2.1/bits/list.tcc \
+ /usr/include/c++/13.2.1/vector \
+ /usr/include/c++/13.2.1/bits/stl_uninitialized.h \
+ /usr/include/c++/13.2.1/bits/stl_vector.h \
+ /usr/include/c++/13.2.1/bits/stl_bvector.h \
+ /usr/include/c++/13.2.1/bits/vector.tcc \
  /home/roman/Desktop/project/SEAGATO/SEAGATO-server/Implementations/../Interfaces/IController.h \
  /home/roman/Desktop/project/SEAGATO/SEAGATO-server/Implementations/../Interfaces/../Entities/Track.h \
  /usr/include/c++/13.2.1/iostream /usr/include/c++/13.2.1/ostream \
@@ -146,9 +147,12 @@ CMakeFiles/ent.dir/Implementations/YaController.cpp.o: \
  /usr/include/c++/13.2.1/bits/locale_facets.tcc \
  /usr/include/c++/13.2.1/bits/basic_ios.tcc \
  /usr/include/c++/13.2.1/bits/ostream.tcc /usr/include/c++/13.2.1/istream \
- /usr/include/c++/13.2.1/bits/istream.tcc /usr/include/c++/13.2.1/memory \
+ /usr/include/c++/13.2.1/bits/istream.tcc /usr/include/c++/13.2.1/list \
+ /usr/include/c++/13.2.1/bits/stl_list.h \
+ /usr/include/c++/13.2.1/bits/allocated_ptr.h \
+ /usr/include/c++/13.2.1/ext/aligned_buffer.h \
+ /usr/include/c++/13.2.1/bits/list.tcc /usr/include/c++/13.2.1/memory \
  /usr/include/c++/13.2.1/bits/stl_tempbuf.h \
- /usr/include/c++/13.2.1/bits/stl_uninitialized.h \
  /usr/include/c++/13.2.1/bits/stl_raw_storage_iter.h \
  /usr/include/c++/13.2.1/bits/align.h \
  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/stdint.h \
@@ -164,6 +168,7 @@ CMakeFiles/ent.dir/Implementations/YaController.cpp.o: \
  /usr/include/c++/13.2.1/backward/auto_ptr.h \
  /usr/include/c++/13.2.1/pstl/glue_memory_defs.h \
  /usr/include/c++/13.2.1/pstl/execution_defs.h \
+ /home/roman/Desktop/project/SEAGATO/SEAGATO-server/Entities/Track.h \
  /home/roman/Desktop/project/SEAGATO/SEAGATO-server/Entities/User.h \
  /usr/include/c++/13.2.1/cstring /usr/include/string.h \
  /usr/include/strings.h

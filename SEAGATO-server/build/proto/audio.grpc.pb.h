@@ -65,6 +65,15 @@ class AudioServices final {
     std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::Track>> PrepareAsyncsendTracksTest(::grpc::ClientContext* context, const ::User& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::Track>>(PrepareAsyncsendTracksTestRaw(context, request, cq));
     }
+    std::unique_ptr< ::grpc::ClientReaderInterface< ::Batch>> SendTracksButched(::grpc::ClientContext* context, const ::Tracks_list& request) {
+      return std::unique_ptr< ::grpc::ClientReaderInterface< ::Batch>>(SendTracksButchedRaw(context, request));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::Batch>> AsyncSendTracksButched(::grpc::ClientContext* context, const ::Tracks_list& request, ::grpc::CompletionQueue* cq, void* tag) {
+      return std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::Batch>>(AsyncSendTracksButchedRaw(context, request, cq, tag));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::Batch>> PrepareAsyncSendTracksButched(::grpc::ClientContext* context, const ::Tracks_list& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::Batch>>(PrepareAsyncSendTracksButchedRaw(context, request, cq));
+    }
     class async_interface {
      public:
       virtual ~async_interface() {}
@@ -74,6 +83,7 @@ class AudioServices final {
       virtual void sendTrackList(::grpc::ClientContext* context, const ::Request_list* request, ::Tracks_list* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       virtual void sendTrackStream(::grpc::ClientContext* context, const ::Tracks_list* request, ::grpc::ClientReadReactor< ::Track>* reactor) = 0;
       virtual void sendTracksTest(::grpc::ClientContext* context, const ::User* request, ::grpc::ClientReadReactor< ::Track>* reactor) = 0;
+      virtual void SendTracksButched(::grpc::ClientContext* context, const ::Tracks_list* request, ::grpc::ClientReadReactor< ::Batch>* reactor) = 0;
     };
     typedef class async_interface experimental_async_interface;
     virtual class async_interface* async() { return nullptr; }
@@ -89,6 +99,9 @@ class AudioServices final {
     virtual ::grpc::ClientReaderInterface< ::Track>* sendTracksTestRaw(::grpc::ClientContext* context, const ::User& request) = 0;
     virtual ::grpc::ClientAsyncReaderInterface< ::Track>* AsyncsendTracksTestRaw(::grpc::ClientContext* context, const ::User& request, ::grpc::CompletionQueue* cq, void* tag) = 0;
     virtual ::grpc::ClientAsyncReaderInterface< ::Track>* PrepareAsyncsendTracksTestRaw(::grpc::ClientContext* context, const ::User& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientReaderInterface< ::Batch>* SendTracksButchedRaw(::grpc::ClientContext* context, const ::Tracks_list& request) = 0;
+    virtual ::grpc::ClientAsyncReaderInterface< ::Batch>* AsyncSendTracksButchedRaw(::grpc::ClientContext* context, const ::Tracks_list& request, ::grpc::CompletionQueue* cq, void* tag) = 0;
+    virtual ::grpc::ClientAsyncReaderInterface< ::Batch>* PrepareAsyncSendTracksButchedRaw(::grpc::ClientContext* context, const ::Tracks_list& request, ::grpc::CompletionQueue* cq) = 0;
   };
   class Stub final : public StubInterface {
    public:
@@ -125,6 +138,15 @@ class AudioServices final {
     std::unique_ptr< ::grpc::ClientAsyncReader< ::Track>> PrepareAsyncsendTracksTest(::grpc::ClientContext* context, const ::User& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncReader< ::Track>>(PrepareAsyncsendTracksTestRaw(context, request, cq));
     }
+    std::unique_ptr< ::grpc::ClientReader< ::Batch>> SendTracksButched(::grpc::ClientContext* context, const ::Tracks_list& request) {
+      return std::unique_ptr< ::grpc::ClientReader< ::Batch>>(SendTracksButchedRaw(context, request));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncReader< ::Batch>> AsyncSendTracksButched(::grpc::ClientContext* context, const ::Tracks_list& request, ::grpc::CompletionQueue* cq, void* tag) {
+      return std::unique_ptr< ::grpc::ClientAsyncReader< ::Batch>>(AsyncSendTracksButchedRaw(context, request, cq, tag));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncReader< ::Batch>> PrepareAsyncSendTracksButched(::grpc::ClientContext* context, const ::Tracks_list& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncReader< ::Batch>>(PrepareAsyncSendTracksButchedRaw(context, request, cq));
+    }
     class async final :
       public StubInterface::async_interface {
      public:
@@ -134,6 +156,7 @@ class AudioServices final {
       void sendTrackList(::grpc::ClientContext* context, const ::Request_list* request, ::Tracks_list* response, ::grpc::ClientUnaryReactor* reactor) override;
       void sendTrackStream(::grpc::ClientContext* context, const ::Tracks_list* request, ::grpc::ClientReadReactor< ::Track>* reactor) override;
       void sendTracksTest(::grpc::ClientContext* context, const ::User* request, ::grpc::ClientReadReactor< ::Track>* reactor) override;
+      void SendTracksButched(::grpc::ClientContext* context, const ::Tracks_list* request, ::grpc::ClientReadReactor< ::Batch>* reactor) override;
      private:
       friend class Stub;
       explicit async(Stub* stub): stub_(stub) { }
@@ -155,10 +178,14 @@ class AudioServices final {
     ::grpc::ClientReader< ::Track>* sendTracksTestRaw(::grpc::ClientContext* context, const ::User& request) override;
     ::grpc::ClientAsyncReader< ::Track>* AsyncsendTracksTestRaw(::grpc::ClientContext* context, const ::User& request, ::grpc::CompletionQueue* cq, void* tag) override;
     ::grpc::ClientAsyncReader< ::Track>* PrepareAsyncsendTracksTestRaw(::grpc::ClientContext* context, const ::User& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientReader< ::Batch>* SendTracksButchedRaw(::grpc::ClientContext* context, const ::Tracks_list& request) override;
+    ::grpc::ClientAsyncReader< ::Batch>* AsyncSendTracksButchedRaw(::grpc::ClientContext* context, const ::Tracks_list& request, ::grpc::CompletionQueue* cq, void* tag) override;
+    ::grpc::ClientAsyncReader< ::Batch>* PrepareAsyncSendTracksButchedRaw(::grpc::ClientContext* context, const ::Tracks_list& request, ::grpc::CompletionQueue* cq) override;
     const ::grpc::internal::RpcMethod rpcmethod_sendAudio_;
     const ::grpc::internal::RpcMethod rpcmethod_sendTrackList_;
     const ::grpc::internal::RpcMethod rpcmethod_sendTrackStream_;
     const ::grpc::internal::RpcMethod rpcmethod_sendTracksTest_;
+    const ::grpc::internal::RpcMethod rpcmethod_SendTracksButched_;
   };
   static std::unique_ptr<Stub> NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
 
@@ -170,6 +197,7 @@ class AudioServices final {
     virtual ::grpc::Status sendTrackList(::grpc::ServerContext* context, const ::Request_list* request, ::Tracks_list* response);
     virtual ::grpc::Status sendTrackStream(::grpc::ServerContext* context, const ::Tracks_list* request, ::grpc::ServerWriter< ::Track>* writer);
     virtual ::grpc::Status sendTracksTest(::grpc::ServerContext* context, const ::User* request, ::grpc::ServerWriter< ::Track>* writer);
+    virtual ::grpc::Status SendTracksButched(::grpc::ServerContext* context, const ::Tracks_list* request, ::grpc::ServerWriter< ::Batch>* writer);
   };
   template <class BaseClass>
   class WithAsyncMethod_sendAudio : public BaseClass {
@@ -251,7 +279,27 @@ class AudioServices final {
       ::grpc::Service::RequestAsyncServerStreaming(3, context, request, writer, new_call_cq, notification_cq, tag);
     }
   };
-  typedef WithAsyncMethod_sendAudio<WithAsyncMethod_sendTrackList<WithAsyncMethod_sendTrackStream<WithAsyncMethod_sendTracksTest<Service > > > > AsyncService;
+  template <class BaseClass>
+  class WithAsyncMethod_SendTracksButched : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_SendTracksButched() {
+      ::grpc::Service::MarkMethodAsync(4);
+    }
+    ~WithAsyncMethod_SendTracksButched() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status SendTracksButched(::grpc::ServerContext* /*context*/, const ::Tracks_list* /*request*/, ::grpc::ServerWriter< ::Batch>* /*writer*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestSendTracksButched(::grpc::ServerContext* context, ::Tracks_list* request, ::grpc::ServerAsyncWriter< ::Batch>* writer, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncServerStreaming(4, context, request, writer, new_call_cq, notification_cq, tag);
+    }
+  };
+  typedef WithAsyncMethod_sendAudio<WithAsyncMethod_sendTrackList<WithAsyncMethod_sendTrackStream<WithAsyncMethod_sendTracksTest<WithAsyncMethod_SendTracksButched<Service > > > > > AsyncService;
   template <class BaseClass>
   class WithCallbackMethod_sendAudio : public BaseClass {
    private:
@@ -350,7 +398,29 @@ class AudioServices final {
     virtual ::grpc::ServerWriteReactor< ::Track>* sendTracksTest(
       ::grpc::CallbackServerContext* /*context*/, const ::User* /*request*/)  { return nullptr; }
   };
-  typedef WithCallbackMethod_sendAudio<WithCallbackMethod_sendTrackList<WithCallbackMethod_sendTrackStream<WithCallbackMethod_sendTracksTest<Service > > > > CallbackService;
+  template <class BaseClass>
+  class WithCallbackMethod_SendTracksButched : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithCallbackMethod_SendTracksButched() {
+      ::grpc::Service::MarkMethodCallback(4,
+          new ::grpc::internal::CallbackServerStreamingHandler< ::Tracks_list, ::Batch>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::Tracks_list* request) { return this->SendTracksButched(context, request); }));
+    }
+    ~WithCallbackMethod_SendTracksButched() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status SendTracksButched(::grpc::ServerContext* /*context*/, const ::Tracks_list* /*request*/, ::grpc::ServerWriter< ::Batch>* /*writer*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerWriteReactor< ::Batch>* SendTracksButched(
+      ::grpc::CallbackServerContext* /*context*/, const ::Tracks_list* /*request*/)  { return nullptr; }
+  };
+  typedef WithCallbackMethod_sendAudio<WithCallbackMethod_sendTrackList<WithCallbackMethod_sendTrackStream<WithCallbackMethod_sendTracksTest<WithCallbackMethod_SendTracksButched<Service > > > > > CallbackService;
   typedef CallbackService ExperimentalCallbackService;
   template <class BaseClass>
   class WithGenericMethod_sendAudio : public BaseClass {
@@ -416,6 +486,23 @@ class AudioServices final {
     }
     // disable synchronous version of this method
     ::grpc::Status sendTracksTest(::grpc::ServerContext* /*context*/, const ::User* /*request*/, ::grpc::ServerWriter< ::Track>* /*writer*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_SendTracksButched : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_SendTracksButched() {
+      ::grpc::Service::MarkMethodGeneric(4);
+    }
+    ~WithGenericMethod_SendTracksButched() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status SendTracksButched(::grpc::ServerContext* /*context*/, const ::Tracks_list* /*request*/, ::grpc::ServerWriter< ::Batch>* /*writer*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -498,6 +585,26 @@ class AudioServices final {
     }
     void RequestsendTracksTest(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncWriter< ::grpc::ByteBuffer>* writer, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncServerStreaming(3, context, request, writer, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_SendTracksButched : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_SendTracksButched() {
+      ::grpc::Service::MarkMethodRaw(4);
+    }
+    ~WithRawMethod_SendTracksButched() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status SendTracksButched(::grpc::ServerContext* /*context*/, const ::Tracks_list* /*request*/, ::grpc::ServerWriter< ::Batch>* /*writer*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestSendTracksButched(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncWriter< ::grpc::ByteBuffer>* writer, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncServerStreaming(4, context, request, writer, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -586,6 +693,28 @@ class AudioServices final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     virtual ::grpc::ServerWriteReactor< ::grpc::ByteBuffer>* sendTracksTest(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/)  { return nullptr; }
+  };
+  template <class BaseClass>
+  class WithRawCallbackMethod_SendTracksButched : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawCallbackMethod_SendTracksButched() {
+      ::grpc::Service::MarkMethodRawCallback(4,
+          new ::grpc::internal::CallbackServerStreamingHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const::grpc::ByteBuffer* request) { return this->SendTracksButched(context, request); }));
+    }
+    ~WithRawCallbackMethod_SendTracksButched() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status SendTracksButched(::grpc::ServerContext* /*context*/, const ::Tracks_list* /*request*/, ::grpc::ServerWriter< ::Batch>* /*writer*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerWriteReactor< ::grpc::ByteBuffer>* SendTracksButched(
       ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/)  { return nullptr; }
   };
   template <class BaseClass>
@@ -697,8 +826,35 @@ class AudioServices final {
     // replace default version of method with split streamed
     virtual ::grpc::Status StreamedsendTracksTest(::grpc::ServerContext* context, ::grpc::ServerSplitStreamer< ::User,::Track>* server_split_streamer) = 0;
   };
-  typedef WithSplitStreamingMethod_sendTrackStream<WithSplitStreamingMethod_sendTracksTest<Service > > SplitStreamedService;
-  typedef WithStreamedUnaryMethod_sendAudio<WithStreamedUnaryMethod_sendTrackList<WithSplitStreamingMethod_sendTrackStream<WithSplitStreamingMethod_sendTracksTest<Service > > > > StreamedService;
+  template <class BaseClass>
+  class WithSplitStreamingMethod_SendTracksButched : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithSplitStreamingMethod_SendTracksButched() {
+      ::grpc::Service::MarkMethodStreamed(4,
+        new ::grpc::internal::SplitServerStreamingHandler<
+          ::Tracks_list, ::Batch>(
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerSplitStreamer<
+                     ::Tracks_list, ::Batch>* streamer) {
+                       return this->StreamedSendTracksButched(context,
+                         streamer);
+                  }));
+    }
+    ~WithSplitStreamingMethod_SendTracksButched() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status SendTracksButched(::grpc::ServerContext* /*context*/, const ::Tracks_list* /*request*/, ::grpc::ServerWriter< ::Batch>* /*writer*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with split streamed
+    virtual ::grpc::Status StreamedSendTracksButched(::grpc::ServerContext* context, ::grpc::ServerSplitStreamer< ::Tracks_list,::Batch>* server_split_streamer) = 0;
+  };
+  typedef WithSplitStreamingMethod_sendTrackStream<WithSplitStreamingMethod_sendTracksTest<WithSplitStreamingMethod_SendTracksButched<Service > > > SplitStreamedService;
+  typedef WithStreamedUnaryMethod_sendAudio<WithStreamedUnaryMethod_sendTrackList<WithSplitStreamingMethod_sendTrackStream<WithSplitStreamingMethod_sendTracksTest<WithSplitStreamingMethod_SendTracksButched<Service > > > > > StreamedService;
 };
 
 
