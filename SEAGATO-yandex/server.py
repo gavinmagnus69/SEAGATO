@@ -36,6 +36,8 @@ class AudioService(audio_pb2_grpc.AudioServicesServicer):
                 # while cur_len > 4000000:
                 #     for i in range(4000001):
                 #         tmp_bytes[i] = trb[i]
+
+                #chunk size can be changed
                 batches = divide_bytes(trb, 4000000)
                 for b in batches:
                     resp = audio_pb2.Batch()

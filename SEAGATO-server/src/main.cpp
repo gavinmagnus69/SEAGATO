@@ -6,19 +6,13 @@
 #include "ServerController.h"
 #include "grpc.h"
 
-// void to_bin(Entity::Track& ent)
-// {
-//     std::ofstream output_file("1.mp3", std::ios::binary);
-//     output_file.write(ent.get_track_bytes().data());
-//     output_file.close();
-// }
-
 
 int main()
 {
     //test port c++ 9999
     //python port 2888
     //INIT ORDER: YACONTROLLER TGCONTROLLER SERVERCONTROLLER
+
     Service::Interactor server(new Controller::YaController(
         new Client(grpc::CreateChannel("localhost:2888", grpc::InsecureChannelCredentials()))),
         new Controller::YaController(

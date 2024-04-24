@@ -6,5 +6,5 @@ CXX_DEFINES = -DCARES_STATICLIB
 
 CXX_INCLUDES = -I/home/roman/Desktop/project/SEAGATO/SEAGATO-server/build
 
-CXX_FLAGS = 
+CXX_FLAGS = -std=gnu++23
 
