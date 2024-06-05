@@ -1,0 +1,6 @@
+localDB/
+.venv/
+.venv1/
+.idea/
+__pycache__/
+bot_token.py

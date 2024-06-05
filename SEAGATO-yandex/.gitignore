@@ -1,0 +1,7 @@
+localDB/
+tolkien.py
+.venv/
+.venv1/
+.idea/
+__pycache__/
+

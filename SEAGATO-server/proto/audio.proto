@@ -1,0 +1,58 @@
+syntax = "proto3";
+
+
+
+message Request
+{
+    string song_id = 1;
+}
+
+message Audio
+{
+    bytes data = 1;
+}
+
+
+message Track
+{
+    string track_name = 1;
+    bytes data = 2;
+    string song_id = 3;
+}
+
+message tracksListRequest
+{
+    string token = 1;
+    bool type = 2;  
+}
+
+message Tracks_list
+{
+    repeated string tracks_names = 1;
+}
+
+message tracksRequest{
+    string token = 1;
+    repeated string tracks_names = 2;
+    bool type = 3;
+}
+
+
+
+message Batch{
+    string track_name = 1;
+    bytes data = 2;
+    int32 code = 3;
+}
+
+
+
+service AudioServices
+{
+    rpc sendAudio(Request) returns (Audio){}
+
+    rpc sendTrackList(tracksListRequest) returns (Tracks_list){}
+
+    rpc SendTracksButched(tracksRequest) returns (stream Batch);
+}
+

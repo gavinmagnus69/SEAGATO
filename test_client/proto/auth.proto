@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+message addUserRequest
+{
+    string token = 1;
+}
+
+message addUserResponse
+{
+    int32 code = 1;
+}
+
+
+service AuthServices
+{
+    rpc addUser(addUserRequest) returns (addUserResponse){}
+}
+

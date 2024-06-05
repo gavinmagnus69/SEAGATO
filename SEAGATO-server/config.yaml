@@ -1,0 +1,6 @@
+port_auth: 1489 
+port_audio: 1488
+port_yandex: 2888
+port_tg: 2889
+storage_path: "/home/roman/Desktop/project/SEAGATO/SEAGATO-server/build/storage/users.db"
+msg_size: 4000000
