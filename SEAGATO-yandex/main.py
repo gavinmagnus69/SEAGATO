@@ -1,8 +1,12 @@
 from yandex_music import Client
-import tolkien as tkn
+
+import tolkien
+#scipt to download all tracks from yandex music
+
+
 
 def main():
-    client = Client(tkn.token)
+    client = Client(tolkien.token)
     client.init()
     tracks = client.users_likes_tracks().fetch_tracks()
     cnt = 0
@@ -12,10 +16,11 @@ def main():
             artists_name += art.name.title()
             artists_name += ' '
         song_name = i.title.title()
-        i.download(f"./localDB/{song_name}-{artists_name}.mp3", 'mp3', 320)
-        if cnt == 10:
-            break
-        cnt += 1
+        try:
+            i.download(f"./localDB/{song_name}-{artists_name}.mp3", 'mp3', 320)
+        except:
+            i.download(f"./localDB/{song_name}-{artists_name}.mp3", 'mp3', 192)
+
 
 
 if __name__ == '__main__':

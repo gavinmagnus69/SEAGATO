@@ -16,6 +16,8 @@ def read_binary_file(file_path):
 def divide_bytes(data, chunk_size):
     divided_chunks = [data[i:i + chunk_size] for i in range(0, len(data), chunk_size)]
     return divided_chunks
+
+
 class AudioService(audio_pb2_grpc.AudioServicesServicer):
     def sendAudio(self, request, context):
         bytes = read_binary_file(f'./localDB/{request.song_id}.mp3')
