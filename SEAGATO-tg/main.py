@@ -8,11 +8,22 @@ from bot_token import token
 
 tkn = token
 
+respond = True
+
 bot = telebot.TeleBot(tkn)
 
 @bot.message_handler(commands = ['start'])
 def main(message):
     bot.send_message(message.chat.id, f'This is SEAGATO telegram bot, you can send your music here, your chat_id: {message.chat.id}')
+
+@bot.message_handler(commands = ['response'])
+def switch_response(message):
+    global respond
+    if respond == True:
+        respond = False
+    else:
+        respond = True
+    bot.send_message(message.chat.id, f'Respond switched to {respond}')
 
 
 @bot.message_handler(content_types = ['audio'])
@@ -44,13 +55,14 @@ def get_audio(message):
 
 
 
+#links handler
 @bot.message_handler(content_types = ['text'])
 def get_from_youtube(message):
 
     #link to youtube video
     link = message.text
 
-    bot.reply_to(message, "Processing your link")
+    #bot.reply_to(message, "Processing your link")
 
     dwnld_path = f'./localDB/{message.chat.id}'
     youtube_path = f'{dwnld_path}/youtube'
@@ -68,14 +80,14 @@ def get_from_youtube(message):
             bot.reply_to(message, "Unsuc")
             return
         
-        for filename in os.listdir(directory_path):
-            if os.path.isfile(os.path.join(directory_path, filename)):
-                if '.mp3' in filename:
-                    print(filename)
-                    bot.send_audio(message.chat.id, audio=open(f'{directory_path}/{filename}', 'rb'))
-                    delete_dir(directory_path)
-                      
-        
+        if respond:
+            for filename in os.listdir(directory_path):
+                if os.path.isfile(os.path.join(directory_path, filename)):
+                    if '.mp3' in filename:
+                        print(filename)
+                        bot.send_audio(message.chat.id, audio=open(f'{directory_path}/{filename}', 'rb'))
+                        delete_dir(directory_path)
+                        
         download_track(link, youtube_path)
 
         bot.reply_to(message, "Suc")
@@ -106,11 +118,13 @@ def delete_dir(dir_path: str):
 def move_track(file: str, dest: str):
     mv_command = f'mv {file} {dest}'
     exit_code = os.system(mv_command)
+    г
     if exit_code != 0:
         print('move error')
         return -1
     return 0
     
+
 
 
 
