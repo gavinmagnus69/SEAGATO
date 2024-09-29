@@ -90,7 +90,7 @@ def get_from_youtube(message):
                         
         download_track(link, youtube_path)
 
-        bot.reply_to(message, "Suc")
+        # bot.reply_to(message, "Suc")
     except:
             bot.reply_to(message, "Error")
 

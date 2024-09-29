@@ -2,6 +2,7 @@
 #define CONFIG_H
 #include <yaml-cpp/yaml.h>
 #include <iostream>
+
 class Config{
     public:
         std::string port_auth;

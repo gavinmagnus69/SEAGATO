@@ -10,7 +10,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 find_package(jwt-cpp CONFIG REQUIRED)
 
 #sqlite
-find_package(SQLite3 CONFIG REQUIRED)
+# find_package(SQLite3 CONFIG REQUIRED)
 
 #yaml-cpp
 find_package(yaml-cpp CONFIG REQUIRED)
@@ -56,5 +56,6 @@ ${CMAKE_CURRENT_SOURCE_DIR}/GRPC_Implementations ${CMAKE_CURRENT_SOURCE_DIR}/too
 target_link_libraries(server-sg PUBLIC ent protolib)
 target_include_directories(ent PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/build/proto)
 #????
-target_link_libraries(ent PUBLIC protolib jwt-cpp::jwt-cpp SQLite::SQLite3 yaml-cpp::yaml-cpp)
+target_link_libraries(ent PUBLIC protolib jwt-cpp::jwt-cpp  yaml-cpp::yaml-cpp)
 #target_link_libraries(server-sg protolib)
+#SQLite::SQLite3

@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+message addUserRequest
+{
+    string token = 1;
+}
+
+message addUserResponse
+{
+    int32 code = 1;
+}
+
+message addUsersDataRequest
+{
+    string token = 1;
+    string chat_id = 2;
+    string ytoken = 3;
+}
+
+message addUsersDataResponse
+{
+    int32 code = 1;
+}
+
+
+service AuthServices
+{
+    rpc addUser(addUserRequest) returns (addUserResponse){}
+    rpc addUserData(addUsersDataRequest) returns (addUsersDataResponse){}
+}
+
