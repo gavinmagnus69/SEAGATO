@@ -7,7 +7,7 @@
 class IConfig {
 public:
     virtual std::optional<std::string> get(const std::string& key) = 0;
-    virtual std::map<std::string, std::string> getConfig() const = 0;
+    virtual std::map<std::string, std::string>& getConfig() = 0;
     virtual bool isEmpty() const = 0;
     virtual void printConfig() = 0;
     virtual ~IConfig() {};
